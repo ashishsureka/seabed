@@ -476,8 +476,8 @@ scroll {  0% {
 /*============== Service style ==============*/
 
 .single_service{  
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 .single_service i{
   position: relative;
@@ -616,7 +616,7 @@ scroll {  0% {
 }
 
 .getit_section{
-    margin-top: 40px;
+  margin-top: 40px;
   margin-bottom: 40px;
 }
 
@@ -860,7 +860,7 @@ scroll {  0% {
 }
 
 .single_blog {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .single_blog a{
