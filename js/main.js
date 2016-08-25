@@ -137,20 +137,6 @@
 
       ];
 
-      $(document).ready(function(){
-
-        $("#skillset").skillset({
-
-          object:object,
-          duration:40
-
-        });
-
-      });
-
-
-        // Owl carousel
-
       $(document).ready(function() {
                
       $("#testimonial_carosule").owlCarousel({
@@ -171,6 +157,22 @@
                
       });
 
+
+      $(document).ready(function(){
+
+        $("#skillset").skillset({
+
+          object:object,
+          duration:40
+
+        });
+
+      });
+
+
+        // Owl carousel
+
+      
       // Up to top js
 
       $(document).ready(function() {
