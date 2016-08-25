@@ -842,8 +842,8 @@ scroll {  0% {
 /*============== Blog style ==============*/
 
 .blog_area{
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 
 .blog_section{
