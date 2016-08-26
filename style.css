@@ -1243,3 +1243,6 @@ line-height: 45px !important;}
   text-indent:100%;
   background:url(img/ui.totop.png) no-repeat left top;
 }
+.scrollToTop:hover{
+	text-decoration:none;
+}

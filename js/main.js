@@ -156,6 +156,26 @@
                 });
                
       });
+	  
+	  
+	  $(document).ready(function () {
+       $(window).scroll(function () {
+           if ($(this).scrollTop() > 100) {
+               $('.scrollup').fadeIn('slow');
+           } else {
+               $('.scrollup').fadeOut('slow');
+           }
+       });
+       $('.scrollup').click(function () {
+           $("html, body").animate({
+               scrollTop: 0
+           }, 700);
+           return false;
+       });
+   });
+	  
+	  
+	  
 
 
       $(document).ready(function(){
