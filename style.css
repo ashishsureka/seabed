@@ -1188,6 +1188,48 @@ line-height: 45px !important;}
   margin-bottom: 30px;
   text-align: center;
 }
+#accordion .panel-heading { padding: 0;}
+#accordion .panel-title > a {
+	display: block;
+	padding: 0.4em 0.6em;
+    outline: none;
+    font-weight:bold;
+    text-decoration: none;
+}
+
+#accordion .panel-title > a.accordion-toggle::before, #accordion a[data-toggle="collapse"]::before  {
+    
+	content:"\e087";
+	
+    float: left;
+    font-family: 'Glyphicons Halflings';
+	margin-right :1em;
+}
+#accordion .panel-title > a.accordion-toggle.collapsed::before, #accordion a.collapsed[data-toggle="collapse"]::before  {
+    content:"\e114";
+}
+
+
+
+#accordion_One .panel-heading { padding: 0;}
+#accordion_One .panel-title > a {
+	display: block;
+	padding: 0.4em 0.6em;
+    outline: none;
+    font-weight:bold;
+    text-decoration: none;
+}
+
+#accordion_One .panel-title > a.accordion-toggle::before, #accordion_One a[data-toggle="collapse"]::before  {
+    content:"\e087";
+    float: left;
+    font-family: 'Glyphicons Halflings';
+	margin-right :1em;
+}
+#accordion_One .panel-title > a.accordion-toggle.collapsed::before, #accordion_One a.collapsed[data-toggle="collapse"]::before  {
+    content:"\e114";
+}
+
 .scrollup {
   display:none;
   text-decoration:none;
