@@ -1044,7 +1044,8 @@ line-height: 45px !important;}
 
 
 .contact_area{
-  background: url(img/photography.png);
+  /*background: url(img/photography.png);*/
+   background-color: #f8f8f8;
 }
 
 .contact_section{
