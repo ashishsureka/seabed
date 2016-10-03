@@ -87,10 +87,11 @@ font-size:15px;
     <td><?php echo $title; ?></td>
     </tr><br/>
     
-    <tr>
-    <td><b>Author(s)</b></td>
-    <td><?php echo $author; ?></td>
+	<tr>
+    <td><b>Authors and Email-IDs</b></td>
+    <td><?php echo $serialized_boxes; ?></td>
     </tr><br/>
+   
 	
 	 <tr>
     <td><b>Submission Date</b></td>
@@ -102,10 +103,7 @@ font-size:15px;
     <td><?php echo $selectOption; ?></td>
     </tr><br/>
     
-    <tr>
-    <td><b>Email Address</b></td>
-    <td><?php echo $email; ?></td>
-    </tr><br>
+   
 	
 	 <tr>
     <td><b>File Uploaded</b></td>
@@ -117,10 +115,7 @@ font-size:15px;
     <td><?php echo $key; ?></td>
     </tr><br/>
 	
-	<tr>
-    <td><b>Boxes</b></td>
-    <td><?php echo $serialized_boxes; ?></td>
-    </tr><br/>
+	
 	
 	</table>
 	<br/>
