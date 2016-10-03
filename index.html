@@ -32,9 +32,29 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-		
+	<!-- Form -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	
+	<!-- Date -->
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<!-- Load jQuery from Google's CDN -->
+    <!-- Load jQuery UI CSS  -->
+    <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />-->
+    
+    <!-- Load jQuery JS -->
+	<!--tagsinput-->
+	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
+   
+    
+    <!-- Load SCRIPT.JS which will create datepicker for input field  -->
+     
 
-		<style>
+    <!-- file -->
+	
+    <!--<link rel="stylesheet" href="runnable.css" />-->
+
+<style>
 .tooltip {
     background-color:#000;
     border:1px solid #fff;
@@ -154,7 +174,7 @@ select {
     border-radius: 4px;
 }-->
 
-select { text-align-last:center; }
+select {  text-align-last:center; }
 
 #tags{
   float:left;
@@ -592,6 +612,80 @@ select { text-align-last:center; }
 </div> <!-- skill area end-->
 
 
+<br/>
+<!-- form area-->
+<div class="form_area">
+  <div class="container">
+    <div class="row">
+      <div class="contact_section">
+          <h1>CASE <span>SUBMISSION</span></h1>
+          <!--<p>YOUR CONTRIBUTIONS ARE IMPORTANT TO MAKE THIS INITIATIVE A SUCCESS</p>-->
+
+                    <!--<div class="col-md-4">-->
+                        <div class="contact_form">
+                        <fieldset id="contact_form">
+                            <div id="result">
+							<div id="form" class="result">
+							<form id="data">
+   <div id="inputs">
+   <div class="col-sm-6">
+   <input type="text"  name="title"  placeholder="&#xf1fc;  Title"  title="Please enter the title of the case" required><br/><br/>
+  <!-- <input type="text" name="author"  placeholder="&#xf0c0;  Author(s)" title="Please enter the name of author(s)involved" required><br /> <br/>-->
+   
+<input  name="date" id="date" placeholder="&#xf073;  Submission Date" title="Please enter the date of case submission" required/><br/><br/>
+ <div class="my-form">
+ <p class="text-box">
+            
+            <input type="text" name="boxes[]" value="" id="box1" placeholder="&#xf0c0;  Author(s)" title="Please enter the name of author(s)involved" required />
+			<input type="text" name="boxes[]" value="" id="email1" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required />
+			
+            <a class="add-box" href="#">Add More</a>
+        </p>
+		</div>
+
+      </div>
+	
+ 
+
+ </div>
+   <!--<input type="date" name="date"  placeholder="&#xf272;  Submission date" title="Please enter the date of submission of the case" required><br /><br/>-->
+   <div class="col-sm-6">
+   <input type="text" list="fields" name="fields" placeholder="&#xf03a;  Category" title="Please select the category of the case" required />
+  <datalist id="fields" name="fields">
+  <option>Requirements</option>
+  <option>Design</option>
+  <option>Construction</option>
+  <option>Testing</option>
+  <option>Configuration Management</option>
+  <option>Process</option>
+  <option>Quality</option>
+  <option>Economics</option>
+  </datalist> <br/> <br/>
+   <!--<input type="email" name="email" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required><br /><br/>-->
+ 
+   <input  type="file" name="profileImg"  id="profileImg"  placeholder="file" title="Please provide the file of the case " required><br /><br/>
+   <input type="text" value="design,testing" id="tagsinputbox" name="tagsinputbox"data-role="tagsinput"placeholder="&#xf022;  Key Terms" title="Please enter the key terms of the case" required></input>
+<br/>
+<br/>
+   
+   </div>
+   <br/>
+  
+   <input type="submit" value="Submit" title="Please Submit after checking all the fields">
+    <!--<button type="submit" class="button">Submit</button>-->
+   
+  </div>
+</form>
+</div>
+</div>
+                        </fieldset>                           
+                        </div>
+                    <!--</div>-->
+                   
+      </div>
+    </div>
+  </div> 
+</div> <!-- form area end-->
 
 
 
@@ -2037,8 +2131,75 @@ select { text-align-last:center; }
 </div>--><!-- contact area end   -->
 
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+$(function(){ // DOM ready
+
+  // ::: TAGS BOX
+
+  $("#tags input").on({
+    focusout : function() {
+      var txt = this.value.replace(/[^a-z0-9\+\-\.\#]/ig,''); // allowed characters
+      if(txt) $("<span/>", {text:txt.toLowerCase(), insertBefore:this});
+      this.value = "";
+    },
+    keyup : function(ev) {
+      // if: comma|enter (delimit more keyCodes with | pipe)
+      if(/(188|13)/.test(ev.which)) $(this).focusout(); 
+    }
+  });
+  $('#tags').on('click', 'span', function() {
+    if(confirm("Remove "+ $(this).text() +"?")) $(this).remove(); 
+  });
+
+});
+</script>
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <script>
+  $(document).ready(function() {
+    $("#date").datepicker();
+	 
+  });
+  </script>
+  <!-- duplicate field -->
+<!--<script  src="https://code.jquery.com/jquery-latest.js"></script>-->
+<script type="text/javascript">
+jQuery(document).ready(function($){
+    $('.my-form .add-box').click(function(){
+	
+        var n = $('.text-box').length + 1;
+		if(n!=5)
+	{
+        var box_html = $('<p class="text-box"> <input type="text" name="boxes[]" value="" id="box' + n + '" placeholder="&#xf0c0;  Author(s)" title="Please enter the name of author(s)involved"required />  <input type="text" name="boxes[]" value="" id="email' + n + '" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required /> <a href="#" class="remove-box">Remove</a></p>');
+        box_html.hide();
+        $('.my-form p.text-box:last').after(box_html);
+        box_html.fadeIn('slow');
+        return false;
+		}
+		else {window.alert("not more than 4");
+		window.location.href='http://www.seabed.in/finaltest/index.html';
+		}
+		
+    });
+	 $('.my-form').on('click', '.remove-box', function(){
+        $(this).parent().css( 'background-color', '#FF6C6C' );
+        $(this).parent().fadeOut("slow", function() {
+            $(this).remove();
+            $('.box-number').each(function(index){
+                $(this).text( index + 1 );
+            });
+        });
+        return false;
+    });
+});
+</script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     
@@ -2056,12 +2217,219 @@ select { text-align-last:center; }
 
 
    <script src="js/scrollupto.js"></script>
+ 
+ 
    <script type="text/javascript" src="js/main.js"></script>
    <!--panel-->
    
    <!-- back-to-top-->
    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>-->
    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>-->
-   
+   <!-- Form -->
+   <script>
+$("form#data").submit(function(event){
+ 
+  //disable the default form submission
+  event.preventDefault();
+ 
+  //grab all form data  
+  var formData = new FormData($(this)[0]);
+ 
+  $.ajax({
+    url: 'form.php',
+    type: 'POST',
+    data: formData,
+    async: false,
+    cache: false,
+    contentType: false,
+    processData: false,
+    success: function (returndata) {
+	 //clearInput();
+	  
+      //alert(returndata);
+	  $("#data").fadeOut(500).hide(function()
+						{
+							$(".result").fadeIn(500).show(function()
+							{
+								$(".result").html(returndata);
+							});
+						});
+    }
+  });
+  clearInput();
+  return "Thanks for submission";
+ 
+  //return false;
+});
+
+
+function clearInput(){
+	$("#data :input").each(function(){
+		$(this).val('');
+	});
+	
+}
+
+</script>
+<script>
+  $("#data :input").tooltip({
+ 
+      // place tooltip on the right edge
+      position: "center right",
+ 
+      // a little tweaking of the position
+      offset: [-2, 10],
+ 
+      // use the built-in fadeIn/fadeOut effect
+      effect: "fade",
+ 
+      // custom opacity setting
+      opacity: 0.7
+ 
+      });
+  
+</script>
+
+<!-- Search -->
+<script>
+$("form#data1").submit(function(event){
+ 
+  //disable the default form submission
+  event.preventDefault();
+ 
+  //grab all form data  
+  var formData = new FormData($(this)[0]);
+ 
+  $.ajax({
+    url: 'search.php',
+    type: 'POST',
+    data: formData,
+    async: false,
+    cache: false,
+    contentType: false,
+    processData: false,
+    success: function (returndata) {
+      //alert(returndata);
+	  $("#data1").fadeOut(500).hide(function()
+						{
+							$(".result1").fadeIn(500).show(function()
+							{
+								$(".result1").html(returndata);
+							});
+						});
+    }
+  });
+  clearInput();
+  return "Thanks for submission";
+ 
+  //return false;
+});
+
+
+function clearInput(){
+	$("#data1 :input").each(function(){
+		$(this).val('');
+	});
+	
+}
+
+</script>
+
+
+
+
+<!--login-->
+<script>
+$("form#data2").submit(function(event){
+ 
+  //disable the default form submission
+  event.preventDefault();
+ 
+  //grab all form data  
+  var formData = new FormData($(this)[0]);
+ 
+  $.ajax({
+    url: 'evolution.php',
+    type: 'POST',
+    data: formData,
+    async: false,
+    cache: false,
+    contentType: false,
+    processData: false,
+    success: function (returndata) {
+      //alert(returndata);
+	  $("#data2").fadeOut(500).hide(function()
+						{
+							$(".result2").fadeIn(500).show(function()
+							{
+								$(".result2").html(returndata);
+							});
+						});
+    }
+  });
+  clearInput();
+  return "Thanks for submission";
+ 
+  //return false;
+});
+
+
+function clearInput(){
+	$("#data2 :input").each(function(){
+		$(this).val('');
+	});
+	
+}
+
+</script>
+<!-- Register -->
+<script>
+$("form#data3").submit(function(event){
+ 
+  //disable the default form submission
+  event.preventDefault();
+ 
+  //grab all form data  
+  var formData = new FormData($(this)[0]);
+ 
+  $.ajax({
+    url: 'evolution.php',
+    type: 'POST',
+    data: formData,
+    async: false,
+    cache: false,
+    contentType: false,
+    processData: false,
+    success: function (returndata) {
+      //alert(returndata);
+	  $("#data3").fadeOut(500).hide(function()
+						{
+							$(".result3").fadeIn(500).show(function()
+							{
+								$(".result3").html(returndata);
+							});
+						});
+    }
+  });
+  clearInput();
+  return "Thanks for submission";
+ 
+  //return false;
+});
+
+
+function clearInput(){
+	$("#data3 :input").each(function(){
+		$(this).val('');
+	});
+	
+}
+
+</script>
+<!-- LikeBtn.com BEGIN -->
+
+
+<!-- file -->
+
 </body>
 </html>
