@@ -17,7 +17,7 @@ $option2=$_POST['option2'];
 $condition = $_POST['condition'];
 
 //$sql = "select * from formdata where ($option1='$term1') $condition ($option2='$term2')";
-$sql = "select * from formdata where similarity(lower($option1),lower('$term1'))>0.7 $condition similarity(lower($option2),lower('$term2'))>0.7";
+$sql = "select * from formdata where (lower($option1) LIKE lower('%$term1%')) $condition (lower($option2) LIKE lower('%$term2%'))";
 
 $retval = mysql_query($sql,$link );
 if(! $retval ) {
