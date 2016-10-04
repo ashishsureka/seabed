@@ -46,7 +46,8 @@
 	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
    
-    
+    <!--select button -->
+	
     <!-- Load SCRIPT.JS which will create datepicker for input field  -->
      
 
@@ -174,8 +175,15 @@ select {
     border-radius: 4px;
 }-->
 
-select {  text-align-last:center; }
+select {  text-align-last:center;   }
 
+
+select.list1{
+    margin:40px;
+    background: #0099CC;
+    color:#fff;
+    text-shadow:#fff;
+}
 #tags{
   float:left;
   border:1px solid #ccc;
@@ -1614,36 +1622,36 @@ select {  text-align-last:center; }
                            <!-- <div id="result"></div>-->
 							<div id="form" class="result1">
 							<form id="data1" action="search.php" method="post">
-   <div id="inputs">
+   <div id="inputs1">
    
-   <label> <font style="normal" size="3" color="black">Term 1 :		</font> </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <input type="text" id="term1"  name="term1" placeholder="&#xf1fc;  Term1"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <label> <font style="normal" size="3" color="black">	Field 1:		</font> </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <label> <font style="normal" size="3" color="black">Term 1 :		</font> </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <input type="text" id="term1"  name="term1" placeholder="&#xf1fc;  Term1"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <label> <font style="normal" size="3" color="black" >	Field 1:		</font> </label>&nbsp;
  
   <select id="option1" name="option1"style="min-width:10%;">
    <option>Select Field</option>
   <option>Title</option>
   <option>Author</option>
   <option>Category</option>
-</select><br/><br/>
-
-  <select id="condition" name="condition"style="min-width:7%;">
+</select>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <select id="condition" name="condition"style="min-width:7%;" class="list1">
 	<option>AND</option>
 	<option>OR</option>
-	</select><br/><br/>
+	</select>
    
-   
-   <label> <font style="normal" size="3" color="black">Term 2 :		</font> </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <label> <font style="normal" size="3" color="black">Term 2 :		</font> </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   
-   <input type="text" id="term2"  name="term2" placeholder="&#xf1fc;  Term2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <label> <font style="normal" size="3" color="black">	Field 2:		</font> </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <input type="text" id="term2"  name="term2" placeholder="&#xf1fc;  Term2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label> <font style="normal" size="3" color="black">	Field 2:		</font> </label> &nbsp;
   
   <select id="option2" name="option2"style="min-width:10%;">
   <option>Select Field</option>
   <option>Title</option>
   <option>Author</option>
   <option>Category</option>
-</select><br/><br/>
+</select>
  
  <!-- <img src="img/search.jpg" align="right" style="  margin-bottom:100px margin-top:120px" width="150" height="150">-->
   
@@ -1914,7 +1922,7 @@ select {  text-align-last:center; }
 </div>
 <!--whtas_new area end-->
 
-<br/><br/>
+<br/>
 
 
 

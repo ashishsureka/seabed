@@ -1628,7 +1628,7 @@ line-height: 45px !important;}
 
 .search_section{
   margin-top: 25px;
- 
+  margin-bottom:20px;
 
 }
 
@@ -1685,12 +1685,11 @@ line-height: 45px !important;}
   width: 20%;
   height: 40px;
   border: 1px solid #DBDBDB;
-  padding-left: 1px;
+  padding-left: 10px;
   text-align: center;
-margin: auto;
-line-height:2px;
-font-weight:bold;
-font-size:15px;
+  line-height:7px;
+  font-weight:bold;
+  font-size:15px;
  }
 
 #search_form textarea{
@@ -1698,7 +1697,10 @@ font-size:15px;
   height:100px; 
   padding-left: 4px;
 }
-
+#inputs1{
+	margin-top: -42px;
+	margin-bottom: 2px;
+}
 .submit_btn { 
   padding: 12px;
   float: left;
@@ -1855,9 +1857,9 @@ font-size:15px;
   width: 20%;
   height: 40px;
   border: 1px solid #DBDBDB;
-  padding-left: 4px;
+  padding-left: 20px;
   text-align: center;
-  margin: auto;
+ 
   line-height:2px;
   font-weight:bold;
   font-size:15px;
