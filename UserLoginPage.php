@@ -33,7 +33,8 @@ $full_name=getUserField('fullname');
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="css/animate.css">
-  
+  <!-- for captcha-->
+	<script src='https://www.google.com/recaptcha/api.js'></script>
     <!-- font awesome-->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/skillset.css">
@@ -732,13 +733,17 @@ select.list1{
     <input type="textarea" name="abstract" rows="4" cols="50" maxlength="150" placeholder="&#xf1fc; abstract" title=" Please enter 150 character abstract for the case " required> <br/> <br/>
     
    <input  type="file" name="profileImg"  id="profileImg"  placeholder="file" title="Please provide a PDF file of the case. Max size 1MB." required><br />
+   <div class="row">
+  <div class="col-sm-2" ></div>
+  <div class="col-sm-10"><div class="g-recaptcha" data-sitekey="6LfocQ4UAAAAADi3UA9hxgcvFdpfKxz5_F4sZC_p"></div></div>
+</div>
   <!-- <input type="text" value="design,testing" id="tagsinputbox" name="tagsinputbox"data-role="tagsinput"placeholder="&#xf022;  Key Terms" title="Please enter the key terms of the case" required></input> 
    <input type="checkbox" name="copyright" title="would you like to give us right to publish this case on seabed" >  -->
    
-   <div class="row">
+  <!-- <div class="row">
   <div class="col-sm-6" style="padding-left: 80px;"><img src="generate.php"></img></div>
   <div class="col-sm-6" style="padding-right: 10px; width:150"><input id="captcha" type="text" name='secure' maxlength="4" title="Please enter the digits shown in the image" style="width: 120px;margin-right: 120px;height:40px" placeholder="Captcha"></div>
-</div>
+</div> -->
 
 <br/>
 <br/>
@@ -2328,9 +2333,9 @@ $("form#data").submit(function(event){
    //clearInput();
     
       //alert(returndata);
-    $("#data").fadeOut(500).hide(function()
+    $("#data").fadeOut(10).hide(function()
             {
-              $(".result").fadeIn(500).show(function()
+              $(".result").fadeIn(10).show(function()
               {
                 $(".result").html(returndata);
               });
@@ -2391,9 +2396,9 @@ $("form#data1").submit(function(event){
     processData: false,
     success: function (returndata) {
       //alert(returndata);
-    $("#data1").fadeOut(500).hide(function()
+    $("#data1").fadeOut(10).hide(function()
             {
-              $(".result1").fadeIn(500).show(function()
+              $(".result1").fadeIn(10).show(function()
               {
                 $(".result1").html(returndata);
               });
