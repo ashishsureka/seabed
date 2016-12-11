@@ -1224,7 +1224,7 @@ line-height: 45px !important;}
   height: 40px;
   border: 1px solid #DBDBDB;
   padding-left: 2px;
-  margin-left:20px;
+  margin-left: 0px;
  }
  
  #contact_form input{
@@ -1447,26 +1447,38 @@ line-height: 45px !important;}
   padding-left: 4px;
  }
  
- #contact_form input#box1{
+#contact_form input#captcha{
   width: 30%;
+  height: 30px;
+  border: 1px solid #DBDBDB;
+  padding-left: 4px;
+  margin-left:30px
+ }
+
+
+ #contact_form input#box1{
+  width: 30%; 
   height: 40px;
   border: 1px solid #DBDBDB;
   padding-left: 4px;
-  margin-left:50px;
+  
  }
- #contact_form input#email1{
+  #contact_form input#email1{
   width: 40%;
   height: 40px;
   border: 1px solid #DBDBDB;
   padding-left: 4px;
-  /*margin-left:50px;*/
+ 
  }
+  
+
+ 
  #contact_form input#box2{
   width: 30%;
   height: 40px;
   border: 1px solid #DBDBDB;
   padding-left: 4px;
-  margin-left:40px;
+ 
  }
  
  #contact_form input#email2{
@@ -1497,15 +1509,28 @@ line-height: 45px !important;}
   height: 40px;
   border: 1px solid #DBDBDB;
   padding-left: 4px;
-  margin-left:40px;
+  /*margin-left:40px; */
  }
  #contact_form input#box4{
   width: 30%;
   height: 40px;
   border: 1px solid #DBDBDB;
   padding-left: 4px;
-  margin-left:40px;
+ /* margin-left:40px; */
  }
+/*
+ #contact_form input[type=checkbox]{
+  /*width: 10%; */
+  /*height: 10px; 
+  border: 1px solid #DBDBDB;
+  padding-left: 4px;
+  text-align: center;
+  margin: auto;
+  line-height:2px;
+  font-weight:bold;
+  font-size:5px;
+ }
+ */
  
  #contact_form input[type=submit]{
   width: 20%;
