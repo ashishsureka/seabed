@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -14,7 +14,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="css/animate.css">
-	
+    <!-- for captcha-->
+	<script src='https://www.google.com/recaptcha/api.js'></script>
     <!-- font awesome-->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/skillset.css">
@@ -54,6 +55,18 @@
     <!-- file -->
 	
     <!--<link rel="stylesheet" href="runnable.css" />-->
+
+
+    <script>
+function validateForm() {
+    var x = document.forms["myForm"]["password"].value;
+    var y = document.forms["myForm"]["password_again"].value;
+    if (x!=y) {
+        alert("password mismatch");
+        return false;
+    }
+}
+</script>
 
 <style>
 .tooltip {
@@ -111,6 +124,14 @@ input[type=file] {
    margin: 0 auto;
 }
 
+input[type=checkbox] {
+   
+    background-color:white ;
+    width: 50%;
+  height: 40px;
+  border: 1px solid #DBDBDB;
+  
+}
 <!--.button {
   background-color: #004A7F;
   -webkit-border-radius: 10px;
@@ -249,6 +270,7 @@ select.list1{
           <li><a href=".skill_area">APPROACH</a></li>
           <li><a href=".blog_area">TEAM</a></li>
           <li><a href=".contact_area">PARTNERSHIP</a></li>
+          
           <!--<li><a href=".testimonial_area">Testimonial</a></li>-->
           <!--<li><a href=".contact_area">Contact</a></li>  -->                  
         </ul>
@@ -642,17 +664,34 @@ select.list1{
    
 <input  name="date" id="date" placeholder="&#xf073;  Submission Date" title="Please enter the date of case submission" required/><br/><br/>
  <div class="my-form">
- <p class="text-box">
-            
-            <input type="text" name="boxes[]" value="" id="box1" placeholder="&#xf0c0;  Author(s)" title="Please enter the name of author(s)involved" required />
-			<input type="email" name="boxes[]" value="" id="email1" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required />
-			
-            <a class="add-box" href="#">Add More</a>
-        </p>
-		</div>
 
-      </div>
+ <p class="text-box" >
+            
+            <input type="text" name="boxes[]" value="" id="box1" style="width:100px;margin-left: 50px" placeholder="&#xf0c0;  Author(s)" title="Please enter the name of author(s)involved" required />
+            <input type="email" name="boxes[]" value="" id="email1" style="width:120px;margin-left: 15px" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required />
+             <input type="text" name="boxes[]" value="" id="af1" style="width:100px;margin-left: 15px" placeholder="Affiliation" title="Please provide author's affiliation" required />
+      
+            <a class="add-box" href="#">Add More</a>
+        </p>  </div> <br/>
+ <!--
+ <p class="text-box">
+          
+      <div class="row">
+    <div class="col-sm-4">  <input type="text" name="boxes[]" value="" id="box1" placeholder="&#xf0c0;  Author(s)" style="width:100px " title="Please enter the name of author(s)involved" required /> </div>
+			<div class="col-sm-4"><input type="email" name="boxes[]" value="" id="email1" placeholder="&#xf0e0; Email Address" style="width:120px" title="Please enter the email id of the author(s)" required /></div>
+		<div class="col-sm-4" style="width:150px"><input type="text"  name="boxes[]" id="affiliation1"  placeholder="&#xf0c0; Affiliation" style="width:100px;margin-left:0px;" title="Please provide author affiliation" required> <a class="add-box" href="#">Add More</a></div>
+           
+            </div>
+        </p> <br/>
+        -->
 	
+         
+<div class="row">
+  <div class="col-sm-6" style="background-color: white; border: 1px solid #DBDBDB;font-size:15px;color:gray; margin-left: 65px;text-align:center;margin-right: 20px;width: 250px;height:40px;font-family: 'FontAwesome';padding-top: 5px">Provide right to publish on seabed</div>
+  <div class="col-sm-6" style="width:80px;padding-right: 80px;height:35px;padding-left:10px;"><input id="checkB" type="checkbox" name='copyright' value="yes" title="Copyright to publish on seabed" style="height:30px;background-color: white; width:80px"></div>
+</div>
+
+
  
 
  </div>
@@ -670,9 +709,25 @@ select.list1{
   <option>Economics</option>
   </datalist> <br/> <br/>
    <!--<input type="email" name="email" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required><br /><br/>-->
- 
-   <input  type="file" name="profileImg"  id="profileImg"  placeholder="file" title="Please provide the file of the case " required><br /><br/>
-   <input type="text" value="design,testing" id="tagsinputbox" name="tagsinputbox"data-role="tagsinput"placeholder="&#xf022;  Key Terms" title="Please enter the key terms of the case" required></input>
+    <input type="textarea" name="abstract" rows="4" cols="50" maxlength="150" placeholder="&#xf1fc; abstract" title=" Please enter 150 character abstract for the case " required> <br/> <br/>
+    
+   <input  type="file" name="profileImg"  id="profileImg"  placeholder="file" title="Please provide a PDF file of the case. Max size 1MB." required><br />
+   
+   
+  
+  <div class="row">
+  <div class="col-sm-2" ></div>
+  <div class="col-sm-10"><div class="g-recaptcha" data-sitekey="6LfocQ4UAAAAADi3UA9hxgcvFdpfKxz5_F4sZC_p"></div></div>
+</div>
+  
+  <!-- <input type="text" value="design,testing" id="tagsinputbox" name="tagsinputbox"data-role="tagsinput"placeholder="&#xf022;  Key Terms" title="Please enter the key terms of the case" required></input> 
+   <input type="checkbox" name="copyright" title="would you like to give us right to publish this case on seabed" >  -->
+  <!-- 
+   <div class="row">
+  <div class="col-sm-6" style="padding-left: 80px;"><img src="generate.php"></img></div>
+  <div class="col-sm-6" style="padding-right: 10px; width:150"><input id="captcha" type="text" name='secure' maxlength="4" title="Please enter the digits shown in the image" style="width: 120px;margin-right: 120px;height:40px" placeholder="Captcha"></div>
+</div>
+-->
 <br/>
 <br/>
    
@@ -1176,7 +1231,7 @@ select.list1{
   
    <div class="portfolio req" data-cat="Requirements">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf">				
+    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">				
           <img src="img/Empty-Case-Study.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
@@ -1190,7 +1245,7 @@ select.list1{
 
       <div class="portfolio design" data-cat="Design">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Design-All-is-Well-Case.pdf">				
+    <a href="./case-study/Design-All-is-Well-Case.pdf" target="_blank">				
           <img src="img/Design-All-is-Well-Case.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
@@ -1204,7 +1259,7 @@ select.list1{
        
 	   <div class="portfolio construct" data-cat="Construction">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf">				
+    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">				
           <img src="img/Empty-Case-Study.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
@@ -1218,7 +1273,7 @@ select.list1{
 	  
 	    <div class="portfolio test" data-cat="Testing">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf">				
+    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">				
           <img src="img/Empty-Case-Study.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
@@ -1233,7 +1288,7 @@ select.list1{
 	  
 	    <div class="portfolio maintain" data-cat="Maintenance">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf">				
+    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">				
           <img src="img/Empty-Case-Study.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
@@ -1248,7 +1303,7 @@ select.list1{
 	  
 	    <div class="portfolio configure" data-cat="Configuration Management">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf">				
+    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">				
           <img src="img/Empty-Case-Study.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
@@ -1262,7 +1317,7 @@ select.list1{
 	  
 	  <div class="portfolio process" data-cat="Process">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf">				
+    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">				
           <img src="img/Empty-Case-Study.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
@@ -1276,7 +1331,7 @@ select.list1{
 	  
 	  <div class="portfolio quality" data-cat="Quality">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf">				
+    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">				
           <img src="img/Empty-Case-Study.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
@@ -1630,14 +1685,14 @@ select.list1{
  
   <select id="option1" name="option1"style="min-width:10%;">
    <option>Select Field</option>
-  <option>Title</option>
-  <option>Author</option>
-  <option>Category</option>
+  <option value="title">Title</option>
+  <option value="author" >Author</option>
+  <option value="category">Category</option>
 </select>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <select id="condition" name="condition"style="min-width:7%;" class="list1">
-	<option>AND</option>
-	<option>OR</option>
+	<option value="and" >AND</option>
+	<option value="or" selected>OR</option>
 	</select>
    
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1648,9 +1703,9 @@ select.list1{
   
   <select id="option2" name="option2"style="min-width:10%;">
   <option>Select Field</option>
-  <option>Title</option>
-  <option>Author</option>
-  <option>Category</option>
+  <option value="title">Title</option>
+  <option value="author" >Author</option>
+  <option value="category">Category</option>
 </select>
  
  <!-- <img src="img/search.jpg" align="right" style="  margin-bottom:100px margin-top:120px" width="150" height="150">-->
@@ -1684,39 +1739,43 @@ select.list1{
                         <fieldset id="evolution_form">
                             <div id="result2">
 							<div id="form" class="result2">
-							<form id="data2" action="evolution.php" method="post">
+							<form id="data2" action="evolution.php" method="POST">
    <div id="inputs">
    <div class="col-sm-6">
-   <input type="text"  name="username"  placeholder="&#xf007;  Username"  title="Please enter the username" required><br/><br/>
-   <input type="password" name="password"  placeholder="&#xf084;  Password" title="Please enter the password" required><br /> <br/>
+   <input type="text"  name="username" maxlength="40" placeholder="&#xf007;  Username"  title="Please enter the username" required><br/><br/>
+   <input type="password" name="password" maxlength="32" placeholder="&#xf084;  Password" title="Please enter the password" required><br /> <br/>
    
   <input type="submit" value="Login" name="Login"  title="Please Login after checking all the fields"><br/><br/>
  
 
  </div>
  </div>
+
  </form>
+ </div>
+ </div>
  <div id="form" class="result3">
- <form id="data3" action="evolution.php" method="post">
+ <form name ="myForm" id="data3" action="evolution.php" method="POST" onsubmit=" return validateForm()">
    <div id="inputs">
    <div class="col-sm-6">
-    <input type="text"  name="fullname"  placeholder="&#xf007;  Full Name"  title="Please enter the full name" required><br/><br/>
-	 <input type="email"  name="email"  placeholder="&#xf0e0;  Email Address"  title="Please enter the email address" required><br/><br/>
-   <input type="text"  name="username"  placeholder="&#xf007;  Username"  title="Please enter the username" required><br/><br/>
-   <input type="password" name="password"  placeholder="&#xf084;  Password" title="Please enter the pasword" required><br /> <br/>
+   <p class="try"> </p>
+    <input type="text"  name="fullname" maxlength="40" placeholder="&#xf007;  Full Name"  title="Please enter the full name" required><br/><br/>
+	 <input type="email"  name="email" maxlength="40" placeholder="&#xf0e0;  Email Address"  title="Please enter the email address" required><br/><br/>
+   <input type="text"  name="username" maxlength="40" placeholder="&#xf007;  Username"  title="Please enter the username" required><br/><br/>
+   <input type="password" name="password" maxlength="32" placeholder="&#xf084;  Password" title="Please enter the pasword" required><br /> <br/>
+   <input type="password" name="password_again" maxlength="32" placeholder="&#xf084; Re-enter Password" title="Please re-enter the pasword" required><br /> <br/>
    
  
-  <input type="submit" value="Register" name="Register" title="Please Login after checking all the fields"><br/><br/>
+  <input type="submit" id="try2" value="Register" name="Register" title="Please Login after checking all the fields"><br/><br/>
 
  </div>
  </div>
  </form>
  </div>
- </div>
-  
+ </fieldset>  
 
-</div>
-                        </fieldset>                           
+
+                                                 
                         </div>
 						
 						
@@ -1773,7 +1832,7 @@ select.list1{
       <div class="blog_section">
           <h1>Founding <span>Team</span></h1>
           <div class="single_blog col-md-3 slider-content">
-            <a href="http://www.software-analytics.in">
+            <a href="http://www.software-analytics.in" target="_blank">
                 <img src="img/1.jpg" alt="">
                 <div class="slider-text">
                   <h3>Ashish Sureka</h3>
@@ -1783,7 +1842,7 @@ select.list1{
             </a>
           </div> 
           <div class="single_blog col-md-3 slider-content">
-            <a href="http://www.pvsingh.com">
+            <a href="http://www.pvsingh.com" target="_blank">
                 <img src="img/2.jpg" alt="">
                 <div class="slider-text">
                   <h3>Paramvir Singh</h3>
@@ -1836,10 +1895,10 @@ select.list1{
               <div class="tab-content">
                   <div id="sectionA" class="tab-pane fade in active">
                       <h3>Publications</h3>
-                      <h7>[1] Kirti Garg, Ashish Sureka, and Vasudeva Varma,<a href="https://dl.dropboxusercontent.com/u/48972351/CMCE-2015-COSEED.pdf"> “A Case-Study on Teaching Software Engineering Concepts using a Case-Based Learning Environment”</a> APSEC Workshop, (CMCE 2015).</h7>
+                      <h7>[1] Kirti Garg, Ashish Sureka, and Vasudeva Varma,<a href="https://dl.dropboxusercontent.com/u/48972351/CMCE-2015-COSEED.pdf" target="_blank"> “A Case-Study on Teaching Software Engineering Concepts using a Case-Based Learning Environment”</a> APSEC Workshop, (CMCE 2015).</h7>
 					  <!--<p> <a href="https://dl.dropboxusercontent.com/u/48972351/CMCE-2015-COSEED.pdf"><h6>APSEC 2015 workshop</h6></a></p>-->
 					 <!-- <p>International Conference on Technology for Education (T4E 2016)</p>-->
-					 <br/> <h7>[2] Divya Kundra and Ashish Sureka,<a href="https://dl.dropboxusercontent.com/u/48972351/T4E-2016-CBL.pdf"> “An Experience Report on Teaching Compiler Design Concepts using Case-Based and Project-Based Learning Approaches”</a> International Conference on Technology for Education (T4E 2016).</h7>
+					 <br/> <h7>[2] Divya Kundra and Ashish Sureka,<a href="https://dl.dropboxusercontent.com/u/48972351/T4E-2016-CBL.pdf" target="_blank"> “An Experience Report on Teaching Compiler Design Concepts using Case-Based and Project-Based Learning Approaches”</a> International Conference on Technology for Education (T4E 2016).</h7>
 					<!--  <p> <a href="https://dl.dropboxusercontent.com/u/48972351/T4E-2016-CBL.pdf"><h6>  T4E 2016</h6></a></p>-->
                   </div>
                 <!--  <div id="sectionB" class="tab-pane fade">
@@ -2247,14 +2306,14 @@ jQuery(document).ready(function($){
         var n = $('.text-box').length + 1;
 		if(n!=5)
 	{
-        var box_html = $('<p class="text-box"> <input type="text" name="boxes[]" value="" id="box' + n + '" placeholder="&#xf0c0;  Author(s)" title="Please enter the name of author(s)involved"required />  <input type="text" name="boxes[]" value="" id="email' + n + '" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required /> <a href="#" class="remove-box">Remove</a></p>');
+        var box_html = $('<p class="text-box"> <input type="text" name="boxes[]" style="width:100px;margin-left: 50px" value="" id="box' + n + '" placeholder="&#xf0c0;  Author(s)" title="Please enter the name of author(s)involved"required />  <input type="email" name="boxes[]" style="width:120px;margin-left: 15px" value="" id="email' + n + '" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required />  <input type="text" name="boxes[]" style="width:100px;margin-left: 15px" value="" id="af'+n+'" placeholder="Affiliation" title="Please provide author\'s affiliation" required /> <a href="#" class="remove-box">Remove</a></p>');
         box_html.hide();
         $('.my-form p.text-box:last').after(box_html);
         box_html.fadeIn('slow');
         return false;
 		}
 		else {window.alert("not more than 4");
-		window.location.href='http://www.seabed.in/finaltest/index.html';
+		window.location.href='http://www.seabed.in/index.html';
 		}
 		
     });
@@ -2317,9 +2376,9 @@ $("form#data").submit(function(event){
 	 //clearInput();
 	  
       //alert(returndata);
-	  $("#data").fadeOut(500).hide(function()
+	  $("#data").fadeOut(10).hide(function()
 						{
-							$(".result").fadeIn(500).show(function()
+							$(".result").fadeIn(10).show(function()
 							{
 								$(".result").html(returndata);
 							});
@@ -2380,9 +2439,9 @@ $("form#data1").submit(function(event){
     processData: false,
     success: function (returndata) {
       //alert(returndata);
-	  $("#data1").fadeOut(500).hide(function()
+	  $("#data1").fadeOut(10).hide(function()
 						{
-							$(".result1").fadeIn(500).show(function()
+							$(".result1").fadeIn(10).show(function()
 							{
 								$(".result1").html(returndata);
 							});
@@ -2405,97 +2464,24 @@ function clearInput(){
 
 </script>
 
-
-
-
-<!--login-->
 <script>
-$("form#data2").submit(function(event){
- 
-  //disable the default form submission
-  event.preventDefault();
- 
-  //grab all form data  
-  var formData = new FormData($(this)[0]);
- 
-  $.ajax({
-    url: 'evolution.php',
-    type: 'POST',
-    data: formData,
-    async: false,
-    cache: false,
-    contentType: false,
-    processData: false,
-    success: function (returndata) {
-      //alert(returndata);
-	  $("#data2").fadeOut(500).hide(function()
-						{
-							$(".result2").fadeIn(500).show(function()
-							{
-								$(".result2").html(returndata);
-							});
-						});
-    }
-  });
-  clearInput();
-  return "Thanks for submission";
- 
-  //return false;
+$(document).ready(function(){
+    $("#try2 :input").click(function(){
+        $.get("evolution.php", function(data, status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+    });
 });
-
-
-function clearInput(){
-	$("#data2 :input").each(function(){
-		$(this).val('');
-	});
-	
-}
-
 </script>
-<!-- Register -->
-<script>
-$("form#data3").submit(function(event){
- 
-  //disable the default form submission
-  event.preventDefault();
- 
-  //grab all form data  
-  var formData = new FormData($(this)[0]);
- 
-  $.ajax({
-    url: 'evolution.php',
-    type: 'POST',
-    data: formData,
-    async: false,
-    cache: false,
-    contentType: false,
-    processData: false,
-    success: function (returndata) {
-      //alert(returndata);
-	  $("#data3").fadeOut(500).hide(function()
-						{
-							$(".result3").fadeIn(500).show(function()
-							{
-								$(".result3").html(returndata);
-							});
-						});
-    }
-  });
-  clearInput();
-  return "Thanks for submission";
- 
-  //return false;
-});
+
+<!-- evolution part -->
 
 
-function clearInput(){
-	$("#data3 :input").each(function(){
-		$(this).val('');
-	});
-	
-}
 
-</script>
+
+
+
+
 <!-- LikeBtn.com BEGIN -->
 
 <!-- file -->
