@@ -3,7 +3,7 @@ require 'connect.inc.php';
 session_start();
 if(isset($_SERVER['HTTP_REFERER'])&&!empty($_SERVER['HTTP_REFERER']))
 $http_referer=$_SERVER['HTTP_REFERER'];
-
+$details='';
 if(isset($_POST['g-recaptcha-response'])&&!empty($_POST['g-recaptcha-response']))
 {
     
@@ -31,7 +31,7 @@ if(isset($_POST['g-recaptcha-response'])&&!empty($_POST['g-recaptcha-response'])
 
 
 
-if(isset($_POST['abstract'])&&isset($_POST['title'])&&isset($_POST['date'])&&isset($_POST['boxes'])&&isset($_FILES['profileImg']) &&isset($_POST['fields']))
+if(isset($_POST['abstract'])&&isset($_POST['title'])&&isset($_POST['tagsinputbox'])&&isset($_POST['date'])&&isset($_POST['boxes'])&&isset($_FILES['profileImg']) &&isset($_POST['fields']))
     {
       if(!empty($_POST['abstract'])&&!empty($_POST['title'])&&!empty($_POST['date'])&&!empty($_POST['boxes'])&&!empty($_FILES['profileImg']) &&!empty($_POST['fields']))
       {
@@ -40,19 +40,22 @@ if(isset($_POST['abstract'])&&isset($_POST['title'])&&isset($_POST['date'])&&iss
 
 
 if(isset($_POST['copyright'])&&!empty($_POST['copyright']))
-   
+   {
    $copyright=$_POST['copyright'];
+   }
+  
  else
-  $copyright="No";
+ die('Please provide us copyright for the case.<a href="'.$http_referer.'">Try again </a>');
 
 
 
 
 $title = $_POST['title'];
 $category = $_POST['fields'];
+$key_terms=$_POST['tagsinputbox'];
 $date = $_POST['date'];
 $arr=$_POST['boxes'];
-$val1=rand(1000,9999);
+$val1=rand(1000,999999);
 $id=$val1;
 $author_details= serialize( $_POST['boxes'] );
 $abstract=$_POST['abstract'];
@@ -61,14 +64,22 @@ $abstract=$_POST['abstract'];
  // counting number of authors
 $count=0;
  $authorCount=0;
+ $num=0;
 foreach ($arr as $key => $value) {
         $count=$count+1;
-      $val=$count%3;
-if($val==2)
+      $val=$count%4;
+if($val==3)
 {   
   
  $authorCount=$authorCount+1;
  $email[$authorCount]=$value;
+}
+
+if($val==1)
+{   
+  
+ $num=$num+1;
+ $author_name[$num]=$value;
 }
 
 }
@@ -84,11 +95,13 @@ echo 'authorCount is '.$authorCount;
 
 // escape string section starts
 
-$title=mysql_real_escape_string($title);
-$author_details=mysql_real_escape_string($author_details);
- $category=mysql_real_escape_string($category); 
+$title=mysql_real_escape_string(strtolower($title));
+$author_details=mysql_real_escape_string(strtolower($author_details));
+ $category=mysql_real_escape_string(strtolower($category)); 
                 
 // escape string section ends
+if($authorCount>4)
+die('Please do not press submit button more than once. After submission please wait few seconds to get the acknowledgement.<a href="'.$http_referer.'">Try again </a>');
 
 Global $count;
 
@@ -116,7 +129,7 @@ if($file_extension=='pdf')
         if(move_uploaded_file($sourcePath,$targetPath))
           {
               //echo 'file uploaded successfully';
-             $query="INSERT INTO `formdata` (`id`, `title`, `category`, `date`, `fileName`, `targetPath`, `abstract`, `copyright`, `authorCount`, `author`) VALUES ('$id', '$title', '$category', '$date', '$file_name', '$targetPath', '$abstract', '$copyright', '$authorCount', '$author_details')";
+             $query="INSERT INTO `formdata` (`id`, `title`, `category`,`key_terms`, `date`, `fileName`, `targetPath`, `abstract`, `copyright`, `authorCount`, `author`) VALUES ('$id', '$title', '$category', '$key_terms' , '$date', '$file_name', '$targetPath', '$abstract', '$copyright', '$authorCount', '$author_details')";
 
             if($query_run=mysql_query($query))
             {
@@ -137,7 +150,9 @@ if($file_extension=='pdf')
                 }
 
                
-           include 're2.php'; }
+          // include 're2.php';
+           include 'testMail.php';
+            }
 
             include 're1.php'; 
 
@@ -202,9 +217,13 @@ font-size:15px;
   <col width="200">
     
     <tr>
-    <td colspan="2"><b><h6>Please Find The Details Entered<h6></b></td>
+    <td colspan="2"><b><h3 style="text-align:center">Submission Details <h3></b></td>
     </tr>
     
+    <tr>
+    <td><b>ID</b></td>
+    <td><?php echo $id; ?></td>
+    </tr><br/>
     
     <tr>
     <td><b>Title</b></td>
@@ -213,31 +232,34 @@ font-size:15px;
     
     <tr>
     <td><b>Authors details </b></td>
-    <td><?php foreach ($arr as $key => $value) {
+    <td><?php $enm=0;
+    $link="http://seabed.in/upload/".$file_name;
+    $temp=$authorCount;
+    foreach ($arr as $key => $value) {
       $count=$count+1;  
-      $val=$count%3;
+      $val=$count%4;
 if($val==1)
-{
-  echo 'Author name: ';
-
+{  $enm=$enm+1;
+  echo '('.$enm.') Author Name: ';
+$temp=$temp-1;
 }
-if($val==2)
+if($val==3)
 {
-  echo 'email id: ';
+  echo '<br> email id: ';
 
 }
 if($val==0)
 {
-  echo 'Author affiliated to: ';
+  echo '<br> affiliated to: ';
 
 }
     
-    if($val!=0)
+    if(($val!=0)&&($val!=1))
       echo $value.',';
     else
-      echo $value;
+      echo $value.' ';
        
-       if($val==0)
+       if(($val==0)&&($temp!=0))
         echo '<hr>';
 } ?></td>
     </tr><br/>
@@ -254,8 +276,13 @@ if($val==0)
     </tr><br/>
     
     <tr>
+    <td><b>Key Terms </b></td>
+    <td><?php echo $key_terms; ?></td>
+    </tr><br/>
+    
+    <tr>
     <td><b>Abstract</b></td>
-    <td><?php echo $abstract; ?></td>
+    <td style="text-align:center"><?php echo $abstract; ?></td>
     </tr><br/>
 
     <tr>
@@ -266,7 +293,7 @@ if($val==0)
     
      <tr>
     <td><b>File Uploaded</b></td>
-    <td><?php echo $file_name; ?></td>
+    <td><a href="<?php echo $link; ?>"><?php echo $link; ?></a></td>
     </tr><br/>
     
    
