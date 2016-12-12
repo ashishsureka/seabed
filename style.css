@@ -1455,7 +1455,7 @@ line-height: 45px !important;}
   margin-left:30px
  }
 
-
+/*
  #contact_form input#box1{
   width: 30%; 
   height: 40px;
@@ -1509,7 +1509,7 @@ line-height: 45px !important;}
   height: 40px;
   border: 1px solid #DBDBDB;
   padding-left: 4px;
-  /*margin-left:40px; */
+  /*margin-left:40px; 
  }
  #contact_form input#box4{
   width: 30%;
