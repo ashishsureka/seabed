@@ -673,30 +673,6 @@ select.list1{
       
             <a class="add-box" href="#">Add More</a>
         </p>  </div> <br/>
- <!--
- <p class="text-box">
-          
-      <div class="row">
-    <div class="col-sm-4">  <input type="text" name="boxes[]" value="" id="box1" placeholder="&#xf0c0;  Author(s)" style="width:100px " title="Please enter the name of author(s)involved" required /> </div>
-			<div class="col-sm-4"><input type="email" name="boxes[]" value="" id="email1" placeholder="&#xf0e0; Email Address" style="width:120px" title="Please enter the email id of the author(s)" required /></div>
-		<div class="col-sm-4" style="width:150px"><input type="text"  name="boxes[]" id="affiliation1"  placeholder="&#xf0c0; Affiliation" style="width:100px;margin-left:0px;" title="Please provide author affiliation" required> <a class="add-box" href="#">Add More</a></div>
-           
-            </div>
-        </p> <br/>
-        -->
-	
-         
-<div class="row">
-  <div class="col-sm-6" style="background-color: white; border: 1px solid #DBDBDB;font-size:15px;color:gray; margin-left: 65px;text-align:center;margin-right: 20px;width: 250px;height:40px;font-family: 'FontAwesome';padding-top: 5px">Provide right to publish on seabed</div>
-  <div class="col-sm-6" style="width:80px;padding-right: 80px;height:35px;padding-left:10px;"><input id="checkB" type="checkbox" name='copyright' value="yes" title="Copyright to publish on seabed" style="height:30px;background-color: white; width:80px"></div>
-</div>
-
-
- 
-
- </div>
-   <!--<input type="date" name="date"  placeholder="&#xf272;  Submission date" title="Please enter the date of submission of the case" required><br /><br/>-->
-   <div class="col-sm-6">
    <input type="text" list="fields" name="fields" placeholder="&#xf03a;  Category" title="Please select the category of the case" required />
   <datalist id="fields" name="fields">
   <option>Requirements</option>
@@ -708,11 +684,43 @@ select.list1{
   <option>Quality</option>
   <option>Economics</option>
   </datalist> <br/> <br/>
+  
+  <input type="text" name="tagsinputbox" placeholder="&#xf022;  Key Terms" title="Please enter the key terms of the case" required></input> <br/><br/>
+ <!--
+ <p class="text-box">
+          
+      <div class="row">
+    <div class="col-sm-4">  <input type="text" name="boxes[]" value="" id="box1" placeholder="&#xf0c0;  Author(s)" style="width:100px " title="Please enter the name of author(s)involved" required /> </div>
+			<div class="col-sm-4"><input type="email" name="boxes[]" value="" id="email1" placeholder="&#xf0e0; Email Address" style="width:120px" title="Please enter the email id of the author(s)" required /></div>
+		<div class="col-sm-4" style="width:150px"><input type="text"  name="boxes[]" id="affiliation1"  placeholder="&#xf0c0; Affiliation" style="width:100px;margin-left:0px;" title="Please provide author affiliation" required> <a class="add-box" href="#">Add More</a></div>
+           
+            </div>
+        </p> <br/>
+        
+	
+         
+<div class="row">
+  <div class="col-sm-6" style="background-color: white; border: 1px solid #DBDBDB;font-size:15px;color:gray; margin-left: 65px;text-align:center;margin-right: 20px;width: 250px;height:40px;font-family: 'FontAwesome';padding-top: 5px">Provide right to publish on seabed</div>
+  <div class="col-sm-6" style="width:80px;padding-right: 80px;height:35px;padding-left:10px;"><input id="checkB" type="checkbox" name='copyright' value="yes" title="Copyright to publish on seabed" style="height:30px;background-color: white; width:80px"></div>
+</div>
+
+-->
+ 
+
+ </div>
+   <!--<input type="date" name="date"  placeholder="&#xf272;  Submission date" title="Please enter the date of submission of the case" required><br /><br/>-->
+   <div class="col-sm-6">
+   
    <!--<input type="email" name="email" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required><br /><br/>-->
-    <input type="textarea" name="abstract" rows="4" cols="50" maxlength="150" placeholder="&#xf1fc; abstract" title=" Please enter 150 character abstract for the case " required> <br/> <br/>
+    <textarea name="abstract" style="min-width: 70%" rows="3" maxlength="150" cols="150" placeholder="Abstract" title=" Please enter 150 character abstract for the case "  wrap ="hard" required> </textarea><br/> <br/>
     
    <input  type="file" name="profileImg"  id="profileImg"  placeholder="file" title="Please provide a PDF file of the case. Max size 1MB." required><br />
    
+   <!--<input type="text"  id="tagsinputbox" name="tagsinputbox" data-role="tagsinput" placeholder="&#xf022;  Key Terms" title="Please enter the key terms of the case" ></input> <br/><br/> -->
+    
+
+  <div class="checkbox" style=" font-size: 20px; width: 300px;margin-left: 80px;padding-right: 40px;">
+<label><input type="checkbox" value="yes" title=" Allow SEABED to publish this work " style="height: 20px;font-size: 20px; margin-left: 120px">Provide right to publish</label></div>
    
   
   <div class="row">
@@ -1787,6 +1795,9 @@ select.list1{
   </div> 
 </div><!-- evolution area end-->
 
+
+
+
 <div class="testimonial_area">
   <div class="container">
     <div class="row">
@@ -1832,7 +1843,7 @@ select.list1{
       <div class="blog_section">
           <h1>Founding <span>Team</span></h1>
           <div class="single_blog col-md-3 slider-content">
-            <a href="http://www.software-analytics.in" target="_blank">
+            <a href="http://ashish-sureka.in/" target="_blank">
                 <img src="img/1.jpg" alt="">
                 <div class="slider-text">
                   <h3>Ashish Sureka</h3>
