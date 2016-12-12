@@ -667,9 +667,10 @@ select.list1{
 
  <p class="text-box" >
             
-            <input type="text" name="boxes[]" value="" id="box1" style="width:100px;margin-left: 50px" placeholder="&#xf0c0;  Author(s)" title="Please enter the name of author(s)involved" required />
-            <input type="email" name="boxes[]" value="" id="email1" style="width:120px;margin-left: 15px" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required />
-             <input type="text" name="boxes[]" value="" id="af1" style="width:100px;margin-left: 15px" placeholder="Affiliation" title="Please provide author's affiliation" required />
+            <input type="text" name="boxes[]" value="" id="first1" style="width:170px; margin-right: 5px" placeholder="&#xf0c0; First Name" title="Please enter first name of author(s)involved" required /> 
+            <input type="text" name="boxes[]" value="" id="last1" style="width:170px;margin-left: 13px" placeholder="&#xf0c0; Last Name" title="Please enter last name of author(s)involved" required /> <br/><br/>
+            <input type="email" name="boxes[]" value="" id="email1" style="width:70%"  placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required /><br/><br/>
+             <input type="text" name="boxes[]" value="" id="af1" style="margin-left: 60px; width:70%" placeholder="Affiliation" title="Please provide author's affiliation" required />
       
             <a class="add-box" href="#">Add More</a>
         </p>  </div> <br/>
@@ -712,16 +713,16 @@ select.list1{
    <div class="col-sm-6">
    
    <!--<input type="email" name="email" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required><br /><br/>-->
-    <textarea name="abstract" style="min-width: 70%" rows="3" maxlength="150" cols="150" placeholder="Abstract" title=" Please enter 150 character abstract for the case "  wrap ="hard" required> </textarea><br/> <br/>
+    <textarea name="abstract" style="min-width: 70%" rows="3" maxlength="150" cols="150" placeholder="Abstract" title=" Please enter 150 character abstract for the case "  required>Abstract </textarea><br/> <br/>
     
-   <input  type="file" name="profileImg"  id="profileImg"  placeholder="file" title="Please provide a PDF file of the case. Max size 1MB." required><br />
+   <input  type="file" name="profileImg"  id="profileImg"  placeholder="file" title="Please provide a PDF file of the case. Max size 1MB." required><br/>
    
    <!--<input type="text"  id="tagsinputbox" name="tagsinputbox" data-role="tagsinput" placeholder="&#xf022;  Key Terms" title="Please enter the key terms of the case" ></input> <br/><br/> -->
     
 
-  <div class="checkbox" style=" font-size: 20px; width: 300px;margin-left: 80px;padding-right: 40px;">
-<label><input type="checkbox" value="yes" title=" Allow SEABED to publish this work " style="height: 20px;font-size: 20px; margin-left: 120px">Provide right to publish</label></div>
-   
+  <div class="checkbox" style=" font-size: 20px; width: 360px;margin-left: 80px;padding-right: 100px;padding-top:5px;text-align:center; background-color: white; border: 1px solid #DBDBDB;height:40px">
+<label><input type="checkbox" value="yes" title=" Allow SEABED to publish this work " name="copyright" style="height: 20px;font-size: 20px; margin-left: 120px">Provide right to publish</label></div>
+   <br/>
   
   <div class="row">
   <div class="col-sm-2" ></div>
@@ -742,7 +743,14 @@ select.list1{
    </div>
    <br/>
   
-   <input type="submit" value="Submit" title="Please Submit after checking all the fields">
+   <input type="submit" value="Submit" style="width:20% ;height: 40px;
+  border: 1px solid #DBDBDB;
+  padding-left: 4px;
+  text-align: center;
+  margin: auto;
+  line-height:2px;
+  font-weight:bold;
+  font-size:15px;" title="Please Submit after checking all the fields">
     <!--<button type="submit" class="button">Submit</button>-->
    
   </div>
@@ -1734,68 +1742,7 @@ select.list1{
   </div> 
 </div>
  <!-- form area end-->
- <br/>
-
-
-<div class="evolution_area">
-  <div class="container">
-    <div class="row">
-      <div class="evolution_section">
-          <h1>CASE <span>EVOLUTION</span></h1>
-        
-                     <div class="evolution_form">
-                        <fieldset id="evolution_form">
-                            <div id="result2">
-							<div id="form" class="result2">
-							<form id="data2" action="evolution.php" method="POST">
-   <div id="inputs">
-   <div class="col-sm-6">
-   <input type="text"  name="username" maxlength="40" placeholder="&#xf007;  Username"  title="Please enter the username" required><br/><br/>
-   <input type="password" name="password" maxlength="32" placeholder="&#xf084;  Password" title="Please enter the password" required><br /> <br/>
-   
-  <input type="submit" value="Login" name="Login"  title="Please Login after checking all the fields"><br/><br/>
  
-
- </div>
- </div>
-
- </form>
- </div>
- </div>
- <div id="form" class="result3">
- <form name ="myForm" id="data3" action="evolution.php" method="POST" onsubmit=" return validateForm()">
-   <div id="inputs">
-   <div class="col-sm-6">
-   <p class="try"> </p>
-    <input type="text"  name="fullname" maxlength="40" placeholder="&#xf007;  Full Name"  title="Please enter the full name" required><br/><br/>
-	 <input type="email"  name="email" maxlength="40" placeholder="&#xf0e0;  Email Address"  title="Please enter the email address" required><br/><br/>
-   <input type="text"  name="username" maxlength="40" placeholder="&#xf007;  Username"  title="Please enter the username" required><br/><br/>
-   <input type="password" name="password" maxlength="32" placeholder="&#xf084;  Password" title="Please enter the pasword" required><br /> <br/>
-   <input type="password" name="password_again" maxlength="32" placeholder="&#xf084; Re-enter Password" title="Please re-enter the pasword" required><br /> <br/>
-   
- 
-  <input type="submit" id="try2" value="Register" name="Register" title="Please Login after checking all the fields"><br/><br/>
-
- </div>
- </div>
- </form>
- </div>
- </fieldset>  
-
-
-                                                 
-                        </div>
-						
-						
-						
-                  
-                
-      </div>
-    </div>
-  </div> 
-</div><!-- evolution area end-->
-
-
 
 
 <div class="testimonial_area">
@@ -2317,7 +2264,8 @@ jQuery(document).ready(function($){
         var n = $('.text-box').length + 1;
 		if(n!=5)
 	{
-        var box_html = $('<p class="text-box"> <input type="text" name="boxes[]" style="width:100px;margin-left: 50px" value="" id="box' + n + '" placeholder="&#xf0c0;  Author(s)" title="Please enter the name of author(s)involved"required />  <input type="email" name="boxes[]" style="width:120px;margin-left: 15px" value="" id="email' + n + '" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required />  <input type="text" name="boxes[]" style="width:100px;margin-left: 15px" value="" id="af'+n+'" placeholder="Affiliation" title="Please provide author\'s affiliation" required /> <a href="#" class="remove-box">Remove</a></p>');
+       var box_html = $('<p class="text-box"> <input type="text" name="boxes[]" style="width:170px; margin-right: 5px;margin-left:8px" value="" id="first' + n + '" placeholder="&#xf0c0; First Name " title="Please enter first name of the author(s)involved"required /> <input type="text" name="boxes[]" style="width:170px; margin-left: 13px" value="" id="last' + n + '" placeholder="&#xf0c0; Last Name" title="Please enter last name of the author(s)involved"required /> <br/><br/>  <input type="email" name="boxes[]" style="width:70%" value="" id="email' + n + '" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required /> <br/><br/> <input type="text" name="boxes[]" style="margin-left: 50px; width:70%" value="" id="af'+n+'" placeholder="Affiliation" title="Please provide author\'s affiliation" required /> <a href="#" class="remove-box">Remove</a></p>');
+        
         box_html.hide();
         $('.my-form p.text-box:last').after(box_html);
         box_html.fadeIn('slow');
