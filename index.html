@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SEABED - Software Engineering - Case Based Learning Database</title>
 
+
+
+
     <!--Google web fonts-->
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,300italic,400italic,600,700,600italic,200,200italic' rel='stylesheet' type='text/css'>    
     <link href='http://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
@@ -15,7 +18,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <!-- for captcha-->
-	<script src='https://www.google.com/recaptcha/api.js'></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
     <!-- font awesome-->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/skillset.css">
@@ -33,27 +36,28 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-	<!-- Form -->
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-	
-	<!-- Date -->
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-	<!-- Load jQuery from Google's CDN -->
+  <!-- Form -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+  <!-- Date -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <!-- Load jQuery from Google's CDN -->
     <!-- Load jQuery UI CSS  -->
     <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />-->
     
     <!-- Load jQuery JS -->
-	<!--tagsinput-->
-	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">-->
+  <!--tagsinput-->
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
    
     <!--select button -->
-	
+  
     <!-- Load SCRIPT.JS which will create datepicker for input field  -->
      
 
-    <!-- file -->
-	
+    <!-- file upload button link -->
+    <script src="js/jquery-v1.min.js"></script>
+  
     <!--<link rel="stylesheet" href="runnable.css" />-->
 
 
@@ -68,7 +72,149 @@ function validateForm() {
 }
 </script>
 
+
+
+
+
 <style>
+
+
+
+
+
+
+
+/* file upload button */
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    max-width: 70%;
+   
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    /*padding: 0.625rem 1.25rem; */
+    /* 10px 20px */
+}
+
+
+/* Make a ring around upload button previous stuff */
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+
+
+
+
+
+.inputfile + label svg {
+    width: 1em;
+
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    /*margin-top: -0.25em; */
+    /*margin-top: 4px; */
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+}
+
+
+
+
+
+
+
+
+  
+/* style 6 */
+
+.inputfile-6 + label {
+   /* color: #d3394c; */
+   color:black;
+   font-size: 15px;
+   padding-top: 10px;
+}
+
+.inputfile-6 + label {
+    border: 1px solid #DBDBDB;
+    background-color: white;
+    height:40px;
+    padding-left: 148px;
+
+   /* padding: 0; */
+}
+
+.inputfile-6:focus + label,
+.inputfile-6.has-focus + label,
+.inputfile-6 + label:hover {
+    border-color: #722040;
+}
+
+.inputfile-6 + label span,
+.inputfile-6 + label strong {
+    /*padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+
+.inputfile-6 + label span {
+    /*width: 200px; */
+    width :200px;
+    min-height: 2em;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.inputfile-6 + label strong {
+    height: 100%;
+    /*color: #f1e5e6; */
+    color:black;
+    /*background-color: #d3394c; */
+    background-color:#C9C9C9;
+    display: inline-block;
+}
+
+.inputfile-6:focus + label strong,
+.inputfile-6.has-focus + label strong,
+.inputfile-6 + label:hover strong {
+    background-color: #722040;
+}
+
+@media screen and (max-width: 50em) {
+  .inputfile-6 + label strong {
+    display: block;
+  }
+}
+
+
+
+
+
+
+/* file upload button */
+
+
 .tooltip {
     background-color:#000;
     border:1px solid #fff;
@@ -83,7 +229,7 @@ function validateForm() {
     /* outline radius for mozilla/firefox only */
     -moz-box-shadow:0 0 10px #000;
     -webkit-box-shadow:0 0 10px #000;
-	}
+  }
 .btn btn-default{
 margin-left:80%;
 margin-top:20px;
@@ -112,8 +258,9 @@ input[type=submit] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-	width: 10em;  height: 2em;
+  width: 10em;  height: 2em;
 }
+/*
 input[type=file] {
    
     background-color: #fff;
@@ -124,6 +271,7 @@ input[type=file] {
    margin: 0 auto;
 }
 
+*/
 input[type=checkbox] {
    
     background-color:white ;
@@ -132,6 +280,7 @@ input[type=checkbox] {
   border: 1px solid #DBDBDB;
   
 }
+
 <!--.button {
   background-color: #004A7F;
   -webkit-border-radius: 10px;
@@ -181,7 +330,7 @@ input[type=checkbox] {
 select {
     padding: 2px 5px;
     border: 1px solid #979997;
-	margin-left:10px;
+  margin-left:10px;
 
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -243,8 +392,8 @@ select.list1{
 
 
 
-</style>	
-		
+</style>  
+    
 </head>
 
 
@@ -471,7 +620,7 @@ select.list1{
   <div class="container">
     <div class="row">
       <div class="skill_section">
-	
+  
           <div class="col-md-4">
             
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -520,12 +669,12 @@ select.list1{
             </div>
             
           </div>
-		
-		 
-		  <!--right box-->
-		  
-		  
-		   <!--<div class="col-md-4">
+    
+     
+      <!--right box-->
+      
+      
+       <!--<div class="col-md-4">
             
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
@@ -573,9 +722,9 @@ select.list1{
             </div>
             
           </div>-->
-		
-		   <div class="container">
-		 
+    
+       <div class="container">
+     
             
    <div class="col-md-4">
   <div class="panel-group" id="accordion_One"role="tablist" aria-multiselectable="true">
@@ -587,7 +736,7 @@ select.list1{
       </div>
       <div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
         <div class="panel-body">SEABED has a case submission form using which a user can submit a case-study. The form requires user to provide information such as title, abstract, keywords, author names and affiliations and upload the case as a PDF file. The case-study undergoes a review process to ensure quality of knowledge-base. The case-study is added to the SEABED database once it is approved by the moderators.
-		</div>
+    </div>
       </div>
     </div>
     <div class="panel panel-default">
@@ -598,7 +747,7 @@ select.list1{
       </div>
       <div id="collapse2" class="panel-collapse collapse"role="tabpanel" aria-labelledby="heading2">
         <div class="panel-body">Users can search case-studies in SEABED database based on fields such as topic, author, keywords, time period (submission date) and presence of certain terms in the title and abstract. Users can also find most recent cases, most commented and most popular cases. Users can see all the versions of a particular case along with the differences in various revisions. 
-		</div>
+    </div>
       </div>
     </div>
     <div class="panel panel-default">
@@ -616,13 +765,13 @@ select.list1{
 </div>
 <!-- example-->
 
-		
-		  
-		  
-		  
-		  
-		  <!--
-		  
+    
+      
+      
+      
+      
+      <!--
+      
           <div class="col-md-8">
               <h2 class="wow bounceInLeft animated">These are our <span>Fantastic skills</span></h2>
               <p class="skill_text wow bounceInLeft animated">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -635,7 +784,7 @@ select.list1{
               </div>
               </main>
           </div>-->
-		  </div>
+      </div>
       </div>
     </div>
   </div>
@@ -655,14 +804,14 @@ select.list1{
                         <div class="contact_form">
                         <fieldset id="contact_form">
                             <div id="result">
-							<div id="form" class="result">
-							<form id="data">
+              <div id="form" class="result">
+              <form id="data" enctype="multipart/form-data"  >
    <div id="inputs">
    <div class="col-sm-6">
-   <input type="text"  name="title"  placeholder="&#xf1fc;  Title"  title="Please enter the title of the case" required><br/><br/>
+   <input type="text"  name="title"  placeholder="&#xf1fc;  Title"  title="Please enter the title of the Case" required><br/><br/>
   <!-- <input type="text" name="author"  placeholder="&#xf0c0;  Author(s)" title="Please enter the name of author(s)involved" required><br /> <br/>-->
    
-<input  name="date" id="date" placeholder="&#xf073;  Submission Date" title="Please enter the date of case submission" required/><br/><br/>
+<input  name="date" id="date" placeholder="&#xf073;  Submission Date" title="Please enter the date of Case submission" required/><br/><br/>
  <div class="my-form">
 
  <p class="text-box" >
@@ -670,11 +819,11 @@ select.list1{
             <input type="text" name="boxes[]" value="" id="first1" style="width:170px; margin-right: 5px" placeholder="&#xf0c0; First Name" title="Please enter first name of author(s)involved" required /> 
             <input type="text" name="boxes[]" value="" id="last1" style="width:170px;margin-left: 13px" placeholder="&#xf0c0; Last Name" title="Please enter last name of author(s)involved" required /> <br/><br/>
             <input type="email" name="boxes[]" value="" id="email1" style="width:70%"  placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required /><br/><br/>
-             <input type="text" name="boxes[]" value="" id="af1" style="margin-left: 60px; width:70%" placeholder="Affiliation" title="Please provide author's affiliation" required />
+             <input type="text" name="boxes[]" value="" id="af1" style="margin-left: 60px; width:70%" placeholder="&#xf19c; Affiliation" title="Please provide author's affiliation" required />
       
             <a class="add-box" href="#">Add More</a>
         </p>  </div> <br/>
-   <input type="text" list="fields" name="fields" placeholder="&#xf03a;  Category" title="Please select the category of the case" required />
+   <input type="text" list="fields" name="fields" placeholder="&#xf03a;  Category" title="Please select the category of the Case" required />
   <datalist id="fields" name="fields">
   <option>Requirements</option>
   <option>Design</option>
@@ -686,19 +835,19 @@ select.list1{
   <option>Economics</option>
   </datalist> <br/> <br/>
   
-  <input type="text" name="tagsinputbox" placeholder="&#xf022;  Key Terms" title="Please enter the key terms of the case" required></input> <br/><br/>
+  <input type="text" name="tagsinputbox" placeholder="&#xf022;  Key Terms" title="Please enter the key terms of the Case. Key terms must be comma(,) delimited." required></input> <br/><br/>
  <!--
  <p class="text-box">
           
       <div class="row">
     <div class="col-sm-4">  <input type="text" name="boxes[]" value="" id="box1" placeholder="&#xf0c0;  Author(s)" style="width:100px " title="Please enter the name of author(s)involved" required /> </div>
-			<div class="col-sm-4"><input type="email" name="boxes[]" value="" id="email1" placeholder="&#xf0e0; Email Address" style="width:120px" title="Please enter the email id of the author(s)" required /></div>
-		<div class="col-sm-4" style="width:150px"><input type="text"  name="boxes[]" id="affiliation1"  placeholder="&#xf0c0; Affiliation" style="width:100px;margin-left:0px;" title="Please provide author affiliation" required> <a class="add-box" href="#">Add More</a></div>
+      <div class="col-sm-4"><input type="email" name="boxes[]" value="" id="email1" placeholder="&#xf0e0; Email Address" style="width:120px" title="Please enter the email id of the author(s)" required /></div>
+    <div class="col-sm-4" style="width:150px"><input type="text"  name="boxes[]" id="affiliation1"  placeholder="&#xf0c0; Affiliation" style="width:100px;margin-left:0px;" title="Please provide author affiliation" required> <a class="add-box" href="#">Add More</a></div>
            
             </div>
         </p> <br/>
         
-	
+  
          
 <div class="row">
   <div class="col-sm-6" style="background-color: white; border: 1px solid #DBDBDB;font-size:15px;color:gray; margin-left: 65px;text-align:center;margin-right: 20px;width: 250px;height:40px;font-family: 'FontAwesome';padding-top: 5px">Provide right to publish on seabed</div>
@@ -713,16 +862,21 @@ select.list1{
    <div class="col-sm-6">
    
    <!--<input type="email" name="email" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required><br /><br/>-->
-    <textarea name="abstract" style="min-width: 70%" rows="3" maxlength="150" cols="150" placeholder="Abstract" title=" Please enter 150 character abstract for the case "  required>Abstract </textarea><br/> <br/>
+    <textarea name="abstract" style="min-width: 70%;color: gray" rows="3" maxlength="150" cols="150" placeholder="&#xf1fc; Abstract" title=" Please enter 150 characters abstract for the Case "  required></textarea><br/> <br/>
     
-   <input  type="file" name="profileImg"  id="profileImg"  placeholder="file" title="Please provide a PDF file of the case. Max size 1MB." required><br/>
+  <!-- <input  type="file" name="profileImg" accept=".pdf" id="profileImg"  placeholder="file" title="Please provide a PDF file of the Case. Max size 1MB." required><br/> -->
+
+<input type="file" name="profileImg" id="file-7" accept=".pdf" class="inputfile inputfile-6"  data-multiple-caption="{count} files selected" />
+          <label for="file-7" title="Please provide a PDF file of the Case. Max size 1MB." style="margin-left: 80px" ><span></span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload a Case </strong></label>
+<div id="valid_msg"> </div>
+   
+  
    
    <!--<input type="text"  id="tagsinputbox" name="tagsinputbox" data-role="tagsinput" placeholder="&#xf022;  Key Terms" title="Please enter the key terms of the case" ></input> <br/><br/> -->
     
 
-  <div class="checkbox" style=" font-size: 20px; width: 360px;margin-left: 80px;padding-right: 100px;padding-top:5px;text-align:center; background-color: white; border: 1px solid #DBDBDB;height:40px">
-<label><input type="checkbox" value="yes" title=" Allow SEABED to publish this work " name="copyright" style="height: 20px;font-size: 20px; margin-left: 120px">Provide right to publish</label></div>
-   <br/>
+  <div class="checkbox" style=" font-size: 20px; width: 360px;margin-left: 80px;padding-right: 100px;padding-top:5px;text-align:center; background-color: white; border: 1px solid #DBDBDB;height:40px;color: gray;font-family: 'FontAwesome';">
+<label><input type="checkbox" value="yes" title=" Allow SEABED to publish this work " name="copyright" style="height: 20px;width:80px;font-size: 20px; margin-left: 220px;" required>Provide Right To Publish</label></div> <br/>
   
   <div class="row">
   <div class="col-sm-2" ></div>
@@ -1188,10 +1342,10 @@ select.list1{
   <div class="container">
       <div class="portfolio_section">
           <div class="col-md-12 portfolio_top">
-		   
+       
              
-			   <h1>CASE <span>COLLECTION </span>  </h1>
-			 
+         <h1>CASE <span>COLLECTION </span>  </h1>
+       
               <!--<p>PLEASE FIND THE GREAT CONTRIBUTIONS TO SEABED. WE ARE HERE FOR SERVING THE SOCIETY.</p>-->
           </div>  
       </div>
@@ -1201,15 +1355,15 @@ select.list1{
       <li><span class="filter" data-filter="req">Requirements</span></li>
       <li><span class="filter" data-filter="design">Design</span></li>
       <li><span class="filter" data-filter="construct">Construction</span></li>
-	  <li><span class="filter" data-filter="test">Testing</span></li>
-	  <li><span class="filter" data-filter="maintain">Maintenance</span></li>
-	  <li><span class="filter" data-filter="configure">Configuration Management</span></li>
-	  <li><span class="filter" data-filter="process">Process and Framework</span></li>
-	  <li><span class="filter" data-filter="quality">Quality</span></li>
-	<!--  <li><span class="filter" data-filter="eco">Economics</span></li>-->
-	  
+    <li><span class="filter" data-filter="test">Testing</span></li>
+    <li><span class="filter" data-filter="maintain">Maintenance</span></li>
+    <li><span class="filter" data-filter="configure">Configuration Management</span></li>
+    <li><span class="filter" data-filter="process">Process and Framework</span></li>
+    <li><span class="filter" data-filter="quality">Quality</span></li>
+  <!--  <li><span class="filter" data-filter="eco">Economics</span></li>-->
+    
 
-	
+  
       <!--<li><span class="filter" data-filter="logos">Logo</span></li>
       <li><span class="filter" data-filter="web">Web</span></li>-->
     </ul>
@@ -1218,7 +1372,7 @@ select.list1{
       
       <!--<div class="portfolio logos" data-cat="Robotics">
         <div class="portfolio-wrapper">
-         <a href="http://www.cameronmoll.com/about/cameronmoll_bio.pdf">		
+         <a href="http://www.cameronmoll.com/about/cameronmoll_bio.pdf">    
           <img src="img/portfolios/logo/singlepage.png" alt="" /></a>
           <div class="label">
             <div class="label-text">
@@ -1229,15 +1383,15 @@ select.list1{
           </div>
         </div>
       </div> -->
-	  
-	<!--  <div class="portfolio req" data-cat="Requirements">
+    
+  <!--  <div class="portfolio req" data-cat="Requirements">
         <div class="portfolio-wrapper">
-         <a href="http://seabed.in">		
+         <a href="http://seabed.in">    
           <img src="img/portfolios/demo.png" alt="" /></a>
           <div class="label">
             <div class="label-text">
               <a class="text-title"></a><br/>
-			    <a class="text-title"></a>-->
+          <a class="text-title"></a>-->
               <!--<span class="text-category">ABB</span>-->
           <!--  </div>
             <div class="label-bg"></div>
@@ -1247,7 +1401,7 @@ select.list1{
   
    <div class="portfolio req" data-cat="Requirements">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">				
+    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">        
           <img src="img/Empty-Case-Study.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
@@ -1261,7 +1415,7 @@ select.list1{
 
       <div class="portfolio design" data-cat="Design">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Design-All-is-Well-Case.pdf" target="_blank">				
+    <a href="./case-study/Design-All-is-Well-Case.pdf" target="_blank">       
           <img src="img/Design-All-is-Well-Case.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
@@ -1273,9 +1427,9 @@ select.list1{
         </div>
       </div>    
        
-	   <div class="portfolio construct" data-cat="Construction">
+     <div class="portfolio construct" data-cat="Construction">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">				
+    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">        
           <img src="img/Empty-Case-Study.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
@@ -1286,10 +1440,10 @@ select.list1{
           </div>
         </div>
       </div>
-	  
-	    <div class="portfolio test" data-cat="Testing">
+    
+      <div class="portfolio test" data-cat="Testing">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">				
+    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">        
           <img src="img/Empty-Case-Study.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
@@ -1300,11 +1454,11 @@ select.list1{
           </div>
         </div>
       </div>
-	  
-	  
-	    <div class="portfolio maintain" data-cat="Maintenance">
+    
+    
+      <div class="portfolio maintain" data-cat="Maintenance">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">				
+    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">        
           <img src="img/Empty-Case-Study.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
@@ -1315,11 +1469,11 @@ select.list1{
           </div>
         </div>
       </div>
-	  
-	  
-	    <div class="portfolio configure" data-cat="Configuration Management">
+    
+    
+      <div class="portfolio configure" data-cat="Configuration Management">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">				
+    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">        
           <img src="img/Empty-Case-Study.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
@@ -1330,10 +1484,10 @@ select.list1{
           </div>
         </div>
       </div>
-	  
-	  <div class="portfolio process" data-cat="Process">
+    
+    <div class="portfolio process" data-cat="Process">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">				
+    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">        
           <img src="img/Empty-Case-Study.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
@@ -1344,10 +1498,10 @@ select.list1{
           </div>
         </div>
       </div>
-	  
-	  <div class="portfolio quality" data-cat="Quality">
+    
+    <div class="portfolio quality" data-cat="Quality">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">				
+    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">        
           <img src="img/Empty-Case-Study.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
@@ -1358,10 +1512,10 @@ select.list1{
           </div>
         </div>
       </div>
-	  
-	<!--  <div class="portfolio eco" data-cat="Economics">
+    
+  <!--  <div class="portfolio eco" data-cat="Economics">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf">				
+    <a href="./case-study/Empty-Case-Study.pdf">        
           <img src="img/Empty-Case-Study.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
@@ -1372,15 +1526,15 @@ select.list1{
           </div>
         </div>
       </div>-->
-	  
+    
      <!-- <div class="portfolio test" data-cat="Testing">
         <div class="portfolio-wrapper">  
-    <a href="seabed.in">			
+    <a href="seabed.in">      
           <img src="img/portfolios/demo.png" alt="" /> </a>
           <div class="label">
             <div class="label-text">
               <a class="text-title"></a><br/>
-			  <a class="text-title"></a>-->
+        <a class="text-title"></a>-->
               <!--<span class="text-category">Yukti Mehta</span>-->
            <!-- </div>
             <div class="label-bg"></div>
@@ -1660,8 +1814,8 @@ select.list1{
           </div>
         </div>
       </div> -->
-	  
-	  
+    
+    
        <!--<embed src="upload/Relevance.pdf" width="350px" height="250px" />-->
           <!--<div class="label">
             <div class="label-text">
@@ -1691,13 +1845,13 @@ select.list1{
                         <div class="search_form">
                         <fieldset id="search_form">
                            <!-- <div id="result"></div>-->
-							<div id="form" class="result1">
-							<form id="data1" action="search.php" method="post">
+              <div id="form" class="result1">
+              <form id="data1" action="search.php" method="post">
    <div id="inputs1">
    
-   <label> <font style="normal" size="3" color="black">Term 1 :		</font> </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <label> <font style="normal" size="3" color="black">Term 1 :   </font> </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    <input type="text" id="term1"  name="term1" placeholder="&#xf1fc;  Term1"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <label> <font style="normal" size="3" color="black" >	Field 1:		</font> </label>&nbsp;
+   <label> <font style="normal" size="3" color="black" >  Field 1:    </font> </label>&nbsp;
  
   <select id="option1" name="option1"style="min-width:10%;">
    <option>Select Field</option>
@@ -1707,15 +1861,15 @@ select.list1{
 </select>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <select id="condition" name="condition"style="min-width:7%;" class="list1">
-	<option value="and" >AND</option>
-	<option value="or" selected>OR</option>
-	</select>
+  <option value="and" >AND</option>
+  <option value="or" selected>OR</option>
+  </select>
    
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <label> <font style="normal" size="3" color="black">Term 2 :		</font> </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <label> <font style="normal" size="3" color="black">Term 2 :   </font> </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   
    <input type="text" id="term2"  name="term2" placeholder="&#xf1fc;  Term2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <label> <font style="normal" size="3" color="black">	Field 2:		</font> </label> &nbsp;
+    <label> <font style="normal" size="3" color="black">  Field 2:    </font> </label> &nbsp;
   
   <select id="option2" name="option2"style="min-width:10%;">
   <option>Select Field</option>
@@ -1776,7 +1930,7 @@ select.list1{
 
 
 
-							
+              
                         </div>          
       </div>
     </div>
@@ -1842,8 +1996,8 @@ select.list1{
           <div class="col-md-12 wow bounceInRight animated">
             <div class="bs-example">
               <ul class="nav nav-tabs">
-			 <!--<li class="active">  <div class="ico"><a data-toggle="tab" href="#sectionA"><i class="fa fa-newspaper-o"></i></a></div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-				<!-- <li class="active">  <div class="ico"><a data-toggle="tab" href="#sectionA"><i class="fa fa-users"></i></a></div>-->
+       <!--<li class="active">  <div class="ico"><a data-toggle="tab" href="#sectionA"><i class="fa fa-newspaper-o"></i></a></div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+        <!-- <li class="active">  <div class="ico"><a data-toggle="tab" href="#sectionA"><i class="fa fa-users"></i></a></div>-->
               <li class="active"><a data-toggle="tab" href="#sectionA"><i class="fa fa-newspaper-o"></i></a></li>
                 <!--  <li><a data-toggle="tab" href="#sectionB"><i class="fa fa-users"></i></a></li>-->
                   <!--<li><a data-toggle="tab" href="#sectionC"><i class="fa fa-cogs"></i></a></li>
@@ -1854,10 +2008,10 @@ select.list1{
                   <div id="sectionA" class="tab-pane fade in active">
                       <h3>Publications</h3>
                       <h7>[1] Kirti Garg, Ashish Sureka, and Vasudeva Varma,<a href="https://dl.dropboxusercontent.com/u/48972351/CMCE-2015-COSEED.pdf" target="_blank"> “A Case-Study on Teaching Software Engineering Concepts using a Case-Based Learning Environment”</a> APSEC Workshop, (CMCE 2015).</h7>
-					  <!--<p> <a href="https://dl.dropboxusercontent.com/u/48972351/CMCE-2015-COSEED.pdf"><h6>APSEC 2015 workshop</h6></a></p>-->
-					 <!-- <p>International Conference on Technology for Education (T4E 2016)</p>-->
-					 <br/> <h7>[2] Divya Kundra and Ashish Sureka,<a href="https://dl.dropboxusercontent.com/u/48972351/T4E-2016-CBL.pdf" target="_blank"> “An Experience Report on Teaching Compiler Design Concepts using Case-Based and Project-Based Learning Approaches”</a> International Conference on Technology for Education (T4E 2016).</h7>
-					<!--  <p> <a href="https://dl.dropboxusercontent.com/u/48972351/T4E-2016-CBL.pdf"><h6>  T4E 2016</h6></a></p>-->
+            <!--<p> <a href="https://dl.dropboxusercontent.com/u/48972351/CMCE-2015-COSEED.pdf"><h6>APSEC 2015 workshop</h6></a></p>-->
+           <!-- <p>International Conference on Technology for Education (T4E 2016)</p>-->
+           <br/> <h7>[2] Divya Kundra and Ashish Sureka,<a href="https://dl.dropboxusercontent.com/u/48972351/T4E-2016-CBL.pdf" target="_blank"> “An Experience Report on Teaching Compiler Design Concepts using Case-Based and Project-Based Learning Approaches”</a> International Conference on Technology for Education (T4E 2016).</h7>
+          <!--  <p> <a href="https://dl.dropboxusercontent.com/u/48972351/T4E-2016-CBL.pdf"><h6>  T4E 2016</h6></a></p>-->
                   </div>
                 <!--  <div id="sectionB" class="tab-pane fade">
                       <h3>Case Study</h3>
@@ -1932,7 +2086,7 @@ select.list1{
         <!--<button class="btn btn-hero btn-lg" role="button">See all features</button>-->
       </div>
     </div>
-	    <div class="item slides">
+      <div class="item slides">
       <div class="slide-14"></div>
       <div class="hero">        
         <hgroup>
@@ -1942,7 +2096,7 @@ select.list1{
         <!--<button class="btn btn-hero btn-lg" role="button">See all features</button>-->
       </div>
     </div>
-	
+  
   </div> 
 </div>
 </div> 
@@ -1985,7 +2139,7 @@ select.list1{
                         </fieldset>                           
                         </div>
                     </div>-->
-					<!--
+          <!--
                     <div class="col-md-6">
                         <div class="contact_text">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -2075,7 +2229,7 @@ select.list1{
                       </li>
                     </ul>
                   </div>--><!-- end pricing-box -->
-				  <!--
+          <!--
                   <div class="col-md-4 col-sm-4 col-xs-12 pricing-box second featured wow bounceInUp animated">
                     <ul>
                       <li class="plan-title">
@@ -2112,7 +2266,7 @@ select.list1{
                       </li>
                     </ul>
                   </div>--><!-- end pricing-box -->
-				  <!--
+          <!--
                   <div class="col-md-4 col-sm-4 col-xs-12 pricing-box last wow bounceInUp animated">
                     <ul>
                       <li class="plan-title">
@@ -2149,7 +2303,7 @@ select.list1{
                       </li>
                     </ul>
                   </div>--><!-- end pricing-box -->
-				  <!--
+          <!--
                 </div>
               </div>
           
@@ -2218,11 +2372,195 @@ select.list1{
 </div>--><!-- contact area end   -->
 
 
+<!-- file upload button -->
+
+<script>
+$(document).ready(function(){
+    $( '.inputfile' ).each( function()
+  {
+    var $input   = $( this ),
+      $label   = $input.next( 'label' ),
+
+      labelVal = $label.html();
+
+    $input.on( 'change', function( e )
+    {
+      var fileName = '';
+
+      if( this.files && this.files.length > 1 )
+        fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+      else if( e.target.value )
+        {
+          var size = this.files[0].size;
+          
+        fileName = e.target.value.split( '\\' ).pop();
+        }
+
+      if( fileName )
+      {
+        var a=validation(fileName,this,$label);
+        if(!a)
+        {
+          var msg0='';
+          $label.find( 'span' ).html( msg0 );
+        }
+
+        if(a)
+       {
+        
+
+        $label.find( 'span' ).html( fileName );
+
+       } 
+        
+
+
+
+      }
+      else
+        $label.html( labelVal );
+
+      function validation(thisform,this1,$label1)
+{
+   with(thisform)
+   {
+      
+      if(validateFileExtension(thisform, "valid_msg", "Only pdf files are allowed !",
+      new Array("pdf","PDF"),$label1) == false)
+      {
+         
+         var msg6='';
+          $label1.find( 'span' ).html( msg6 );
+          return false; 
+         
+      }
+
+      if(validateFileSize(this1,1048576, "valid_msg", "Document size should be less than 1MB !",$label1)==false)
+      {
+         
+
+          var msg7='';
+          $label1.find( 'span' ).html( msg7 );
+          return false;
+      }
+
+      return true;
+   }
+}
+
+
+function validateFileExtension(component,msg_id,msg,extns,$label1)
+{
+   var flag=0;
+   with(component)
+   {
+    
+      var ext=component.substring(component.lastIndexOf('.')+1);
+      
+      for(i=0;i<extns.length;i++)
+      {
+         if(ext==extns[i])
+         {
+            flag=0;
+            break;
+         }
+         else
+         {
+            flag=1;
+         }
+      }
+      if(flag!=0)
+      {
+        
+         document.getElementById(msg_id).innerHTML=msg;
+         component.value="";
+         component.style.backgroundColor="#eab1b1";
+         component.style.border="thin solid #000000";
+         component.focus();
+
+          var msg8='';
+          $label1.find( 'span' ).html( msg8 );
+         return false;
+      }
+      else
+      {
+         var msg1='';
+        document.getElementById(msg_id).innerHTML=msg1;
+         return true;
+      }
+   }
+}
+
+
+
+function validateFileSize(component,maxSize,msg_id,msg,$label1)
+{
+  
+   if(navigator.appName=="Microsoft Internet Explorer")
+   {  
+      if(component.value)
+      {  
+         var oas=new ActiveXObject("Scripting.FileSystemObject");
+         var e=oas.getFile(component.value);
+         var size=e.size;
+      }
+   }
+   else
+   {
+    
+      if(component!=undefined)
+      {
+        
+
+         size = component.files[0].size;
+
+        
+      }
+   }
+   if(size!=undefined && size>maxSize)
+   {
+    
+      document.getElementById(msg_id).innerHTML=msg;
+      component.value="";
+      component.style.backgroundColor="#eab1b1";
+      component.style.border="thin solid #000000";
+      component.focus();
+      
+      return false;
+   }
+   else
+   {
+     var msg2='';
+        document.getElementById(msg_id).innerHTML=msg2;
+      return true;
+   }
+}
+
+
+
+
+
+
+
+    });
+});
+});
+
+</script>
+
+
+
+
+
+
+
+
+
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script>
@@ -2252,7 +2590,7 @@ $(function(){ // DOM ready
   <script>
   $(document).ready(function() {
     $("#date").datepicker();
-	 
+   
   });
   </script>
   <!-- duplicate field -->
@@ -2260,23 +2598,23 @@ $(function(){ // DOM ready
 <script type="text/javascript">
 jQuery(document).ready(function($){
     $('.my-form .add-box').click(function(){
-	
+  
         var n = $('.text-box').length + 1;
-		if(n!=5)
-	{
-       var box_html = $('<p class="text-box"> <input type="text" name="boxes[]" style="width:170px; margin-right: 5px;margin-left:8px" value="" id="first' + n + '" placeholder="&#xf0c0; First Name " title="Please enter first name of the author(s)involved"required /> <input type="text" name="boxes[]" style="width:170px; margin-left: 13px" value="" id="last' + n + '" placeholder="&#xf0c0; Last Name" title="Please enter last name of the author(s)involved"required /> <br/><br/>  <input type="email" name="boxes[]" style="width:70%" value="" id="email' + n + '" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required /> <br/><br/> <input type="text" name="boxes[]" style="margin-left: 50px; width:70%" value="" id="af'+n+'" placeholder="Affiliation" title="Please provide author\'s affiliation" required /> <a href="#" class="remove-box">Remove</a></p>');
+    if(n!=5)
+  {
+       var box_html = $('<p class="text-box"> <input type="text" name="boxes[]" style="width:170px; margin-right: 5px;margin-left:8px" value="" id="first' + n + '" placeholder="&#xf0c0; First Name " title="Please enter first name of the author(s)involved"required /> <input type="text" name="boxes[]" style="width:170px; margin-left: 13px" value="" id="last' + n + '" placeholder="&#xf0c0; Last Name" title="Please enter last name of the author(s)involved"required /> <br/><br/>  <input type="email" name="boxes[]" style="width:70%" value="" id="email' + n + '" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required /> <br/><br/> <input type="text" name="boxes[]" style="margin-left: 50px; width:70%" value="" id="af'+n+'" placeholder="&#xf19c; Affiliation" title="Please provide author\'s affiliation" required /> <a href="#" class="remove-box">Remove</a></p>');
         
         box_html.hide();
         $('.my-form p.text-box:last').after(box_html);
         box_html.fadeIn('slow');
         return false;
-		}
-		else {window.alert("not more than 4");
-		window.location.href='http://www.seabed.in/index.html';
-		}
-		
+    }
+    else {window.alert("not more than 4");
+    window.location.href='http://www.seabed.in/index.html';
+    }
+    
     });
-	 $('.my-form').on('click', '.remove-box', function(){
+   $('.my-form').on('click', '.remove-box', function(){
         $(this).parent().css( 'background-color', '#FF6C6C' );
         $(this).parent().fadeOut("slow", function() {
             $(this).remove();
@@ -2332,16 +2670,16 @@ $("form#data").submit(function(event){
     contentType: false,
     processData: false,
     success: function (returndata) {
-	 //clearInput();
-	  
+   //clearInput();
+    
       //alert(returndata);
-	  $("#data").fadeOut(10).hide(function()
-						{
-							$(".result").fadeIn(10).show(function()
-							{
-								$(".result").html(returndata);
-							});
-						});
+    $("#data").fadeOut(10).hide(function()
+            {
+              $(".result").fadeIn(10).show(function()
+              {
+                $(".result").html(returndata);
+              });
+            });
     }
   });
   clearInput();
@@ -2352,10 +2690,10 @@ $("form#data").submit(function(event){
 
 
 function clearInput(){
-	$("#data :input").each(function(){
-		$(this).val('');
-	});
-	
+  $("#data :input").each(function(){
+    $(this).val('');
+  });
+  
 }
 
 </script>
@@ -2398,13 +2736,13 @@ $("form#data1").submit(function(event){
     processData: false,
     success: function (returndata) {
       //alert(returndata);
-	  $("#data1").fadeOut(10).hide(function()
-						{
-							$(".result1").fadeIn(10).show(function()
-							{
-								$(".result1").html(returndata);
-							});
-						});
+    $("#data1").fadeOut(10).hide(function()
+            {
+              $(".result1").fadeIn(10).show(function()
+              {
+                $(".result1").html(returndata);
+              });
+            });
     }
   });
   clearInput();
@@ -2415,10 +2753,10 @@ $("form#data1").submit(function(event){
 
 
 function clearInput(){
-	$("#data1 :input").each(function(){
-		$(this).val('');
-	});
-	
+  $("#data1 :input").each(function(){
+    $(this).val('');
+  });
+  
 }
 
 </script>
@@ -2433,17 +2771,10 @@ $(document).ready(function(){
 });
 </script>
 
-<!-- evolution part -->
+<!-- file upload button -->
 
 
 
-
-
-
-
-<!-- LikeBtn.com BEGIN -->
-
-<!-- file -->
 
 </body>
 </html>
