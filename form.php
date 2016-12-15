@@ -31,9 +31,9 @@ if(isset($_POST['g-recaptcha-response'])&&!empty($_POST['g-recaptcha-response'])
 
 
 
-if(isset($_POST['abstract'])&&isset($_POST['title'])&&isset($_POST['tagsinputbox'])&&isset($_POST['date'])&&isset($_POST['boxes'])&&isset($_FILES['profileImg']) &&isset($_POST['fields']))
+if(isset($_POST['abstract'])&&isset($_POST['tagsinputbox'])&&isset($_POST['title'])&&isset($_POST['tagsinputbox'])&&isset($_POST['date'])&&isset($_POST['boxes'])&&isset($_FILES['profileImg']) &&isset($_POST['fields']))
     {
-      if(!empty($_POST['abstract'])&&!empty($_POST['title'])&&!empty($_POST['date'])&&!empty($_POST['boxes'])&&!empty($_FILES['profileImg']) &&!empty($_POST['fields']))
+      if(!empty($_POST['abstract'])&&!empty($_POST['tagsinputbox'])&&!empty($_POST['title'])&&!empty($_POST['date'])&&!empty($_POST['boxes'])&&!empty($_FILES['profileImg']) &&!empty($_POST['fields']))
       {
 
          
@@ -50,9 +50,13 @@ if(isset($_POST['copyright'])&&!empty($_POST['copyright']))
 
 
 
+
+
+
 $title = $_POST['title'];
 $category = $_POST['fields'];
 $key_terms=$_POST['tagsinputbox'];
+$key_terms = preg_replace("/[^a-z0-9\s\,]/i", "", $key_terms);
 $date = $_POST['date'];
 $arr=$_POST['boxes'];
 $val1=rand(1000,999999);
@@ -293,7 +297,7 @@ if($val==0)
     
      <tr>
     <td><b>File Uploaded</b></td>
-    <td><a href="<?php echo $link; ?>"><?php echo $link; ?></a></td>
+    <td><a href="<?php echo $link; ?>" target="_blank"><?php echo $link; ?></a></td>
     </tr><br/>
     
    
