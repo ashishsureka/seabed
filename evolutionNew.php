@@ -1,30 +1,36 @@
 <?php 
 session_start();
 require 'connect.inc.php';
-$title=$_SESSION['title'];
+
 if(isset($_SERVER['HTTP_REFERER'])&&!empty($_SERVER['HTTP_REFERER']))
 $http_referer=$_SERVER['HTTP_REFERER'];
 
-if(isset($_POST['recommendations'])&&!empty($_POST['recommendations']))
- $rec=$_POST['recommendations'];
-else
-$rec='';
+///  Captcha verification
 
-if(isset($_POST['notification'])&&!empty($_POST['notification']))
- $notify="ON";
-else
-$notify="OFF";
+if($_SESSION['captcha']==0)
+{
+   die('<span style="font-size:30px;color:red">Captcha Mismatch. Please </span><a href="'.$http_referer.'"style="font-size:30px">try again.</a>');
+}
 
+// captcha verification ends
 
 
+//$title=$_SESSION['title'];
 
 
-if(isset($_POST['experience'])&&!empty($_POST['experience']))
-$exp=$_POST['experience'];
-else
-$exp='';
+$title='';
 
-if(isset($_FILES['revision'])&&!empty($_FILES['revision'])&&isset($_POST['justification'])&&!empty($_POST['justification']))
+if(isset($_SERVER['HTTP_REFERER'])&&!empty($_SERVER['HTTP_REFERER']))
+$http_referer=$_SERVER['HTTP_REFERER'];
+
+
+
+
+
+
+
+
+if(isset($_FILES['revision'])&&!empty($_FILES['revision'])&&isset($_FILES['jus'])&&!empty($_FILES['jus']))
 {
   
     $revFile_name=$_FILES["revision"]["name"];
@@ -34,155 +40,133 @@ $targetPath = "upload/".$_FILES['revision']['name']; // Target path where file i
  if(move_uploaded_file($sourcePath,$targetPath))
      $rev=$targetPath;
     
-      
-     $jus=$_POST['justification'];
+     $jusFile_name=$_FILES["jus"]["name"];
+    $sourcePath = $_FILES['jus']['tmp_name']; // Storing source path of the file in a variable
+$targetPath = "upload/".$_FILES['jus']['name']; // Target path where file is to be stored
+
+ if(move_uploaded_file($sourcePath,$targetPath))
+     $jus=$targetPath;
+    
+
+    
+     
     
 }
 else
 {
     $rev='';
     $revFile_name=" ";
-    $jus='';
-
-}
-
-if(isset($_FILES['report'])&&!empty($_FILES['report']))
-{
-  $rep='';
-  $repFile_name='';
-
-  $repFile_name=$_FILES["report"]["name"];
-  $sourcePath = $_FILES['report']['tmp_name']; // Storing source path of the file in a variable
-$targetPath = "upload/".$_FILES['report']['name']; // Target path where file is to be stored
- if(move_uploaded_file($sourcePath,$targetPath))
-    $rep=$targetPath;  
-  else
-  {
-
-  }
-
-}
-else   
-{
-    $rep='';
-    $repFile_name='';
-
-}
+     $jusFile_name='';
+     $jus='';
     
+}
+
+// author details
+
+// author details
+
+$author_details= $_SESSION['author_details'];
+//$arr1=array();
+//echo $arr1=$_SESSION['try'];
+$arr=$_SESSION['try'];
+
+
+// counting number of authors
+$count=0;
+ $authorCount=0;
+ $num=0;
+foreach ($arr as $key => $value) {
+        $count=$count+1;
+      $val=$count%4;
+if($val==0)
+{   
   
- $fn=$_POST['firstName'];
-$ln=$_POST['lastName'];
- $email=$_POST['email'];
- $af=$_POST['affiliation'];
- $date1=$_POST['date'];
+ $authorCount=$authorCount+1;
+ $email[$authorCount]=$value;
+}
+
+if($val==1)
+{   
+  
+ $num=$num+1;
+ $author_name[$num]=$value;
+}
+
+}
+
+
+
+$author_details=mysql_real_escape_string($author_details);
+  
+Global $count;
+
+$count=0;
+
+
+ 
+
 $val1=rand(10000000,99999999);
 
- $id=$_SESSION['id'];
+$rep='';
+$ref='';
+$rec='';
+ $exp=''; 
 
-$query="INSERT INTO `case_revision` (`id`, `case_Id`, `revision`, `justification`, `report`, `experience`, `recommendation`, `firstName`, `lastName`, `email`, `affiliation`, `notification`,`SubDate`) VALUES ('$val1', ".$id.", '$rev', '$jus', '$rep', '$exp', '$rec', '$fn', '$ln', '$email', '$af','$notify','$date1')";
+
+$id=$_POST['case_evolve'];
+$notify=$_SESSION['notify'];
+ $date1=$_SESSION['date'];
+
+$query1="SELECT `title` FROM `formdata` WHERE `id` = '".$id."' ";
 
 
+  if($query_run1=mysql_query($query1))
+    if($query_result1=mysql_result($query_run1,0,'title'))
+      $title=$query_result1;
+  else
+    die('<span style="font-size:30px;color:red">Could not connect.</span> <a href="'.$http_referer.'" style="font-size:30px">Please try again.</a>');
 
 
+$title=mysql_real_escape_string($title);
+
+$query="INSERT INTO `case_revision` (`id`, `case_Id`, `revision`, `justification`, `report`, `experience`, `recommendation`, `notification`, `SubDate`, `allow`, `ref`, `authorCount`, `author`) VALUES ('$val1', '$id', '$rev', '$jus', '$rep', '$exp', '$rec', '$notify', '$date1', '0', '$ref', '$authorCount', 'author_details')";
 
 if($query_run=mysql_query($query))
 {
 
   //echo 'query executed successfully';
-  include 'revMail.php';
+  $mailLoop='';
+              $flag2=0;
+              
+
+              foreach ($email as $key => $value) {
+  
+
+                 if($flag2!=0)
+                  $mailLoop=$mailLoop.' ,'.$value;
+
+                if($flag2==0)
+                {
+                 $mailLoop=$mailLoop.' '.$value;
+                 $flag2=1;
+                }
+
+               
+          // include 're2.php';
+           include 'revMail.php';
+            }
 
 }
 
 else
-  die('Could not coonect. Please try after sometime.<a href="'.$http_referer.'">Go back</a>');
+  die('<span style="font-size:30px;color:red">Could not connect. Please try after sometime. </span> <a href="'.$http_referer.'" style="font-size:30px">Go back</a>');
 
 
+die('<span style="color:green;font-size:30px">Thank you for submission. Please check your mail to get the acknowledgement <br></span><a href="'.$http_referer.'" style="font-size:30px">Go back</a>');
 
 
 
  ?>
 
 
- <style>
-.ev table, .ev td {
-    border: 2px solid #3498db;
-    border-spacing: 2px;
-    height:30px;
-    text-align: center;
-    
-}
-
-</style>
-
-<table align="center" width="400"cellpadding="0" class="ev" cellspacing="0" style="margin-top:-7em;">
- <col width="150">
-  
-    
-    <tr>
-    <td colspan="2"><b><h3 style="text-align:center">Submission Details <h3></b></td>
-    </tr>
-    
-    <tr>
-    <td><b>ID</b></td>
-    <td><?php echo $id; ?></td>
-    </tr><br/>
-    
-    <tr>
-    <td><b>Title</b></td>
-    <td><?php echo $title; ?></td>
-    </tr><br/>
-    
-    <tr>
-    <td><b>Authors details </b></td>
-     <td><?php echo 'Author Name: '.$fn.' '.$ln.'<br>';
-        
-               echo 'Email Id: '.$email.'<br>';
-               echo 'Affilated to : '.$af.'<br>';
-
-
-       ?></td>
-    </tr><br/>
-
-<tr>
-    <td><b> Submission Date </b></td>
-    <td><?php echo $date1; ?></td>
-    </tr><br/>
-
-    <tr>
-    <td><b>Revision Uploaded</b></td>
-    <td><a href="<?php echo ''.$rev; ?>" target="_blank"><?php echo $revFile_name; ?></a></td>
-    </tr><br/>
-
-    <tr>
-    <td><b>Justification for the Revision </b></td>
-    <td><?php echo $jus; ?></td>
-    </tr><br/>
-    
-
-    <tr>
-    <td><b>Report Uploaded</b></td>
-    <td><a href="<?php echo ''.$rep; ?>" target="_blank"><?php echo $repFile_name; ?></a></td>
-    </tr><br/>
-
-    <tr>
-    <td><b>Experience </b></td>
-    <td><?php echo $exp; ?></td>
-    </tr><br/>
-
-    <tr>
-    <td><b>Recommendation</b></td>
-    <td><?php echo $rec; ?></td>
-    </tr><br/>
-
-
-    <tr>
-    <td><b>Notification</b></td>
-    <td><?php echo $notify; ?></td>
-    </tr><br/>
-
-</table>
-    <br/>
-
-    <?php die('Thank you for submission.<a href="'.$http_referer.'">Go back</a>')  ?>
-
-
+ 
