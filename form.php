@@ -26,7 +26,10 @@ if(isset($_POST['g-recaptcha-response'])&&!empty($_POST['g-recaptcha-response'])
 }
 
 
-
+if(isset($_POST['notification'])&&!empty($_POST['notification']))
+ $notify="ON";
+else
+$notify="OFF";
 
 
 
@@ -175,7 +178,7 @@ if($file_extension=='pdf')
         if(move_uploaded_file($sourcePath,$targetPath))
           {
               //echo 'file uploaded successfully';
-             $query="INSERT INTO `formdata` (`id`, `title`, `category`,`key_terms`, `date`, `fileName`, `targetPath`, `abstract`, `copyright`, `authorCount`, `author`) VALUES ('$id', '$title', '$category', '$key_terms' , '$date', '$file_name', '$targetPath', '$abstract', '$copyright', '$authorCount', '$author_details')";
+             $query="INSERT INTO `formdata` (`id`, `title`, `category`,`key_terms`, `date`, `fileName`, `targetPath`, `abstract`, `copyright`, `authorCount`, `author`,`notification`) VALUES ('$id', '$title', '$category', '$key_terms' , '$date', '$file_name', '$targetPath', '$abstract', '$copyright', '$authorCount', '$author_details','$notify')";
 
             if($query_run=mysql_query($query))
             {
@@ -303,7 +306,10 @@ table,td {
     <td><a href="<?php echo $link; ?>" target="_blank"><?php echo $file_name; ?></a></td>
     </tr><br/>
     
-   
+    <tr>
+    <td><b>Notification</b></td>
+    <td><?php echo $notify; ?></td>
+    </tr><br/>
     
     
     </table>

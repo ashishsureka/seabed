@@ -93,7 +93,10 @@ $message .= '<table align="center" width="700"cellpadding="0" cellspacing="0" st
     <td><a href=" '.$link.'">'.$file_name.'</a></td>
     </tr>
     
-   
+    <tr>
+    <td><b>Notification</b></td>
+    <td>'.$notify.'</td>
+    </tr>
     
     
     </table>
