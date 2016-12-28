@@ -1,16 +1,45 @@
 <?php
 //$to =$value.',veena.sainiaug2shine@gmail.com,admin@seabed.in,ashish@iiitd.ac.in,singhpv@nitj.ac.in';
-$to =$email.',veena.sainiaug2shine@gmail.com,admin@seabed.in';
-
-$first_name=$fn;
+$to =$value.',veena.sainiaug2shine@gmail.com,admin@seabed.in';
+$index=$key;
+$first_name=$author_name[$index];
 $first_name=strtoupper($first_name);
-$subject = 'SEABED Case #'.$id.' Revision/Report Acknowledgement';
+$subject = 'SEABED Case #'.$id.' Revision Acknowledgement';
 $from = 'SEABED <admin@seabed.in>';
 // author details computation 
+$details='';
+$temp=$authorCount;
+$enm=0;
+$count=0;
+foreach ($arr as $key => $value) {
+      $count=$count+1;  
+      $val=$count%4;
+     
+if($val==1)
+{
+$enm=$enm+1;
+$temp=$temp-1;
+$details=$details.'('.$enm.') Author name: ';
 
-$details="Author Name: ".$fn." ".$ln."<br>";
-$details=$details."Email Id: ".$email."<br>";
-$details=$details."Affiliated to : ".$af."<br>";
+}
+if($val==0)
+{
+ $details=$details.'<br>email id: ';
+
+}if($val==3)
+{
+  $details=$details.'<br>affiliated to: ';
+
+}
+    
+    if(($val!=0)&&($val!=1))
+      $details=$details.$value.',';
+    else
+      $details=$details.$value.' ';
+       
+       if(($val==0)&&($temp!=0))
+        $details=$details.'<hr>';
+} 
 
 // To send HTML mail, the Content-type header must be set
 $headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -35,8 +64,8 @@ table,td {
 </style>
 </head> <body>';
 $message .='<p>Dear '.$first_name.', </p>';
-$message .='<p>Thanks for submitting the following case to SEABED. We appreciate your valuable contributions to SEABED. </p>';
-$message .= '<table align="center" width="700"cellpadding="0" cellspacing="0" style="margin-top:-7em;">
+$message .='<p>Thanks for submitting the Revision of the following Case to SEABED. We appreciate your valuable contributions to SEABED. </p>';
+$message .= '<table align="center" width="80%"cellpadding="0" cellspacing="0" style="margin-top:-7em;">
  <col width="200">
   <col width="200">
     
@@ -73,25 +102,10 @@ $message .= '<table align="center" width="700"cellpadding="0" cellspacing="0" st
 
     <tr>
     <td><b>Justification for the Revision </b></td>
-    <td> '.$jus.'</td>
+    <td><a href="http://seabed.in/'.$jus.'">'.$jusFile_name.'</a></td>
+    </tr>
     </tr>
     
-
-    <tr>
-    <td><b>Report Uploaded</b></td>
-    <td><a href="http://seabed.in/'.$rev.'">'.$repFile_name.'</a></td>
-    </tr>
-
-    <tr>
-    <td><b>Experience </b></td>
-    <td>'.$exp.'</td>
-    </tr>
-
-    <tr>
-    <td><b>Recommendation</b></td>
-    <td>'.$rec.'</td>
-    </tr>
-
 
     <tr>
     <td><b>Notification</b></td>
