@@ -17,11 +17,11 @@ if(isset($_POST['g-recaptcha-response'])&&!empty($_POST['g-recaptcha-response'])
    $arr=json_decode($rsp,TRUE);
 
      if($arr['success'])
-     	{
-     	   //echo 'success';
-     	}
+      {
+         //echo 'success';
+      }
      else
-     	die('Captcha mismatch. <a href="'.$http_referer.'">Please try again </a>');
+      die('Captcha mismatch. <a href="'.$http_referer.'">Please try again </a>');
 
 }
 
@@ -126,6 +126,48 @@ $max_size=1048576;
 
 $file_extension=strtolower(substr($file_name,strpos($file_name,'.')+1));
 
+// author details computation 
+$temp=$authorCount;
+$enm=0;
+$count=0;
+foreach ($arr as $key => $value) {
+      $count=$count+1;  
+      $val=$count%4;
+      
+if($val==1)
+{
+$enm=$enm+1;
+   $temp=$temp-1;
+  $details=$details.'('.$enm.') Author name: ';
+
+}
+if($val==3)
+{
+  $details=$details.'<br>email id: ';
+
+}
+if($val==0)
+{
+  $details=$details.'<br>affiliated to: ';
+
+}
+    
+    if(($val!=0)&&($val!=1))
+      $details=$details.$value.',';
+    else
+      $details=$details.$value.' ';
+       
+       if(($val==0)&&($temp!=0))
+        $details=$details.'<hr>';
+} 
+
+
+
+
+
+
+
+
 if($file_extension=='pdf')
 {
   if($file_size<=$max_size)
@@ -202,23 +244,13 @@ table,td {
     height:30px;
     
 }
-input[type=submit]{
-  width: 20%;
-  height: 40px;
-  border: 1px solid #DBDBDB;
-  padding-left: 1px;
-  text-align: center;
-margin: auto;
-line-height:2px;
-font-weight:bold;
-font-size:15px;
- }
+
 
 </style>
 
- <table align="center" width="700"cellpadding="0" cellspacing="0" style="margin-top:-7em;">
- <col width="200">
-  <col width="200">
+ <table align="center" width="80%" cellpadding="0" cellspacing="0" style="margin-top:-7em;">
+ <col width="40%">
+
     
     <tr>
     <td colspan="2"><b><h3 style="text-align:center">Submission Details <h3></b></td>
@@ -236,36 +268,7 @@ font-size:15px;
     
     <tr>
     <td><b>Authors details </b></td>
-    <td><?php $enm=0;
-    $link="http://seabed.in/upload/".$file_name;
-    $temp=$authorCount;
-    foreach ($arr as $key => $value) {
-      $count=$count+1;  
-      $val=$count%4;
-if($val==1)
-{  $enm=$enm+1;
-  echo '('.$enm.') Author Name: ';
-$temp=$temp-1;
-}
-if($val==3)
-{
-  echo '<br> email id: ';
-
-}
-if($val==0)
-{
-  echo '<br> affiliated to: ';
-
-}
-    
-    if(($val!=0)&&($val!=1))
-      echo $value.',';
-    else
-      echo $value.' ';
-       
-       if(($val==0)&&($temp!=0))
-        echo '<hr>';
-} ?></td>
+    <td><?php echo $details; ?></td>
     </tr><br/>
    
     
@@ -297,7 +300,7 @@ if($val==0)
     
      <tr>
     <td><b>File Uploaded</b></td>
-    <td><a href="<?php echo $link; ?>" target="_blank"><?php echo $link; ?></a></td>
+    <td><a href="<?php echo $link; ?>" target="_blank"><?php echo $file_name; ?></a></td>
     </tr><br/>
     
    
