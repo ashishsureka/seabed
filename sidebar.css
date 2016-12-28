@@ -1,0 +1,112 @@
+/* sidebar style*/
+
+#sidebar-wrapper
+{
+  z-index: 1;
+  position: absolute;
+  overflow-y: hidden;
+  width: 0px;
+  height:100%;
+ background-color: #2C3E50;
+  opacity: 0.9;
+ 
+}
+
+#sidebar-wrapper1
+{
+  z-index: 1;
+  position: absolute;
+  overflow-y: hidden;
+  width: 0px;
+  height:100%;
+ background-color: #2C3E50;
+ 
+ opacity: 0.9;
+ 
+}
+
+
+#page-content-wrapper{
+
+width: 100%;
+padding: 15px;
+
+
+
+}
+
+
+
+
+
+
+
+/* change the width of sidebar to display */
+
+#wrapper1.menuDisplayed #sidebar-wrapper
+{
+
+width: 250px;
+
+}
+
+#wrapper1.menuDisplayed #page-content-wrapper
+{
+
+padding-left: 250px;
+
+}
+
+
+
+/* change the width of sidebar to display */
+
+#wrapper1.Displayed #sidebar-wrapper1
+{
+
+width: 250px;
+
+}
+
+#wrapper1.Displayed #page-content-wrapper
+{
+
+padding-left: 250px;
+
+}
+
+
+
+
+
+
+.sidebar-nav
+{
+  list-style: none;
+  padding: 0px;
+
+}
+
+.sidebar-nav li
+{
+  text-indent: 20px;
+  line-height: 40px;
+
+}
+
+
+.sidebar-nav li a
+{
+  display: block;
+  text-decoration: none;
+  color: #ddd;
+
+}
+
+.sidebar-nav li a:hover
+{
+  
+  background-color: #16A085;
+
+}
+
