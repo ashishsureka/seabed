@@ -69,7 +69,7 @@
     <!-- Load jQuery JS -->
   <!--tagsinput-->
   <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
+    
    
     <!--select button -->
   
@@ -83,12 +83,345 @@
 
 <style>
 
-/* Hidden popup form  for Case Evolution */
+#contact_form input[type=checkbox] {
+
+height: 20px;
+width:10%;
+cursor: pointer;
+margin-left: 65%;
+
+}
+
+#contact_form input[type=checkbox] :hover .checkbox
+{
+  z-index: 21;
+}
+#contact_form input[type=checkbox] :hover .checkbox span {
+
+display: block;
+  
+  padding: 5px;
+  border:2px solid white;
+  color: white;
+  background-color: black;
+  font-size:12px;
+  text-decoration: none;
+  text-align:left;
+  position: absolute;
+  
+bottom: 120%;
+  float: top;
+  border-radius: 6px;
+
+
+}
+
+
+
+.checkbox
+{
+  display: inline-block;
+  font-size: 2rem; 
+  width: 70%;
+  padding-right: 10%;
+  padding-top:5px;
+  text-align:center; 
+  background-color: white; 
+  border: 1px solid #DBDBDB;
+  height:40px;
+  color: gray;
+  font-family: 'FontAwesome'; 
+  overflow: hidden;
+  z-index: 20;
+
+}
+
+.checkbox span
+{
+  display: none;
+}
 
 
 
 
-/* Hidden popup form */
+
+
+
+
+.checkbox label
+{
+  padding-right: 15%;
+  margin-bottom:10px;
+  color: gray ;
+  padding-bottom: 5px;
+  cursor: default;
+}
+
+#tp
+{
+display:none;
+}
+
+
+@media screen and (max-width: 500px){
+
+.checkbox{
+
+font-size: 1.15rem;
+margin-top: 1rem;
+display: inline-block;
+padding-right: 15%;
+padding-bottom:1rem;
+}
+
+
+    /*margin-top: -0.25em; */
+    /*margin-top: 4px; */
+    /* 4px */
+    /*margin-right: 0.25em; */
+    /* 4px */
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 500px){
+
+.inputfile-6 + label
+{
+  padding-left: 5%;
+}
+
+
+.inputfile-6 + label span{
+
+  width:70%;
+}
+
+
+
+.checkbox label
+{
+  
+  text-align: center;
+  color: gray ;
+  margin-bottom: 0.5rem;
+  
+}
+}
+
+
+
+
+@media only screen and (max-width: 700px) and (min-width: 500px){
+
+#contact_form input[type=checkbox] {
+   height: 20px;
+width:10%;
+
+   margin-left:70%;
+  
+}
+
+.checkbox{
+
+font-size: 1.3rem;
+margin-top: 0.5rem;
+display: inline-block;
+padding-right: 15%;
+padding-bottom:0.5rem;
+}
+
+.checkbox label
+{
+  
+  text-align: center;
+  color: gray ;
+  margin-bottom: 1rem;
+  
+}
+}
+
+@media screen and (max-width: 1000px) and (min-width:700px ){
+
+#contact_form input[type=checkbox] {
+   height: 20px;
+width:10%;
+
+   margin-left:70%;
+  
+}
+
+.checkbox{
+
+font-size: 1.3rem;
+margin-top: 1rem;
+display: inline-block;
+padding-right: 15%;
+padding-bottom:1rem;
+}
+
+.checkbox label
+{
+  
+  text-align: center;
+  color: gray ;
+  margin-bottom: 1rem;
+  
+}
+}
+
+@media only screen and (max-width: 1100px) and (min-width:1000px){
+
+#contact_form input[type=checkbox] {
+   height: 20px;
+width:10%;
+
+   margin-left:65%;
+  
+}
+
+.checkbox{
+
+font-size: 1.3rem;
+margin-top: 1rem;
+display: inline-block;
+padding-right: 10%;
+padding-bottom:0.5rem;
+}
+
+.checkbox label
+{
+  
+  text-align: center;
+  color: gray ;
+  margin-bottom: 0.5rem;
+  
+}
+}
+
+@media only screen and (max-width: 1300px) and (min-width:1100px){
+
+#contact_form input[type=checkbox] {
+   height: 20px;
+width:10%;
+
+   margin-left:65%;
+  
+}
+
+.checkbox{
+
+font-size: 1.5rem;
+margin-top: 1rem;
+display: inline-block;
+padding-right: 10%;
+padding-bottom:0.5rem;
+}
+
+.checkbox label
+{
+  
+  text-align: center;
+  color: gray ;
+  margin-bottom: 0.5rem;
+  
+}
+}
+
+
+
+
+
+
+#menu-toggle ,#menu-toggle1 {
+
+  position: relative;
+  z-index: 20;
+}
+
+#menu-toggle span, #menu-toggle1 span{
+ 
+display: none
+
+}
+
+#menu-toggle:hover,#menu-toggle1:hover{
+
+  z-index: 21;
+}
+
+#menu-toggle:hover span,#menu-toggle1:hover span{
+
+ display: block;
+  
+  padding: 5px;
+  border:2px solid white;
+  color: white;
+  background-color: black;
+  font-size:12px;
+  text-decoration: none;
+  text-align:left;
+  position: absolute;
+  
+bottom: 120%;
+  float: top;
+  border-radius: 6px;
+  
+ 
+  
+  
+ 
+}
+   
+
+
+
+
+/*  for Case Evolution */
+
+#demof {
+border: 1px solid #ccc;
+margin: 25px 0;
+}
+#demof ul {
+padding: 0;
+list-style: none;
+}
+#demof li {
+padding: 20px;
+border-bottom: 1px dashed #ccc;
+}
+#demof li.odd {
+background: #fafafa;
+}
+#demof li:after {
+content: '';
+display: block;
+clear: both;
+}
+#demof img {
+float: left;
+width: 15%;
+margin: 5px 15px 0 0;
+}
+#demof a {
+font-family: Arial, sans-serif;
+font-size: 20px;
+font-weight: bold;
+color: #06f;
+}
+#demof p {
+margin: 15px 0 0;
+font-size: 14px;
+}
+
+
+
+/*  for case evolution*/
 
 
 
@@ -179,7 +512,7 @@
    border: 1px solid #DBDBDB;
     background-color: white;
     height:40px;
-    padding-left: 32px;
+    
 }
 
 
@@ -269,6 +602,7 @@
 @media screen and (max-width: 50em) {
   .inputfile-6 + label strong {
     display: block;
+    padding-right:30%
   }
 }
 
@@ -949,7 +1283,7 @@ select.list1{
    <div class="col-sm-6">
    
    <!--<input type="email" name="email" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required><br /><br/>-->
-    <textarea name="abstract" style="min-width: 70%;color: gray" rows="3" maxlength="150" cols="150" placeholder="&#xf1fc; Abstract" title=" Please enter 150 characters abstract for the Case "  required></textarea><br/> <br/>
+    <textarea name="abstract" style="width: 70%;color: gray" rows="3" maxlength="150" cols="150" placeholder="&#xf1fc; Abstract" title=" Please enter 150 characters abstract for the Case "  required></textarea><br/> <br/>
 
    
 
@@ -957,22 +1291,24 @@ select.list1{
   <!-- <input  type="file" name="profileImg" accept=".pdf" id="profileImg"  placeholder="file" title="Please provide a PDF file of the Case. Max size 1MB." required><br/> -->
 
 <input type="file" name="profileImg" id="file-7" accept=".pdf" class="inputfile inputfile-6"  data-multiple-caption="{count} files selected" required />
-          <label for="file-7" title="Please provide a PDF file of the Case. Max size 1MB." style="margin-left: 80px" ><span></span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload a Case </strong></label>
-<div id="valid_msg"> </div>
+          <label for="file-7" title="Please provide a PDF file of the Case. Max size 1MB." style="margin-left: 15%" ><span></span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload a Case </strong></label>
+<p id="valid_msg"> </p>
    
   
    
    <!--<input type="text"  id="tagsinputbox" name="tagsinputbox" data-role="tagsinput" placeholder="&#xf022;  Key Terms" title="Please enter the key terms of the case" ></input> <br/><br/> -->
     
 
-  <div class="checkbox" style=" font-size: 20px; width: 360px;margin-left: 80px;padding-right: 100px;padding-top:5px;text-align:center; background-color: white; border: 1px solid #DBDBDB;height:40px;color: gray;font-family: 'FontAwesome';">
-<label><input type="checkbox" value="yes"  name="copyright" style="height: 20px;width:80px;font-size: 20px; margin-left: 220px;" title="Allow SEABED to publish this work" required />Provide Right To Publish</label></div> <br/>
+   <div class="checkbox"> 
+<label><input type="checkbox" value="yes"  name="copyright" title="Allow SEABED to publish this work" required />Provide Right To Publish</label></div><br/><br/>
   
-  &nbsp;<input type="checkbox" name="notification" value="yes" style="height:15px; width:15px;margin-left:10% "><span style="padding-right: 20%;margin-bottom:10px;color: maroon;padding-bottom: 5px"><b> Notify me regarding any activity for this Case. </b></span>    <br/>
+  
   <div class="row">
   <div class="col-sm-2" ></div>
   <div class="col-sm-10"><div id="recaptcha1"></div></div>
-</div>
+</div> <br/>
+
+<input type="checkbox" name="notification" value="yes" style="height:15px; width:15px;margin-left:10% "><span style="padding-right: 20%;margin-bottom:10px;color: gray ;padding-bottom: 5px"><b> Notify me regarding any activity for this Case. </b></span>    <br/>
   
   <!-- <input type="text" value="design,testing" id="tagsinputbox" name="tagsinputbox"data-role="tagsinput"placeholder="&#xf022;  Key Terms" title="Please enter the key terms of the case" required></input> 
    <input type="checkbox" name="copyright" title="would you like to give us right to publish this case on seabed" >  -->
@@ -992,9 +1328,10 @@ select.list1{
   border: 1px solid #DBDBDB;
   padding-left: 4px;
   text-align: center;
-  margin: auto;
+  
   line-height:2px;
   font-weight:bold;
+  margin-left:50%;
   font-size:15px;" title="Please Submit after checking all the fields">
     <!--<button type="submit" class="button">Submit</button>-->
    
@@ -1010,6 +1347,10 @@ select.list1{
     </div>
   </div> 
 </div> <!-- form area end-->
+
+
+
+
 
 
 
@@ -2133,9 +2474,9 @@ jQuery(document).ready(function($){
 
 <select id="case_evolve" name="case_evolve" style="width:65%; height: 40px;color:darkblue ;cursor: pointer;border-radius:3px; padding-left: 10px;margin-left: 35%;" >
    <option value="Select_Case">Select Case</option>
-  <option value="821548">Sample Case</option>
+  <option value="821548">All Is Well Case</option>
   <option value="960214" >Twitter Case Study</option>
-  <option value="124532">Software Engineering Case Based Learning Exercise</option>
+  
   
  
 </select>
@@ -2156,7 +2497,7 @@ jQuery(document).ready(function($){
 
 
 <input type="file" name="jus" id="file-8.1" accept=".pdf" class="Justify"  data-multiple-caption="{count} files selected"  required />
-          <label for="file-8.1" title="Please provide a PDF file which will jusify the revision. Max size 1MB." style="margin-left:80px"  ><span style="padding-right: 60px;"> upload justification file</span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload Justification</strong></label>
+          <label for="file-8.1" title="Please provide a PDF file which will jusify the revision. Max size 1MB." style="margin-left:80px"  ><span style="padding-right: 60px;"> upload justification doc.</span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload Justification</strong></label>
 <div id="valid_msg1.1"><span id="1.1"></span></div><br/>
 
 <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal" id="disapper2" style="display: none">Author details </button>
@@ -2175,9 +2516,9 @@ jQuery(document).ready(function($){
 
 <select id="case_evolve2" name="case_evolve2" style="width:65%; height: 40px;color:darkblue ;cursor: pointer;border-radius:3px; padding-left: 10px;margin-left: 35%;" >
     <option value="Select_Case">Select Case</option>
-  <option value="821548">Sample Case</option>
+  <option value="821548">All Is Well Case</option>
   <option value="960214" >Twitter Case Study</option>
-  <option value="124532">Software Engineering Case Based Learning Exercise</option>
+  
   
  
 </select>
@@ -2209,7 +2550,7 @@ jQuery(document).ready(function($){
 
 <div id="page-content-wrapper">
 
-<div class="blog_area">
+
 
   <div class="container">
  
@@ -2218,114 +2559,53 @@ jQuery(document).ready(function($){
     <div class="row">
       <div class="blog_section">
            
- <h1>CASE <span>EVOLUTION</span>   <a href="#" class="btn btn-success" id="menu-toggle" style="margin-left:70%; ">Revision</a> &nbsp; <a href="#" class="btn btn-success" id="menu-toggle1" title="an experience report is one comprehensive document that includes the experiences, empirical analysis, recommendations, comments">Experience Report</a>   </h1>  <br/>
+ <h1>CASE <span>EVOLUTION</span> </h1> <br/>  
+ <a href="#" class="btn btn-success" id="menu-toggle">Case Revision<span>Please revise the existing Cases</span></a> &nbsp;&nbsp; <a href="#" class="btn btn-success" id="menu-toggle1">Experience Report<span> A comprehensive document that includes experiences,<br/> empirical analysis, recommendations, comments and <br/>solutions for a Case </span></a>     <br/>
 
 
-          <div class="single_blog col-md-3 slider-content">
-           
-                <a href="#" target="_blank">
-                <img src="img/5.jpg" alt="">
-                <div class="slider-text">
-                  <h3 >Twitter Case Study</h3>
-                  <!--<p> <i class="fa fa-user"></i> By FAHEM <i class="fa fa-clock-o"></i> August 31th, 2014</p>-->
-                  <p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year</p>
-                </div>
-            </a>
-            <div id="Output5"></div>
-          </div> 
-          <div class="single_blog col-md-3 slider-content">
-            <a href="#" target="_blank">
-                <img src="img/6.jpg" alt="">
-                <div class="slider-text">
-                  <h3>All Is Well Case</h3>
-                 <!-- <p> <i class="fa fa-user"></i> By FAHEM <i class="fa fa-clock-o"></i> August 31th, 2014</p>     -->             
-                  <p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
-select the technology stack for development</p>
-                </div>
-            </a>
-          </div> 
-          <div class="single_blog col-md-3 slider-content">
-             <a href="#" target="_blank">
-                <img src="img/5.jpg" alt="">
-                <div class="slider-text">
-                  <h3>Twitter Case Study</h3>
-                  <!--<p> <i class="fa fa-user"></i> By FAHEM <i class="fa fa-clock-o"></i> August 31th, 2014</p>                  -->
-                  <p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year</p>
-                </div>
-            </a>
-          </div>   
-<div class="single_blog col-md-3 slider-content">
-             <a href="#" target="_blank">
-                <img src="img/6.jpg" alt="">
-                <div class="slider-text">
-                  <h3>All Is Well Case</h3>
-                  <!--<p> <i class="fa fa-user"></i> By FAHEM <i class="fa fa-clock-o"></i> August 31th, 2014</p>                  -->
-                  <p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
-select the technology stack for development</p>
-                </div>
-            </a>
-          </div>                              
-      </div>
-    </div>
+<div class="container"  style=" width: 80%" >
 
-<br/>
+<div id="demof">
+                  
+  <ul  role="tablist">
+    
+    <li><a href="http://seabed.in/case-study/twitter-case-study.pdf" target="_blank"><img src="img/5.jpg" alt="" /> Twitter Case Study </a>
+<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-10</span> </p>
+</li>
+<li><a href="http://seabed.in/case-study/Design-All-is-Well-Case.pdf" target="_blank"> <img src="img/6.jpg" alt="" /> All Is Well Case </a>
+<p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
+select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-11</span></p>
+</li>
 
-<br/>
+
+
+</ul>
+</div>
+     <ul class="pagination" style="text-align: center;">
+    <li><a href="#">«</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><a href="#">7</a></li>
+    <li><a href="#">8</a></li>
+    
+    <li><a href="#">»</a></li>
+  </ul>   
+  
+ </div>
+
+          
  
-<div class="row">
-      <div class="blog_section">
-           
-          <div class="single_blog col-md-3 slider-content">
-            <a href="#" target="_blank">
-                <img src="img/5.jpg" alt="">
-                <div class="slider-text">
-                  <h3>Twitter Case Study</h3>
-                  <!--<p> <i class="fa fa-user"></i> By FAHEM <i class="fa fa-clock-o"></i> August 31th, 2014</p>-->
-                  <p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year</p>
-                </div>
-            </a>
-          </div> 
-          <div class="single_blog col-md-3 slider-content">
-             <a href="#" target="_blank">
-                <img src="img/6.jpg" alt="">
-                <div class="slider-text">
-                  <h3>All Is Well Case</h3>
-                 <!-- <p> <i class="fa fa-user"></i> By FAHEM <i class="fa fa-clock-o"></i> August 31th, 2014</p>     -->             
-                  <p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
-select the technology stack for development</p>
-                </div>
-            </a>
-          </div> 
-          <div class="single_blog col-md-3 slider-content">
-             <a href="#" target="_blank">
-                <img src="img/5.jpg" alt="">
-                <div class="slider-text">
-                  <h3>Twitter Case Study</h3>
-                  <!--<p> <i class="fa fa-user"></i> By FAHEM <i class="fa fa-clock-o"></i> August 31th, 2014</p>                  -->
-                  <p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year</p>
-                </div>
-            </a>
-          </div>   
-<div class="single_blog col-md-3 slider-content">
-             <a href="#" target="_blank">
-                <img src="img/6.jpg" alt="">
-                <div class="slider-text">
-                  <h3>All Is Well Case</h3>
-                  <!--<p> <i class="fa fa-user"></i> By FAHEM <i class="fa fa-clock-o"></i> August 31th, 2014</p>                  -->
-                  <p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
-select the technology stack for development</p>
-                </div>
-            </a>
-          </div>                              
-      </div>
-    </div>
-<br/>
-
-  </div>
-</div><!-- blog area end   -->
 
 </div>
 </div>
+</div>
+</div>
+</div>
+
 
 
 
