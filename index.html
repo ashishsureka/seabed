@@ -1,4 +1,4 @@
- <!doctype html>
+﻿ <!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -81,6 +81,9 @@
     <!--<link rel="stylesheet" href="runnable.css" />-->
 
 <style>
+
+
+
 
 #contact_form input[type=checkbox] {
 
@@ -445,7 +448,7 @@ font-size: 14px;
 }
 
 .inputfile + label,.Revision + label ,.Report + label,.Ref + label ,.Rec + label,.Justify +label {
-    max-width: 70%;
+    max-width: 70.5%;
      
    
     font-size: 1.25rem;
@@ -501,12 +504,25 @@ font-size: 14px;
   
 /* style 6 */
 
-.inputfile-6 + label,.Revision+ label,.Report+ label ,.Ref+ label,.Rec+ label,.Justify+ label{
+.inputfile-6 + label{
+   /* color: #d3394c; */
+   color:black;
+   font-size: 1em;
+   padding-top: 10px;
+
+
+   border: 1px solid #DBDBDB;
+    background-color: white;
+    height:40px;
+    
+}
+
+.Revision+ label,.Report+ label ,.Ref+ label,.Rec+ label,.Justify+ label{
    /* color: #d3394c; */
    color:black;
    font-size: 15px;
    padding-top: 10px;
-
+   padding-right:10px; 
 
    border: 1px solid #DBDBDB;
     background-color: white;
@@ -598,24 +614,7 @@ font-size: 14px;
     background-color: #722040;
 }
 
-@media screen and (max-width: 50em) {
-  .inputfile-6 + label strong {
-    display: block;
-    padding-right:30%
-  }
-}
 
-@media screen and (max-width: 50em) {
-  .Revision + label strong ,.Ref + label strong, .Rec + label strong ,.Justify + label strong  {
-    display: block;
-  }
-}
-
-@media screen and (max-width: 50em) {
-  .Report + label strong {
-    display: block;
-  }
-}
 
 
 
@@ -667,12 +666,12 @@ input[type=submit] {
    
     background-color:#3498db;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding: 2% 2%;
+    margin: 2% 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  width: 10em;  height: 2em;
+  width: 60%;  height: 1.2rem;
 }
 /*
 input[type=file] {
@@ -1234,16 +1233,16 @@ select.list1{
 <input  name="date" id="date" placeholder="&#xf073;  Submission Date" title="Please enter the date of Case submission" required/><br/><br/>
  <div class="my-form">
 
- <p class="text-box" >
+ <p class="text-box"  >
             
-            <input type="text" name="boxes[]" value="" id="first1" style="width:170px; margin-right: 5px" placeholder="&#xf0c0; First Name" title="Please enter first name of author(s)involved" required /> 
-            <input type="text" name="boxes[]" value="" id="last1" style="width:170px;margin-left: 13px" placeholder="&#xf0c0; Last Name" title="Please enter last name of author(s)involved" required /> <br/><br/>
+            <input type="text" name="boxes[]" value="" id="first1" style="width:34%; margin-left:0.8%; margin-right: 1%" placeholder="&#xf0c0; First Name" title="Please enter first name of author(s)involved" required /> 
+            <input type="text" name="boxes[]" value="" id="last1" style="width:34%; margin-left: 0.2%" placeholder="&#xf0c0; Last Name" title="Please enter last name of author(s)involved" required /> <br/><br/>
             <input type="email" name="boxes[]" value="" id="email1" style="width:70%"  placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required /><br/><br/>
-             <input type="text" name="boxes[]" value="" id="af1" style="margin-left: 60px; width:70%" placeholder="&#xf19c; Affiliation" title="Please provide author's affiliation" required />
+             <input type="text" name="boxes[]" value="" id="af1" style="margin-left:11%; width:70%" placeholder="&#xf19c; Affiliation" title="Please provide author's affiliation" required />
       
             <a class="add-box" href="#">Add More</a>
-        </p>  </div> <br/>
-   <input type="text" list="fields" name="fields" placeholder="&#xf03a;  Category" title="Please select the category of the Case" required />
+        </p>  </div>
+   <input type="text" list="fields" name="fields" placeholder="&#xf03a;  Category" style="margin-top:8px" title="Please select the category of the Case" required />
   <datalist id="fields" name="fields">
   <option>Requirements</option>
   <option>Design</option>
@@ -1282,7 +1281,9 @@ select.list1{
    <div class="col-sm-6">
    
    <!--<input type="email" name="email" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required><br /><br/>-->
-    <textarea name="abstract" style="width: 70%;color: gray" rows="3" maxlength="150" cols="150" placeholder="&#xf1fc; Abstract" title=" Please enter 150 characters abstract for the Case "  required></textarea><br/> <br/>
+    <textarea name="abstract" style="width: 70%;color: gray;margin-bottom:15px" rows="3" maxlength="150" cols="150" placeholder="&#xf1fc; Abstract" title=" Please enter 150 characters abstract for the Case "  required></textarea> 
+    
+ <br/> 
 
    
 
@@ -1290,7 +1291,7 @@ select.list1{
   <!-- <input  type="file" name="profileImg" accept=".pdf" id="profileImg"  placeholder="file" title="Please provide a PDF file of the Case. Max size 1MB." required><br/> -->
 
 <input type="file" name="profileImg" id="file-7" accept=".pdf" class="inputfile inputfile-6"  data-multiple-caption="{count} files selected" required />
-          <label for="file-7" title="Please provide a PDF file of the Case. Max size 1MB." style="margin-left: 15%" ><span></span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload a Case </strong></label>
+          <label for="file-7" title="Please provide a PDF file of the Case. Max size 1MB." style="margin-left: 14.8%;margin-bottom:0" ><span></span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload a Case </strong></label>
 <p id="valid_msg"> </p>
    
   
@@ -1299,14 +1300,16 @@ select.list1{
     
 
    <div class="checkbox"> 
-<label><input type="checkbox" value="yes"  name="copyright" title="Allow SEABED to publish this work" required />Provide Right To Publish</label></div><br/><br/>
+<label><input type="checkbox" value="yes"  name="copyright" title="Allow SEABED to publish this work" required />Provide Right To Publish</label></div>
+<br/>
   
-  
+  <div id="recaptcha1" style="display:inline-block;margin-top:5px;"></div> <br/><br/>
+  <!--  
   <div class="row">
   <div class="col-sm-2" ></div>
-  <div class="col-sm-10"><div id="recaptcha1"></div></div>
+  <div class="col-sm-10"></div>
 </div> <br/>
-
+-->
 <input type="checkbox" name="notification" value="yes" style="height:15px; width:15px;margin-left:10% "><span style="padding-right: 20%;margin-bottom:10px;color: gray ;padding-bottom: 5px"><b> Notify me regarding any activity for this Case. </b></span>    <br/>
   
   <!-- <input type="text" value="design,testing" id="tagsinputbox" name="tagsinputbox"data-role="tagsinput"placeholder="&#xf022;  Key Terms" title="Please enter the key terms of the case" required></input> 
@@ -1319,19 +1322,12 @@ select.list1{
 -->
 <br/>
 <br/>
-   
+ <br/>
+  
+    <input type="submit" value="Submit" style="width:30%;font-weight:bold" title="Please Submit after checking all the fields">
    </div>
-   <br/>
   
-   <input type="submit" value="Submit" style="width:20% ;height: 40px;
-  border: 1px solid #DBDBDB;
-  padding-left: 4px;
-  text-align: center;
-  
-  line-height:2px;
-  font-weight:bold;
-  margin-left:50%;
-  font-size:15px;" title="Please Submit after checking all the fields">
+   
     <!--<button type="submit" class="button">Submit</button>-->
    
   </div>
@@ -2312,7 +2308,7 @@ select.list1{
  <!-- <img src="img/search.jpg" align="right" style="  margin-bottom:100px margin-top:120px" width="150" height="150">-->
   
   
-   <input type="submit" style="width:150px;height: 40px; padding-top:10px; "  value="Search" title="Search">
+   <input type="submit" style="width: 15%;height: 37px; text-align: center; padding-top: 15px; " value="Search" title="Search">
   <!-- <button type="submit" class="button">Search</button>-->
 
   </div>
@@ -2403,7 +2399,7 @@ jQuery(document).ready(function($){
         var n = $('.text-box2').length + 1;
     if(n!=5)
   {
-       var box_html2 = $('<p class="text-box2"> <input type="text" name="boxes2[]" style="width:30%" value="" id="firstName' + n + '" placeholder="&#xf0c0; First Name " title="Please enter first name of the author(s)involved"required /> <input type="text" name="boxes2[]" style="width:30%" value="" id="lastName' + n + '" placeholder="&#xf0c0; Last Name" title="Please enter last name of the author(s)involved"required />&nbsp;<input type="text" name="boxes2[]" style="width:30%" value="" id="aFfiliation' + n + '" placeholder=" &#xf19c;   Affiliation" title="Please provide author \' Affiliation " required /><input type="email" name="boxes2[]" style="width:60%;margin-right:21%" value="" id="eMail'+n+'" placeholder=" &#xf0e0; email" title="Please enter the email id of the author(s)" required /> <a href="#" class="remove-box2">Remove</a></p>');
+       var box_html2 = $('<p class="text-box2"> <input type="text" name="boxes2[]" style="width:30%" value="" id="firstName' + n + '" placeholder="&#xf0c0; First Name " title="Please enter first name of the author(s)involved"required /> <input type="text" name="boxes2[]" style="width:30%" value="" id="lastName' + n + '" placeholder="&#xf0c0; Last Name" title="Please enter last name of the author(s)involved"required />&nbsp;<input type="text" name="boxes2[]" style="width:30%" value="" id="aFfiliation' + n + '" placeholder=" &#xf19c;   Affiliation" title="Please provide author \' Affiliation " required /><input type="email" name="boxes2[]" style="width:60%;margin-right:21%" value="" id="eMail'+n+'" placeholder=" &#xf0e0; Email Address" title="Please enter the email id of the author(s)" required /> <a href="#" class="remove-box2">Remove</a></p>');
         
         box_html2.hide();
         $('.my-form2 p.text-box2:last').after(box_html2);
@@ -2490,12 +2486,12 @@ jQuery(document).ready(function($){
 
 
 <input type="file" name="revision" id="file-8" accept=".pdf" class="Revision"  data-multiple-caption="{count} files selected"  required />
-          <label for="file-8" title="Please provide a PDF file of the Revision document. Max size 1MB." style="margin-left:80px"  ><span style="padding-right: 60px;"> upload revision</span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload Revision</strong></label>
+          <label for="file-8" title="Please provide a PDF file of the Revision document. Max size 1MB." style="margin-left:80px"  ><span style="padding-right: 60px;"> upload case revision</span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload Revision</strong></label>
 <div id="valid_msg1"><span id="1"></span></div><br/>
 
 
 <input type="file" name="jus" id="file-8.1" accept=".pdf" class="Justify"  data-multiple-caption="{count} files selected"  required />
-          <label for="file-8.1" title="Please provide a PDF file which will jusify the revision. Max size 1MB." style="margin-left:80px"  ><span style="padding-right: 60px;"> upload justification doc.</span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload Justification</strong></label>
+          <label for="file-8.1" title="Please provide a PDF file which will jusify the revision. Max size 1MB." style="margin-left:80px"  ><span style="padding-right: 60px;"> upload justification doc.</span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg>Upload Justification </strong></label>
 <div id="valid_msg1.1"><span id="1.1"></span></div><br/>
 
 <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal" id="disapper2" style="display: none">Author details </button>
@@ -2529,7 +2525,7 @@ jQuery(document).ready(function($){
 
 
 <input type="file" name="report" id="file-9" accept=".pdf" class="Report"  data-multiple-caption="{count} files selected" required />
-          <label for="file-9" title="Please provide a PDF file of the Report . Max size 1MB." style="margin-left: 80px" ><span style="padding-right: 60px"> Upload Report </span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload Report </strong></label>
+          <label for="file-9" title="Please provide a PDF file of the Report . Max size 1MB." style="margin-left: 80px" ><span style="padding-right: 60px"> Upload Report </span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg>Upload Report</strong></label>
 <div id="valid_msg2"><span id="2"></span></div><br/>
 
 
@@ -3240,7 +3236,6 @@ function validateFileExtension(component,msg_id,msg,extns,$label1)
       }
       if(flag!=0)
       {
-        
          document.getElementById(msg_id).innerHTML='<span style="color: red">'+msg+'</span>';
          component.value="";
          component.style.backgroundColor="#eab1b1";
@@ -3288,7 +3283,7 @@ function validateFileSize(component,maxSize,msg_id,msg,$label1)
    }
    if(size!=undefined && size>maxSize)
    {
-    
+       
       document.getElementById(msg_id).innerHTML='<span style="color: red">'+msg+'</span>';
       component.value="";
       component.style.backgroundColor="#eab1b1";
@@ -3934,7 +3929,7 @@ jQuery(document).ready(function($){
         var n = $('.text-box').length + 1;
     if(n!=5)
   {
-       var box_html = $('<p class="text-box"> <input type="text" name="boxes[]" style="width:170px; margin-right: 5px;margin-left:8px" value="" id="first' + n + '" placeholder="&#xf0c0; First Name " title="Please enter first name of the author(s)involved"required /> <input type="text" name="boxes[]" style="width:170px; margin-left: 13px" value="" id="last' + n + '" placeholder="&#xf0c0; Last Name" title="Please enter last name of the author(s)involved"required /> <br/><br/>  <input type="email" name="boxes[]" style="width:70%" value="" id="email' + n + '" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required /> <br/><br/> <input type="text" name="boxes[]" style="margin-left: 50px; width:70%" value="" id="af'+n+'" placeholder="&#xf19c; Affiliation" title="Please provide author\'s affiliation" required /> <a href="#" class="remove-box">Remove</a></p>');
+       var box_html = $('<p class="text-box"> <input type="text" name="boxes[]" style="width:34%; margin-right: 1%;margin-left:0.1%" value="" id="first' + n + '" placeholder="&#xf0c0; First Name " title="Please enter first name of the author(s)involved"required /> <input type="text" name="boxes[]" style="width:34%; margin-left: 0.2%" value="" id="last' + n + '" placeholder="&#xf0c0; Last Name" title="Please enter last name of the author(s)involved"required /> <br/><br/>  <input type="email" name="boxes[]" style="width:70%" value="" id="email' + n + '" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required /> <br/><br/> <input type="text" name="boxes[]" style="margin-left:10%; width:70%" value="" id="af'+n+'" placeholder="&#xf19c; Affiliation" title="Please provide author\'s affiliation" required /> <a href="#" class="remove-box">Remove</a></p>');
         
         box_html.hide();
         $('.my-form p.text-box:last').after(box_html);
