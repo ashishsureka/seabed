@@ -60,7 +60,14 @@ $title = $_POST['title'];
 $category = $_POST['fields'];
 $key_terms=$_POST['tagsinputbox'];
 $key_terms = preg_replace("/[^a-z0-9\s\,]/i", "", $key_terms);
-$date = $_POST['date'];
+
+
+
+ $time=time();
+
+$actual_time=date('d M Y ', $time);
+
+$date=$actual_time;
 $arr=$_POST['boxes'];
 $val1=rand(1000,999999);
 $id=$val1;
