@@ -50,7 +50,6 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
      <link rel="stylesheet" type="text/css" href="sidebar.css">
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -2369,8 +2368,7 @@ select.list1{
             </p>
             </div>
 
-            
-<input type="date" style="margin-right: 60%" name="date" id="date2" placeholder="&#xf073; Submission Date" title="Please enter the date of Case submission" required/><br/><br/>
+  <br/>         
 <input type="checkbox" name="notification" value="yes" style="height:20px; width:20px;"><span style="padding-right: 40%; margin-right:20%;margin-bottom:10px;color: maroon"><b> Notify me regarding any activity for this Case. </b></span>    <br/>
 
 <div id="recaptcha2"></div>
@@ -2405,7 +2403,7 @@ jQuery(document).ready(function($){
         var n = $('.text-box2').length + 1;
     if(n!=5)
   {
-       var box_html2 = $('<p class="text-box2"> <input type="text" name="boxes2[]" style="width:30%" value="" id="firstName' + n + '" placeholder="&#xf0c0; First Name " title="Please enter first name of the author(s)involved"required /> <input type="text" name="boxe2[]" style="width:30%" value="" id="lastName' + n + '" placeholder="&#xf0c0; Last Name" title="Please enter last name of the author(s)involved"required />&nbsp;<input type="text" name="boxes2[]" style="width:30%" value="" id="aFfiliation' + n + '" placeholder=" &#xf19c;   Affiliation" title="Please provide author \' Affiliation " required /><input type="email" name="boxes2[]" style="width:60%;margin-right:21%" value="" id="eMail'+n+'" placeholder=" &#xf0e0; email" title="Please enter the email id of the author(s)" required /> <a href="#" class="remove-box2">Remove</a></p>');
+       var box_html2 = $('<p class="text-box2"> <input type="text" name="boxes2[]" style="width:30%" value="" id="firstName' + n + '" placeholder="&#xf0c0; First Name " title="Please enter first name of the author(s)involved"required /> <input type="text" name="boxes2[]" style="width:30%" value="" id="lastName' + n + '" placeholder="&#xf0c0; Last Name" title="Please enter last name of the author(s)involved"required />&nbsp;<input type="text" name="boxes2[]" style="width:30%" value="" id="aFfiliation' + n + '" placeholder=" &#xf19c;   Affiliation" title="Please provide author \' Affiliation " required /><input type="email" name="boxes2[]" style="width:60%;margin-right:21%" value="" id="eMail'+n+'" placeholder=" &#xf0e0; email" title="Please enter the email id of the author(s)" required /> <a href="#" class="remove-box2">Remove</a></p>');
         
         box_html2.hide();
         $('.my-form2 p.text-box2:last').after(box_html2);
@@ -4325,7 +4323,7 @@ function clearInput(){
   
   $("form#data7").submit(function(event){
  
-if (document.getElementById('firstName').value == "" ||document.getElementById('lastName').value == "" || document.getElementById('eMail').value == "" || document.getElementById('aFfiliation').value == ""|| document.getElementById('date2').value == "") {
+if (document.getElementById('firstName').value == "" ||document.getElementById('lastName').value == "" || document.getElementById('eMail').value == "" || document.getElementById('aFfiliation').value == "") {
 alert("Fill All Fields !");
 event.preventDefault();
 
