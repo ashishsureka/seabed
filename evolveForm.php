@@ -39,9 +39,6 @@ $_SESSION['try']=$try;
  $_SESSION['author_details']= serialize( $_POST['boxes2'] );
 
 
-$_SESSION['date']=$_POST['date'];
-
-
 if(isset($_POST['notification'])&&!empty($_POST['notification']))
  $notify="ON";
 else
