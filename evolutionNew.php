@@ -115,7 +115,12 @@ $rec='';
 
 $id=$_POST['case_evolve'];
 $notify=$_SESSION['notify'];
- $date1=$_SESSION['date'];
+ $time=time();
+
+$actual_time=date('d M Y ', $time);
+
+
+ $date1=$actual_time;
 
 $query1="SELECT `title` FROM `formdata` WHERE `id` = '".$id."' ";
 
@@ -129,8 +134,7 @@ $query1="SELECT `title` FROM `formdata` WHERE `id` = '".$id."' ";
 
 $title=mysql_real_escape_string($title);
 
-$query="INSERT INTO `case_revision` (`id`, `case_Id`, `revision`, `justification`, `report`, `experience`, `recommendation`, `notification`, `SubDate`, `allow`, `ref`, `authorCount`, `author`) VALUES ('$val1', '$id', '$rev', '$jus', '$rep', '$exp', '$rec', '$notify', '$date1', '0', '$ref', '$authorCount', 'author_details')";
-
+$query="INSERT INTO `case_revision` (`id`, `case_Id`, `revision`, `justification`, `report`, `notification`, `SubDate`, `allow`, `authorCount`, `author`) VALUES ('$val1', '$id', '$rev', '$jus', '$rep','$notify', '$date1', '0', '$authorCount', '$author_details')";
 if($query_run=mysql_query($query))
 {
 
