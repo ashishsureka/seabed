@@ -1,4 +1,4 @@
-﻿ <!doctype html>
+ <!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -10,12 +10,9 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script>
-
-<script src="js/bootstrap.min.js"></script>
-
+  
 
 <!--Safe scripts-->
 
@@ -77,10 +74,102 @@
 
     <!-- file upload button link -->
     <script src="js/jquery-v1.min.js"></script>
+    
+    
+    
   
     <!--<link rel="stylesheet" href="runnable.css" />-->
 
 <style>
+
+[data-tip1] {
+    position:relative;
+
+}
+
+[data-tip1]:after {
+    display:none;
+    content:attr(data-tip1);
+    position:absolute;
+    top:5px;
+    left:85%;
+    padding:5px 8px;
+    background:#1a1a1a;
+    border: 2px solid pink;
+    color:#fff;
+    z-index:9;
+    font-family: 'font-awesome';
+    font-size: 0.85em;
+   /* height:18px;
+    line-height:18px; */
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    white-space:nowrap;
+    word-wrap:normal;
+}
+
+[data-tip1]:hover:after {
+    display:block;
+}
+
+[data-tip]:hover:before,
+[data-tip]:hover:after {
+    display:block;
+}
+
+[data-tip] {
+    position:relative;
+
+}
+[data-tip]:before {
+    content:'';
+    /* hides the tooltip when not hovered */
+    display:none;
+    content:'';
+    display:none;
+   border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+
+    border-bottom: 5px solid pink;
+
+    position:absolute;
+    top:30px;
+    left:20%;
+    z-index:8;
+    font-size:0;
+    line-height:0;
+    width:0;
+    height:0;
+     
+}
+[data-tip]:after {
+    display:none;
+    content:attr(data-tip);
+    position:absolute;
+    top:35px;
+    left:19%;
+    padding:5px 8px;
+    background:#1a1a1a;
+    border: 2px solid pink;
+    color:#fff;
+    z-index:9;
+    font-family: 'font-awesome';
+    font-size: 0.85em;
+   /* height:18px;
+    line-height:18px; */
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    white-space:nowrap;
+    word-wrap:normal;
+}
+[data-tip]:hover:before,
+[data-tip]:hover:after {
+    display:block;
+}
+
+/* this was for tooltip at case submission */
 
 
 
@@ -93,31 +182,6 @@ cursor: pointer;
 margin-left: 65%;
 
 }
-
-#contact_form input[type=checkbox] :hover .checkbox
-{
-  z-index: 21;
-}
-#contact_form input[type=checkbox] :hover .checkbox span {
-
-display: block;
-  
-  padding: 5px;
-  border:2px solid white;
-  color: white;
-  background-color: black;
-  font-size:12px;
-  text-decoration: none;
-  text-align:left;
-  position: absolute;
-  
-bottom: 120%;
-  float: top;
-  border-radius: 6px;
-
-
-}
-
 
 
 .checkbox
@@ -134,21 +198,9 @@ bottom: 120%;
   color: gray;
   font-family: 'FontAwesome'; 
   overflow: hidden;
-  z-index: 20;
+  
 
 }
-
-.checkbox span
-{
-  display: none;
-}
-
-
-
-
-
-
-
 
 .checkbox label
 {
@@ -157,11 +209,6 @@ bottom: 120%;
   color: gray ;
   padding-bottom: 5px;
   cursor: default;
-}
-
-#tp
-{
-display:none;
 }
 
 
@@ -183,11 +230,6 @@ padding-bottom:1rem;
     /*margin-right: 0.25em; */
     /* 4px */
 }
-
-
-
-
-
 
 
 @media screen and (max-width: 500px){
@@ -359,9 +401,9 @@ display: none
 #menu-toggle:hover span,#menu-toggle1:hover span{
 
  display: block;
-  
+  font-family:'font-awesome';
   padding: 5px;
-  border:2px solid white;
+  border:2px solid pink;
   color: white;
   background-color: black;
   font-size:12px;
@@ -395,7 +437,7 @@ list-style: none;
 }
 #demof li {
 padding: 20px;
-border-bottom: 1px dashed #ccc;
+
 }
 #demof li.odd {
 background: #fafafa;
@@ -550,7 +592,7 @@ font-size: 14px;
     background-color: white;
     height:40px;
     /*padding-left: 148px; */
-    padding-left: 48%;
+    padding-left: 40%;
 
 
    /* padding: 0; */
@@ -1227,22 +1269,28 @@ select.list1{
               <form id="data" enctype="multipart/form-data"  >
    <div id="inputs">
    <div class="col-sm-6">
-   <input type="text"  name="title"  placeholder="&#xf1fc;  Title"  title="Please enter the title of the Case" required><br/><br/>
+   <div data-tip1="Please enter the title of the Case.">
+   <input type="text"  name="title" maxlength="150" placeholder="&#xf1fc;  Title" required><br/></div>
   <!-- <input type="text" name="author"  placeholder="&#xf0c0;  Author(s)" title="Please enter the name of author(s)involved" required><br /> <br/>-->
    
-<input  name="date" id="date" placeholder="&#xf073;  Submission Date" title="Please enter the date of Case submission" required/><br/><br/>
- <div class="my-form">
+
+ <div class="my-form" style="margin-top:20px">
 
  <p class="text-box"  >
+            <div data-tip1="Please enter name of author(s) involved">
+            <input type="text" name="boxes[]" value="" id="first1" title="" maxlength="50" style="width:34%; margin-left:0.8%; margin-right: 1%" placeholder="&#xf0c0; First Name"  required /> 
+            <input type="text" name="boxes[]" value="" id="last1" maxlength="50" style="width:34%; margin-left: 0.2%" placeholder="&#xf0c0; Last Name"  required /> <br/><br/>
+            </div>
+            <div data-tip1="Please enter the email id of the author(s)">
+            <input type="email" name="boxes[]" value="" id="email1" style="width:70%" maxlength="100" placeholder="&#xf0e0;  Email Address"  required /><br/><br/> </div>
+            <div data-tip="Please provide author's affiliation">
+             <input type="text" name="boxes[]" value="" id="af1" maxlength="100" style=" margin-left:11%; width:70%" placeholder="&#xf19c; Affiliation"  required />
+             <a class="add-box" href="#">Add More</a>
+     </div>
             
-            <input type="text" name="boxes[]" value="" id="first1" style="width:34%; margin-left:0.8%; margin-right: 1%" placeholder="&#xf0c0; First Name" title="Please enter first name of author(s)involved" required /> 
-            <input type="text" name="boxes[]" value="" id="last1" style="width:34%; margin-left: 0.2%" placeholder="&#xf0c0; Last Name" title="Please enter last name of author(s)involved" required /> <br/><br/>
-            <input type="email" name="boxes[]" value="" id="email1" style="width:70%"  placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required /><br/><br/>
-             <input type="text" name="boxes[]" value="" id="af1" style="margin-left:11%; width:70%" placeholder="&#xf19c; Affiliation" title="Please provide author's affiliation" required />
-      
-            <a class="add-box" href="#">Add More</a>
-        </p>  </div>
-   <input type="text" list="fields" name="fields" placeholder="&#xf03a;  Category" style="margin-top:8px" title="Please select the category of the Case" required />
+        </p>  </div>  
+   <div data-tip1="Please select the category of the Case">     
+   <input type="text" list="fields" name="fields" placeholder="&#xf03a;  Category" style="margin-top:8px" title="" required />
   <datalist id="fields" name="fields">
   <option>Requirements</option>
   <option>Design</option>
@@ -1253,8 +1301,12 @@ select.list1{
   <option>Quality</option>
   <option>Economics</option>
   </datalist> <br/> <br/>
-  
-  <input type="text" name="tagsinputbox" placeholder="&#xf022;  Key Terms" title="Please enter the key terms of the Case. Key terms must be comma(,) delimited." required></input> <br/><br/>
+  </div>
+  <div data-tip="Please enter the key terms of the Case. Key terms must be comma(,) delimited.">
+  <input type="text" name="tagsinputbox" maxlength="150" placeholder="&#xf022;  Key Terms" />
+  </div>
+  <br/>
+  <br/>
  <!--
  <p class="text-box">
           
@@ -1281,27 +1333,30 @@ select.list1{
    <div class="col-sm-6">
    
    <!--<input type="email" name="email" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required><br /><br/>-->
-    <textarea name="abstract" style="width: 70%;color: gray;margin-bottom:15px" rows="3" maxlength="150" cols="150" placeholder="&#xf1fc; Abstract" title=" Please enter 150 characters abstract for the Case "  required></textarea> 
-    
- <br/> 
+   <div data-tip1="Please enter 150 characters abstract for the Case">   
+    <textarea name="abstract" style="margin-bottom:15px; width: 70%;color: gray;" rows="3" maxlength="150" cols="150" placeholder="&#xf1fc; Abstract" required></textarea> 
+    </div>
+  
 
    
 
     
   <!-- <input  type="file" name="profileImg" accept=".pdf" id="profileImg"  placeholder="file" title="Please provide a PDF file of the Case. Max size 1MB." required><br/> -->
-
+<div data-tip1="Please provide a Case File. Max size 1MB.">
 <input type="file" name="profileImg" id="file-7" accept=".pdf" class="inputfile inputfile-6"  data-multiple-caption="{count} files selected" required />
-          <label for="file-7" title="Please provide a PDF file of the Case. Max size 1MB." style="margin-left: 14.8%;margin-bottom:0" ><span></span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload a Case </strong></label>
+          <label for="file-7" style="margin-left: 14.8%;margin-bottom:0" ><span></span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload Case File [PDF]</strong></label>
+          </div>
 <p id="valid_msg"> </p>
    
   
    
    <!--<input type="text"  id="tagsinputbox" name="tagsinputbox" data-role="tagsinput" placeholder="&#xf022;  Key Terms" title="Please enter the key terms of the case" ></input> <br/><br/> -->
     
+<div data-tip1=" Allow SEABED to publish this work ">
+   <div class="checkbox" > 
+<label><input type="checkbox" value="yes"  name="copyright" required />Provide Right To Publish</label></div>
+</div>
 
-   <div class="checkbox"> 
-<label><input type="checkbox" value="yes"  name="copyright" title="Allow SEABED to publish this work" required />Provide Right To Publish</label></div>
-<br/>
   
   <div id="recaptcha1" style="display:inline-block;margin-top:5px;"></div> <br/><br/>
   <!--  
@@ -2276,8 +2331,8 @@ select.list1{
               <form id="data1" action="search.php" method="post">
    <div id="inputs1">
    
-   <label> <font style="normal" size="3" color="black">Term 1 :   </font> </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <input type="text" id="term1"  name="term1" placeholder="&#xf1fc;  Term1"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <label> <font style="normal" size="3" color="black">Term 1 :   </font> </label>&nbsp;
+   <input type="text" id="term1" maxlength="180"  name="term1" placeholder="&#xf1fc;  Term1"  > &nbsp;&nbsp;
    <label> <font style="normal" size="3" color="black" >  Field 1:    </font> </label>&nbsp;
  
   <select id="option1" name="option1"style="min-width:10%;">
@@ -2286,16 +2341,16 @@ select.list1{
   <option value="author" >Author</option>
   <option value="category">Category</option>
 </select>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
   <select id="condition" name="condition"style="min-width:7%;" class="list1">
   <option value="and" >AND</option>
   <option value="or" selected>OR</option>
   </select>
    
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <label> <font style="normal" size="3" color="black">Term 2 :   </font> </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+   <label> <font style="normal" size="3" color="black">Term 2 :   </font> </label>&nbsp;
   
-   <input type="text" id="term2"  name="term2" placeholder="&#xf1fc;  Term2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <input type="text" id="term2"  name="term2" maxlength="180" placeholder="&#xf1fc;  Term2">&nbsp;&nbsp;
     <label> <font style="normal" size="3" color="black">  Field 2:    </font> </label> &nbsp;
   
   <select id="option2" name="option2"style="min-width:10%;">
@@ -2307,8 +2362,8 @@ select.list1{
  
  <!-- <img src="img/search.jpg" align="right" style="  margin-bottom:100px margin-top:120px" width="150" height="150">-->
   
-  
-   <input type="submit" style="width: 15%;height: 37px; text-align: center; padding-top: 15px; " value="Search" title="Search">
+  <br/>
+   <input type="submit" style="width: 19%;height: 37px; text-align: center;padding-top:1.5%" value="Search" title="Search">
   <!-- <button type="submit" class="button">Search</button>-->
 
   </div>
@@ -2356,10 +2411,10 @@ select.list1{
       <div class="my-form2">
 
  <p class="text-box2" >
-  <input type="text" name="boxes2[]" value="" id="firstName" style="width:30%;" placeholder="&#xf0c0; First Name" title="Please enter first name of author(s)involved" required /> 
-            <input type="text" name="boxes2[]" value="" id="lastName" style="width:30%;" placeholder="&#xf0c0; Last Name" title="Please enter last name of author(s)involved" required />
-             <input type="text" name="boxes2[]" value="" id="aFfiliation" style=" width:30%" placeholder="&#xf19c; Affiliation" title="Please provide author's affiliation" required />
-            <input type="email" name="boxes2[]" value="" id="eMail" style="width:60% ;margin-right:20.5%;"  placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required />
+  <input type="text" name="boxes2[]" value="" id="firstName" maxlength="50" style="width:30%;" placeholder="&#xf0c0; First Name" title="Please enter first name of author(s)involved" required /> 
+            <input type="text" name="boxes2[]" value="" id="lastName" maxlength="50" style="width:30%;" placeholder="&#xf0c0; Last Name" title="Please enter last name of author(s)involved" required />
+             <input type="text" name="boxes2[]" value="" id="aFfiliation" maxlength="100" style=" width:30%" placeholder="&#xf19c; Affiliation" title="Please provide author's affiliation" required />
+            <input type="email" name="boxes2[]" value="" id="eMail" maxlength="100" style="width:60% ;margin-right:20.5%;"  placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required />
             <a class="add-box2" href="#">Add More</a>
             </p>
             </div>
@@ -2399,7 +2454,7 @@ jQuery(document).ready(function($){
         var n = $('.text-box2').length + 1;
     if(n!=5)
   {
-       var box_html2 = $('<p class="text-box2"> <input type="text" name="boxes2[]" style="width:30%" value="" id="firstName' + n + '" placeholder="&#xf0c0; First Name " title="Please enter first name of the author(s)involved"required /> <input type="text" name="boxes2[]" style="width:30%" value="" id="lastName' + n + '" placeholder="&#xf0c0; Last Name" title="Please enter last name of the author(s)involved"required />&nbsp;<input type="text" name="boxes2[]" style="width:30%" value="" id="aFfiliation' + n + '" placeholder=" &#xf19c;   Affiliation" title="Please provide author \' Affiliation " required /><input type="email" name="boxes2[]" style="width:60%;margin-right:21%" value="" id="eMail'+n+'" placeholder=" &#xf0e0; Email Address" title="Please enter the email id of the author(s)" required /> <a href="#" class="remove-box2">Remove</a></p>');
+       var box_html2 = $('<p class="text-box2"> <input type="text" name="boxes2[]" maxlength="50" style="width:30%" value="" id="firstName' + n + '" placeholder="&#xf0c0; First Name " title="Please enter first name of the author(s)involved"required /> <input type="text" name="boxes2[]" style="width:30%" maxlength="50" value="" id="lastName' + n + '" placeholder="&#xf0c0; Last Name" title="Please enter last name of the author(s)involved"required />&nbsp;<input type="text" name="boxes2[]" style="width:30%" maxlength="100" value="" id="aFfiliation' + n + '" placeholder=" &#xf19c;   Affiliation" title="Please provide author \' Affiliation " required /><input type="email" name="boxes2[]" style="width:60%;margin-right:21%" value="" id="eMail'+n+'" placeholder=" &#xf0e0; email" maxlength="100" title="Please enter the email id of the author(s)" required /> <a href="#" class="remove-box2">Remove</a></p>');
         
         box_html2.hide();
         $('.my-form2 p.text-box2:last').after(box_html2);
@@ -2487,7 +2542,9 @@ jQuery(document).ready(function($){
 
 <input type="file" name="revision" id="file-8" accept=".pdf" class="Revision"  data-multiple-caption="{count} files selected"  required />
           <label for="file-8" title="Please provide a PDF file of the Revision document. Max size 1MB." style="margin-left:80px"  ><span style="padding-right: 60px;"> upload case revision</span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload Revision</strong></label>
+          
 <div id="valid_msg1"><span id="1"></span></div><br/>
+
 
 
 <input type="file" name="jus" id="file-8.1" accept=".pdf" class="Justify"  data-multiple-caption="{count} files selected"  required />
@@ -2526,6 +2583,7 @@ jQuery(document).ready(function($){
 
 <input type="file" name="report" id="file-9" accept=".pdf" class="Report"  data-multiple-caption="{count} files selected" required />
           <label for="file-9" title="Please provide a PDF file of the Report . Max size 1MB." style="margin-left: 80px" ><span style="padding-right: 60px"> Upload Report </span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg>Upload Report</strong></label>
+          
 <div id="valid_msg2"><span id="2"></span></div><br/>
 
 
@@ -2563,7 +2621,7 @@ jQuery(document).ready(function($){
                   
   <ul  role="tablist">
     
-    <li><a href="http://seabed.in/case-study/twitter-case-study.pdf" target="_blank"><img src="img/5.jpg" alt="" /> Twitter Case Study </a>
+    <li style="border-bottom: 1px dashed #ccc;"><a href="http://seabed.in/case-study/twitter-case-study.pdf" target="_blank"><img src="img/5.jpg" alt="" /> Twitter Case Study </a>
 <p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-10</span> </p>
 </li>
 <li><a href="http://seabed.in/case-study/Design-All-is-Well-Case.pdf" target="_blank"> <img src="img/6.jpg" alt="" /> All Is Well Case </a>
@@ -3906,6 +3964,7 @@ $(function(){ // DOM ready
 </script>
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <!--
   <script>
   $(document).ready(function() {
     $("#date").datepicker();
@@ -3913,7 +3972,7 @@ $(function(){ // DOM ready
   });
   </script>
 
- 
+ -->
 
 
 
@@ -3929,7 +3988,7 @@ jQuery(document).ready(function($){
         var n = $('.text-box').length + 1;
     if(n!=5)
   {
-       var box_html = $('<p class="text-box"> <input type="text" name="boxes[]" style="width:34%; margin-right: 1%;margin-left:0.1%" value="" id="first' + n + '" placeholder="&#xf0c0; First Name " title="Please enter first name of the author(s)involved"required /> <input type="text" name="boxes[]" style="width:34%; margin-left: 0.2%" value="" id="last' + n + '" placeholder="&#xf0c0; Last Name" title="Please enter last name of the author(s)involved"required /> <br/><br/>  <input type="email" name="boxes[]" style="width:70%" value="" id="email' + n + '" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required /> <br/><br/> <input type="text" name="boxes[]" style="margin-left:10%; width:70%" value="" id="af'+n+'" placeholder="&#xf19c; Affiliation" title="Please provide author\'s affiliation" required /> <a href="#" class="remove-box">Remove</a></p>');
+       var box_html = $('<p class="text-box"> <input type="text" name="boxes[]" maxlength="50" style="width:170px; margin-right: 5px;margin-left:8px" value="" id="first' + n + '" placeholder="&#xf0c0; First Name " title="Please enter first name of the author(s)involved"required /> <input type="text" name="boxes[]" maxlength="50" style="width:170px; margin-left: 13px" value="" id="last' + n + '" placeholder="&#xf0c0; Last Name" title="Please enter last name of the author(s)involved"required /> <br/><br/>  <input type="email" name="boxes[]" maxlength="100" style="width:70%" value="" id="email' + n + '" placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required /> <br/><br/> <input type="text" name="boxes[]" style="margin-left: 50px; width:70%" maxlength="100" value="" id="af'+n+'" placeholder="&#xf19c; Affiliation" title="Please provide author\'s affiliation" required /> <a href="#" class="remove-box">Remove</a></p>');
         
         box_html.hide();
         $('.my-form p.text-box:last').after(box_html);
