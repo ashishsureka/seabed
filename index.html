@@ -75,12 +75,90 @@
     <!-- file upload button link -->
     <script src="js/jquery-v1.min.js"></script>
     
+    <script type="text/javascript">
+
+function ajax_postSS(id1)
+{
+
+  $("#MainSS").fadeOut(100).hide(function()
+            {  
+                
+              
+  var hr = new XMLHttpRequest();
+  
+   var url = "my_parse_file.php";
+  
     
+    hr.open("POST", url, true);
+
+    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    
+    // Access the onreadystatechange event for the XMLHttpRequest object
+    hr.onreadystatechange = function() {
+        if(hr.readyState == 4 && hr.status == 200) {
+            var return_data = hr.responseText;
+            document.getElementById("resultES").innerHTML = return_data;
+           
+
+        }
+}
+
+        hr.send('id='+id1); // Actually execute the request
+        
+
+    document.getElementById("resultES").innerHTML = "processing...";
+              
+              $("#demo5S").fadeIn(100).show();
+
+          }
+              );
+  
+  
+
+}
+</script>
+
+
     
   
     <!--<link rel="stylesheet" href="runnable.css" />-->
 
 <style>
+
+#search_form input{
+  width: 15%;
+  height: 30px;
+  border: 1px solid #DBDBDB;
+  padding-left: 10px;
+ }
+
+
+.skill_section{
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 5px;
+
+   margin-left: 15%;
+  
+   
+ 
+  }
+
+
+
+.newFeatureClass
+{
+  width: 100%;
+  height:100%;
+   
+
+   vertical-align: middle;
+
+}
+
+
+
+
 
 [data-tip2] {
     position:relative;
@@ -909,7 +987,7 @@ select.list1{
     <div class="content"> <a class="logo" href="#">SEABED</a>
       <div class="mobile-toggle"> <span></span> <span></span> <span></span></div>
       <nav>
-        <ul class="main_menu">
+       <ul class="main_menu">
           <li><a href=".hero">HOME</a></li>
           <li><a href=".service_area">FEATURES</a></li>
           <li><a href=".skill_area">APPROACH</a></li>
@@ -1112,12 +1190,12 @@ select.list1{
   </div>
 </div> <!-- service area end   -->
 
-<div class="skill_area">
+<div class="skill_area" >
   <div class="container">
     <div class="row">
       <div class="skill_section">
   
-          <div class="col-md-4">
+          <div class="col-md-5" id="current1">
             
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
@@ -1130,7 +1208,7 @@ select.list1{
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                   <div class="panel-body">
-                    Case-Based Learning (CBL) is a teaching methodology consisting of reading, and discussing real-world problems and scenarios in the form of case-studies. A case is on the form of a story and triggers brainstorming between participations, enables decision making and exploration of alternate solutions. The instructor plays the role of a facilitator and students work in groups collaborative solving the problem.
+                    Case-Based Learning (CBL) is a teaching methodology consisting of reading, and discussing real-world problems and scenarios in the form of cases. A case is on the form of a story and triggers brainstorming between participations, enables decision making and exploration of alternate solutions. The instructor plays the role of a facilitator and students work in groups collaborative solving the problem.
                   </div>
                 </div>
               </div>
@@ -1158,7 +1236,7 @@ select.list1{
                 </div>
                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                   <div class="panel-body">
-                    We believe that an open and continuous user feedback is required to evolve SEABED and improve it. Please send your suggestions and feedback to Ashish Sureka (ashish.sureka@in.abb.com) and Paramvir Singh (singhpv@nitj.ac.in). Please feel free to send your feedback on any aspect of SEABED: bugs, user experience and feature requests. We appreciate your time in using our tool and providing feedback. 
+                   We believe that an open and continuous user feedback is required to evolve SEABED and improve it. Please send your suggestions and feedback to Ashish Sureka (ashish.sureka@in.abb.com) and Paramvir Singh (singhpv@nitj.ac.in). Please feel free to send your feedback on any aspect of SEABED: bugs, user experience and feature requests. We appreciate your time in using our tool and providing feedback.  
                   </div>
                 </div>
               </div>
@@ -1219,46 +1297,47 @@ select.list1{
             
           </div>-->
     
-       <div class="container">
-     
-            
-   <div class="col-md-4">
-  <div class="panel-group" id="accordion_One"role="tablist" aria-multiselectable="true">
+       
+     <div class="col-md-5" id="current2">
+         
+
+   
+  <div class="panel-group" id="accordion_One" role="tablist" aria-multiselectable="true">
     <div class="panel panel-default">
-      <div class="panel-heading"role="tab" id="heading1">
+      <div class="panel-heading" role="tab" id="heading1">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion_One" href="#collapse1"aria-expanded="true" aria-controls="collapse1">Case Submission</a>
+          <a data-toggle="collapse" data-parent="#accordion_One" href="#collapse1" aria-expanded="true" aria-controls="collapse1">Case Submission</a>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
-        <div class="panel-body">SEABED has a case submission form using which a user can submit a case-study. The form requires user to provide information such as title, abstract, keywords, author names and affiliations and upload the case as a PDF file. The case-study undergoes a review process to ensure quality of knowledge-base. The case-study is added to the SEABED database once it is approved by the moderators.
+        <div class="panel-body">SEABED has a case submission form using which a user can submit a case. The form requires user to provide information such as title, abstract, keywords, author names and affiliations and upload the case as a PDF file. The case undergoes a review process to ensure quality of knowledge-base. The case is added to the SEABED database once it is approved by the moderators.
     </div>
       </div>
     </div>
     <div class="panel panel-default">
-      <div class="panel-heading"role="tab" id="heading2">
+      <div class="panel-heading" role="tab" id="heading2">
         <h4 class="panel-title">
-          <a class="collapsed" data-toggle="collapse" data-parent="#accordion_One" href="#collapse2"aria-expanded="false" aria-controls="collapse2">Faceted Search</a>
+          <a class="collapsed" data-toggle="collapse" data-parent="#accordion_One" href="#collapse2" aria-expanded="false" aria-controls="collapse2">Faceted Search</a>
         </h4>
       </div>
-      <div id="collapse2" class="panel-collapse collapse"role="tabpanel" aria-labelledby="heading2">
-        <div class="panel-body">Users can search case-studies in SEABED database based on fields such as topic, author, keywords, time period (submission date) and presence of certain terms in the title and abstract. Users can also find most recent cases, most commented and most popular cases. Users can see all the versions of a particular case along with the differences in various revisions. 
+      <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+        <div class="panel-body">Users can search cases in SEABED database based on fields such as topic, author, keywords, time period (submission date) and presence of certain terms in the title and abstract. Users can also find most recent cases, most commented and most popular cases. Users can see all the versions of a particular case along with the differences in various revisions. 
     </div>
       </div>
     </div>
     <div class="panel panel-default">
-      <div class="panel-heading"role="tab" id="heading3">
+      <div class="panel-heading" role="tab" id="heading3">
         <h4 class="panel-title">
-          <a class="collapsed" data-toggle="collapse" data-parent="#accordion_One" href="#collapse3"aria-expanded="false" aria-controls="collapse3">Case Evolution</a>
+          <a class="collapsed" data-toggle="collapse" data-parent="#accordion_One" href="#collapse3" aria-expanded="false" aria-controls="collapse3">Case Evolution</a>
         </h4>
       </div>
-      <div id="collapse3" class="panel-collapse collapse"role="tabpanel" aria-labelledby="heading3">
+      <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
         <div class="panel-body">SEABED allows users to comment on existing cases, follow and up-vote. We encourage users to share their implementation experiences and provide comments on how to improve the cases and make them better. The authors of the cases can then revise their cases or create different flavors of the same case based on the inputs received. Hence there is a process of continuous case improvement.</div>
       </div>
     </div>
   </div>
-
 </div>
+ 
 <!-- example-->
 
     
@@ -1284,7 +1363,7 @@ select.list1{
       </div>
     </div>
   </div>
-</div> <!-- skill area end-->
+   <!-- skill area end-->
 
 
 <br/>
@@ -1311,7 +1390,7 @@ select.list1{
 
  <div class="my-form" style="margin-top:20px">
 
- <p class="text-box"  >
+ <p class="text-box" id="forEdge" >
             <span data-tip2="Please enter name of author(s) involved" >
             <input type="text" name="boxes[]" value="" id="first1" title="" maxlength="50" style="width:34%; margin-left:0.8%; margin-right: 1%" placeholder="&#xf0c0; First Name"  required /> 
             <input type="text" name="boxes[]" value="" id="last1" maxlength="50" style="width:34%; margin-left: 0.2%" placeholder="&#xf0c0; Last Name"  required /> <br/><br/>
@@ -1338,7 +1417,7 @@ select.list1{
   </datalist> <br/> <br/>
   </div>
   <div data-tip="Please enter the key terms of the Case. Key terms must be comma(,) delimited.">
-  <input type="text" name="tagsinputbox" maxlength="150" placeholder="&#xf022;  Key Terms" />
+  <input type="text" name="tagsinputbox" maxlength="150" placeholder="&#xf022;  Key Terms" required />
   </div>
   <br/>
   <br/>
@@ -1400,6 +1479,8 @@ select.list1{
   <div class="col-sm-10"></div>
 </div> <br/>
 -->
+      
+
 <input type="checkbox" name="notification" value="yes" style="height:15px; width:15px;margin-left:10% "><span style="padding-right: 20%;margin-bottom:10px;color: gray ;padding-bottom: 5px"><b> Notify me regarding any activity for this Case. </b></span>    <br/>
   
   <!-- <input type="text" value="design,testing" id="tagsinputbox" name="tagsinputbox"data-role="tagsinput"placeholder="&#xf022;  Key Terms" title="Please enter the key terms of the case" required></input> 
@@ -1871,12 +1952,12 @@ select.list1{
       <li><span class="filter active" data-filter="req design construct test maintain configure process quality">All</span></li>
       <li><span class="filter" data-filter="req">Requirements</span></li>
       <li><span class="filter" data-filter="design">Design</span></li>
-      <li><span class="filter" data-filter="construct">Construction</span></li>
-    <li><span class="filter" data-filter="test">Testing</span></li>
+     <li><span class="filter" data-filter="test">Testing</span></li>
     <li><span class="filter" data-filter="maintain">Maintenance</span></li>
     <li><span class="filter" data-filter="configure">Configuration Management</span></li>
     <li><span class="filter" data-filter="process">Process and Framework</span></li>
     <li><span class="filter" data-filter="quality">Quality</span></li>
+   <li><span class="filter" data-filter="construct">Construction</span></li> 
   <!--  <li><span class="filter" data-filter="eco">Economics</span></li>-->
     
 
@@ -1918,12 +1999,41 @@ select.list1{
   
    <div class="portfolio req" data-cat="Requirements">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">        
-          <img src="img/Empty-Case-Study.png"  alt="" /> </a>
+    <a href="./case-study/Twitter-Case.pdf" target="_blank">        
+          <img src="img/Twitter_Case_Pic.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
               <a class="text-title"></a>
-              <span class="text-category">Empty Case Study</span>
+              <span class="text-category">Twitter Case</span>
+            </div>
+            <div class="label-bg"></div>
+          </div>
+        </div>
+      </div>    
+
+
+<div class="portfolio req" data-cat="Requirements">
+        <div class="portfolio-wrapper">   
+    <a href="./case-study/Metro_Case.pdf" target="_blank">        
+          <img src="img/TD.PNG"  alt="" /> </a>
+          <div class="label">
+            <div class="label-text">
+              <a class="text-title"></a>
+              <span class="text-category">TicketDistributor System Case</span>
+            </div>
+            <div class="label-bg"></div>
+          </div>
+        </div>
+      </div>    
+
+      <div class="portfolio req" data-cat="Requirements">
+        <div class="portfolio-wrapper">   
+    <a href="./case-study/LIC_Case.pdf" target="_blank">        
+          <img src="img/LIC.PNG"  alt="" /> </a>
+          <div class="label">
+            <div class="label-text">
+              <a class="text-title"></a>
+              <span class="text-category">LIC Market Driven System Case</span>
             </div>
             <div class="label-bg"></div>
           </div>
@@ -1944,34 +2054,38 @@ select.list1{
         </div>
       </div>    
        
-     <div class="portfolio construct" data-cat="Construction">
-        <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">        
-          <img src="img/Empty-Case-Study.png"  alt="" /> </a>
-          <div class="label">
-            <div class="label-text">
-              <a class="text-title"></a>
-              <span class="text-category">Empty Case Study</span>
-            </div>
-            <div class="label-bg"></div>
-          </div>
-        </div>
-      </div>
-    
       <div class="portfolio test" data-cat="Testing">
         <div class="portfolio-wrapper">   
-    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">        
-          <img src="img/Empty-Case-Study.png"  alt="" /> </a>
+    <a href="./case-study/StalwartX_Case.pdf" target="_blank">        
+          <img src="img/StalwartX_Case_Pic.png"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
               <a class="text-title"></a>
-              <span class="text-category">Empty Case Study</span>
+              <span class="text-category">StalwartX Case</span>
             </div>
             <div class="label-bg"></div>
           </div>
+          
         </div>
+
       </div>
-    
+
+       <div class="portfolio test" data-cat="Testing">
+        <div class="portfolio-wrapper">   
+    <a href="./case-study/Google_Case.pdf" target="_blank">        
+          <img src="img/browser_case.png"  alt="" /> </a>
+          <div class="label">
+            <div class="label-text">
+              <a class="text-title"></a>
+              <span class="text-category">Browser Case</span>
+            </div>
+            <div class="label-bg"></div>
+          </div>
+          
+        </div>
+
+      </div>
+    <!--
     
       <div class="portfolio maintain" data-cat="Maintenance">
         <div class="portfolio-wrapper">   
@@ -2029,6 +2143,21 @@ select.list1{
           </div>
         </div>
       </div>
+
+      <div class="portfolio construct" data-cat="Construction">
+        <div class="portfolio-wrapper">   
+    <a href="./case-study/Empty-Case-Study.pdf" target="_blank">        
+          <img src="img/Empty-Case-Study.png"  alt="" /> </a>
+          <div class="label">
+            <div class="label-text">
+              <a class="text-title"></a>
+              <span class="text-category">Empty Case Study</span>
+            </div>
+            <div class="label-bg"></div>
+          </div>
+        </div>
+      </div>
+      -->
     
   <!--  <div class="portfolio eco" data-cat="Economics">
         <div class="portfolio-wrapper">   
@@ -2350,7 +2479,7 @@ select.list1{
   </div>
 </div><!-- portfolio area end   -->
 
-
+<div id="newSearch" >
 <div class="search_area">
   <div class="container">
     <div class="row">
@@ -2359,7 +2488,8 @@ select.list1{
           <!--<p>YOUR CONTRIBUTIONS ARE IMPORTANT TO MAKE THIS INITIATIVE A SUCCESS</p>-->
 
                     <!--<div class="col-sm-8">-->
-                        <div class="search_form">
+                    
+                       <div class="search_form" >
                         <fieldset id="search_form">
                            <!-- <div id="result"></div>-->
               <div id="form" class="result1">
@@ -2406,12 +2536,14 @@ select.list1{
 </div>
                         </fieldset>                           
                         </div>
+                       
                    <!-- </div>-->
                    
       </div>
     </div>
   </div> 
 </div>
+ </div>
 <br/>
 
  <!-- form area end-->
@@ -2450,12 +2582,13 @@ select.list1{
             <input type="text" name="boxes2[]" value="" id="lastName" maxlength="50" style="width:30%;" placeholder="&#xf0c0; Last Name" title="Please enter last name of author(s)involved" required />
              <input type="text" name="boxes2[]" value="" id="aFfiliation" maxlength="100" style=" width:30%" placeholder="&#xf19c; Affiliation" title="Please provide author's affiliation" required />
             <input type="email" name="boxes2[]" value="" id="eMail" maxlength="100" style="width:60% ;margin-right:20.5%;"  placeholder="&#xf0e0;  Email Address" title="Please enter the email id of the author(s)" required />
-            <a class="add-box2" href="#">Add More</a>
+            <a class="add-box2" href="#" >Add More</a>
             </p>
             </div>
 
   <br/>         
-<input type="checkbox" name="notification" value="yes" style="height:20px; width:20px;"><span style="padding-right: 40%; margin-right:20%;margin-bottom:10px;color: maroon"><b> Notify me regarding any activity for this Case. </b></span>    <br/>
+<div style="float: left">      
+<input type="checkbox"  name="notification" value="yes" style="height:20px; width:20px;"><span id="span2" style="margin-bottom:20px;color: maroon"><b> Notify me regarding any activity for this Case. </b></span> </div>  <br/>
 
 <div id="recaptcha2"></div>
 
@@ -2547,6 +2680,8 @@ jQuery(document).ready(function($){
 
 
 
+
+
 <!-- Case Evolution area starts -->
 
 <div id="wrapper1">
@@ -2557,12 +2692,15 @@ jQuery(document).ready(function($){
 <form action="evolutionNew.php" method="POST" id="data5" enctype="multipart/form-data">
 
 <select id="case_evolve" name="case_evolve" style="width:65%; height: 40px;color:darkblue ;cursor: pointer;border-radius:3px; padding-left: 10px;margin-left: 35%;" >
-   <option value="Select_Case">Select Case</option>
-  <option value="821548">All Is Well Case</option>
-  <option value="960214" >Twitter Case Study</option>
-  
-  
+  <option value="Select_Case">Select Case</option>
+   <option value="821548">All Is Well Case</option>
+  <option value="960214" >Twitter Case</option>
+  <option value="820015" >StalwartX</option>
+  <option value="940771" >Responsiveness Case</option>
+  <option value="690686" >TicketDistributor Case</option>
+  <option value="277003">LIC Market-Driven System Case</option> 
  
+  
 </select>
 
 <br/>
@@ -2574,18 +2712,15 @@ jQuery(document).ready(function($){
 
 
 
-<div data-tip="Case Revision [PDF]. Max size 1MB.">
+
 <input type="file" name="revision" id="file-8" accept=".pdf" class="Revision"  data-multiple-caption="{count} files selected"  required />
-          <label for="file-8" style="margin-left:80px"  ><span style="padding-right: 60px;"> upload case revision</span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload Revision</strong></label>
-     </div>     
-<div id="valid_msg1" style="margin-top:20px"><span id="1"></span></div>
+          <label for="file-8" title="Please provide a PDF file of the Revision document. Max size 1MB." style="margin-left:80px"  ><span style="padding-right: 60px;"> upload revision</span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload Revision</strong></label>
+<div id="valid_msg1"><span id="1"></span></div><br/>
 
 
-<div data-tip="Justification for Case Revision [PDF]">
 <input type="file" name="jus" id="file-8.1" accept=".pdf" class="Justify"  data-multiple-caption="{count} files selected"  required />
-          <label for="file-8.1" title="Please provide a PDF file which will jusify the revision. Max size 1MB." style="margin-left:80px"  ><span style="padding-right: 60px;"> upload justification doc.</span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg>Upload Justification </strong></label>
-</div>
-<div id="valid_msg1.1" style="margin-top:20px" ><span id="1.1"></span></div>
+          <label for="file-8.1" title="Please provide a PDF file which will jusify the revision. Max size 1MB." style="margin-left:80px"  ><span style="padding-right: 60px;"> upload justification doc.</span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload Justification</strong></label>
+<div id="valid_msg1.1"><span id="1.1"></span></div><br/>
 
 <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal" id="disapper2" style="display: none">Author details </button>
 <input type="submit" value="Submit" style="min-width:7%;height: 40px; padding-top:10px; margin-left:90px " >
@@ -2603,10 +2738,12 @@ jQuery(document).ready(function($){
 
 <select id="case_evolve2" name="case_evolve2" style="width:65%; height: 40px;color:darkblue ;cursor: pointer;border-radius:3px; padding-left: 10px;margin-left: 35%;" >
     <option value="Select_Case">Select Case</option>
-  <option value="821548">All Is Well Case</option>
-  <option value="960214" >Twitter Case Study</option>
-  
-  
+   <option value="821548">All Is Well Case</option>
+  <option value="960214" >Twitter Case</option>
+  <option value="820015" >StalwartX</option>
+  <option value="940771" >Responsiveness Case</option>
+  <option value="690686" >TicketDistributor Case</option>
+  <option value="277003">LIC Market-Driven System Case</option> 
  
 </select>
 
@@ -2616,11 +2753,10 @@ jQuery(document).ready(function($){
 <br/>
 
 
-<div data-tip="Experience Report[PDF]. Max size 1MB.">
+
 <input type="file" name="report" id="file-9" accept=".pdf" class="Report"  data-multiple-caption="{count} files selected" required />
-          <label for="file-9" title="Please provide a PDF file of the Report . Max size 1MB." style="margin-left: 80px" ><span style="padding-right: 60px"> Upload Report </span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg>Upload Report</strong></label>
-</div>          
-<div id="valid_msg2" style="margin-top:20px;"><span id="2"></span></div><br/>
+          <label for="file-9" title="Please provide a PDF file of the Report . Max size 1MB." style="margin-left: 80px" ><span style="padding-right: 60px"> Upload Report </span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Upload Report </strong></label>
+<div id="valid_msg2"><span id="2"></span></div><br/>
 
 
 <input type="submit" value="Submit" style="min-width:7%;height: 40px; padding-top:10px; margin-left:90px " >
@@ -2650,30 +2786,62 @@ jQuery(document).ready(function($){
  <h1>CASE <span>EVOLUTION</span> </h1> <br/>  
  <a href="#" class="btn btn-success" id="menu-toggle">Case Revision<span>Please revise the existing Cases</span></a> &nbsp;&nbsp; <a href="#" class="btn btn-success" id="menu-toggle1">Experience Report<span> A comprehensive document that includes experiences,<br/> empirical analysis, recommendations, comments and <br/>solutions for a Case </span></a>     <br/>
 
+<div class="col-sm-8" id="resultE"></div>
+<div class="col-sm-4" id="demo5" style="display: none;">
 
-<div class="container"  style=" width: 80%" >
+
 
 <div id="demof">
-                  
-  <ul  role="tablist">
+        <input type="text" name="" value="1" id="helpS" style="display: none" />             
+  <ul  role="tablist" id="smallList1">
     
-    <li style="border-bottom: 1px dashed #ccc;"><a href="http://seabed.in/case-study/twitter-case-study.pdf" target="_blank"><img src="img/5.jpg" alt="" /> Twitter Case Study </a>
-<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-10</span> </p>
+    <li style="border-bottom: 1px dashed #ccc;"><a href="javascript:%20ajax_postS(960214)"><img src="img/5.jpg" alt="" /> Twitter Case </a>
+<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-12-15</span> </p>
 </li>
-<li><a href="http://seabed.in/case-study/Design-All-is-Well-Case.pdf" target="_blank"> <img src="img/6.jpg" alt="" /> All Is Well Case </a>
+<li><a href="javascript:%20ajax_postS(821548)"> <img src="img/6.jpg" alt="" /> All Is Well Case </a>
 <p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
-select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-11</span></p>
+select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-12-14</span></p>
 </li>
 
 
 
 </ul>
+
+
+<ul  role="tablist" id="smallList2" style="display: none" >
+    
+    <li style="border-bottom: 1px dashed #ccc;"><a href="javascript:%20ajax_postS(820015)"><img src="img/car.jpg" alt="" /> StalwartX Case </a>
+<p>StalwartX is a driver-less vehicle.  Perform security and functionality testing for these autopilots. <br/> <br/><span style="color: green">Uploaded by Saurabh,Ashish,Paramvir and Veena on 2017-04-19</span> </p>
+</li>
+<li><a href="javascript:%20ajax_postS(940771)"> <img src="img/best-browsers.jpg" alt="" /> Responsiveness Case</a>
+<p>Let you are a test manager at Google Chrome. Present test scenario for performance and responsiveness testing <br/> <br/> <span style="color: green">Uploaded by Saurabh,Ashish,Paramvir and Veena on 2017-04-19</span></p>
+</li>
+
+</ul>
+
+<ul  role="tablist" id="smallList3" style="display: none" >
+    
+    <li style="border-bottom: 1px dashed #ccc;"><a href="javascript:%20ajax_postS(690686)"><img src="img/ticket.PNG" alt="" /> TicketDistributor Case </a>
+<p>Your task is to design a metro ticket vending machine. For this, gather requirements, resolve conflicts and present them in the form of user stories.<br/> <br/><span style="color: green">Uploaded by Deepti ,Ashish,Paramvir and Saurabh on 2017-10-03</span> </p>
+</li>
+<li><a href="javascript:%20ajax_postS(277003)"> <img src="img/ins.PNG" alt=""/> LIC Market-Driven System Case</a>
+<p>LIC insurance company wants a digital solution that addresses all aspects of agent-insurer relationship. Generate a requirements and feasibility report. <br/> <br/> <span style="color: green">Uploaded by Deepti,Ashish,Paramvir and Saurabh on 2017-10-03</span></p>
+</li>
+
+</ul>
+
+
+
+
+
 </div>
-     <ul class="pagination" style="text-align: center;">
-    <li><a href="#">«</a></li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
+     <input type="text" name="" value="1" id="helpScrollerS" style="display: none" /> 
+
+     <ul class="pagination" style="text-align: center;" id="ListScrollerS1">
+    
+    <li><a href="javascript:%20ajax_postLS(1)">1</a></li>
+    <li><a href="javascript:%20ajax_postLS(2)">2</a></li>
+    <li><a href="javascript:%20ajax_postLS(3)">3</a></li>
     <li><a href="#">4</a></li>
     <li><a href="#">5</a></li>
     <li><a href="#">6</a></li>
@@ -2683,9 +2851,260 @@ select the technology stack for development <br/> <br/> <span style="color: gree
     <li><a href="#">»</a></li>
   </ul>   
   
+<ul class="pagination" style="text-align: center; display: none" id="ListScrollerS2" >
+    <li><a href="#">«</a></li>
+    <li><a href="#">9</a></li>
+    <li><a href="#">10</a></li>
+    <li><a href="#">11</a></li>
+    <li><a href="#">12</a></li>
+    <li><a href="#">13</a></li>
+    <li><a href="#">14</a></li>
+    <li><a href="#">15</a></li>
+    <li><a href="#">16</a></li>
+    
+    
+  </ul>   
+
+
+  
  </div>
 
-          
+   
+<div class="container" id="MainS"  style=" width: 80%" >
+
+<div id="demof">
+  
+  <input type="text" name="" value="1" id="help" style="display: none" />                
+  <ul  role="tablist" id="bigList1">
+    
+    <li style="margin-right: 15%"><a href="javascript:%20ajax_postS(960214)"><img src="img/5.jpg" alt="" />Twitter Case</a>
+<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-12-15</span> </p>
+</li>
+ <li  style="border-bottom: 1px dashed #ccc; padding-top:0px"></li>
+<li style="margin-right: 15%"><a href="javascript:%20ajax_postS(821548)"><img src="img/6.jpg" alt="" /> All Is Well Case </a>
+<p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
+select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-12-14</span></p>
+</li>
+
+
+
+</ul>
+
+<ul  role="tablist" id="bigList2" style="display: none">
+    
+    <li style="margin-right: 15%"><a href="javascript:%20ajax_postS(820015)"><img src="img/car.jpg" alt="" /> StalwartX Case </a>
+<p>StalwartX is a driver-less vehicle.  Perform security and functionality testing for these autopilots. <br/> <br/> <span style="color: green">Uploaded by Saurabh,Ashish,Paramvir and Veena on 2017-04-19</span> </p>
+</li>
+<li  style="border-bottom: 1px dashed #ccc; padding-top:0px"></li>
+<li style="margin-right: 15%"><a href="javascript:%20ajax_postS(940771)"> <img src="img/best-browsers.jpg" alt="" /> Responsiveness Case</a>
+<p>Let you are a test manager at Google Chrome. Present test scenario for performance and responsiveness testing<br/> <br/> <span style="color: green">Uploaded by Saurabh,Ashish,Paramvir and Veena on 2017-04-19</span></p>
+</li>
+
+</ul>
+<ul  role="tablist" id="bigList3" style="display: none">
+    
+    <li style="margin-right: 15%"><a href="javascript:%20ajax_postS(690686)"><img src="img/ticket.PNG" alt="" /> TicketDistributor Case </a>
+<p>Your task is to design a metro ticket vending machine. For this, gather requirements, resolve conflicts and present them in the form of user stories. <br/> <br/> <span style="color: green">Uploaded by Deepti, Ashish, Paramvir and Saurabh on 2017-10-03</span> </p>
+</li>
+<li  style="border-bottom: 1px dashed #ccc; padding-top:0px"></li>
+<li style="margin-right: 15%"><a href="javascript:%20ajax_postS(277003)"><img src="img/ins.PNG" alt="" /> LIC Market-Driven System Case</a>
+<p>LIC insurance company wants a digital solution that addresses all aspects of agent-insurer relationship. Generate a requirements and feasibility report. <br/> <br/> <span style="color: green">Uploaded by Deepti, Ashish, Paramvir and Saurabh on 2017-10-03</span></p>
+</li>
+
+</ul>
+<ul  role="tablist" id="bigList4" style="display: none">
+    
+    <li style="border-bottom: 1px dashed #ccc;"><a href="javascript:%20ajax_postS(960214)"><img src="img/5.jpg" alt="" /> Twitter Case Study 4</a>
+<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-10</span> </p>
+</li>
+<li><a href="javascript:%20ajax_postS(821548)"><img src="img/6.jpg" alt="" /> All Is Well Case 4</a>
+<p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
+select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-11</span></p>
+</li>
+
+</ul>
+<ul  role="tablist" id="bigList5" style="display: none">
+    
+    <li style="border-bottom: 1px dashed #ccc;"><a href="javascript:%20ajax_postS(960214)"><img src="img/5.jpg" alt="" /> Twitter Case Study 5</a>
+<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-10</span> </p>
+</li>
+<li><a href="javascript:%20ajax_postS(821548)"><img src="img/6.jpg" alt="" /> All Is Well Case 5</a>
+<p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
+select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-11</span></p>
+</li>
+
+</ul>
+<ul  role="tablist" id="bigList6" style="display: none">
+    
+    <li style="border-bottom: 1px dashed #ccc;"><a href="javascript:%20ajax_postS(960214)"><img src="img/5.jpg" alt="" /> Twitter Case Study 6</a>
+<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-10</span> </p>
+</li>
+<li><a href="javascript:%20ajax_postS(821548)"><img src="img/6.jpg" alt="" /> All Is Well Case 6</a>
+<p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
+select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-11</span></p>
+</li>
+
+</ul>
+
+<ul  role="tablist" id="bigList7" style="display: none">
+    
+    <li style="border-bottom: 1px dashed #ccc;"><a href="javascript:%20ajax_postS(960214)"><img src="img/5.jpg" alt="" /> Twitter Case Study 7</a>
+<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-10</span> </p>
+</li>
+<li><a href="javascript:%20ajax_postS(821548)"><img src="img/6.jpg" alt="" /> All Is Well Case 7</a>
+<p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
+select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-11</span></p>
+</li>
+
+</ul>
+
+<ul  role="tablist" id="bigList8" style="display: none">
+    
+    <li style="border-bottom: 1px dashed #ccc;"><a href="javascript:%20ajax_postS(960214)"><img src="img/5.jpg" alt="" /> Twitter Case Study 8</a>
+<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-10</span> </p>
+</li>
+<li><a href="javascript:%20ajax_postS(821548)"><img src="img/6.jpg" alt="" /> All Is Well Case 8</a>
+<p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
+select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-11</span></p>
+</li>
+
+</ul>
+<ul  role="tablist" id="bigList9" style="display: none">
+    
+    <li style="border-bottom: 1px dashed #ccc;"><a href="javascript:%20ajax_postS(960214)"><img src="img/5.jpg" alt="" /> Twitter Case Study 9</a>
+<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-10</span> </p>
+</li>
+<li><a href="javascript:%20ajax_postS(821548)"><img src="img/6.jpg" alt="" /> All Is Well Case 9</a>
+<p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
+select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-11</span></p>
+</li>
+
+</ul>
+
+<ul  role="tablist" id="bigList10" style="display: none">
+    
+    <li style="border-bottom: 1px dashed #ccc;"><a href="javascript:%20ajax_postS(960214)"><img src="img/5.jpg" alt="" /> Twitter Case Study 10</a>
+<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-10</span> </p>
+</li>
+<li><a href="javascript:%20ajax_postS(821548)"><img src="img/6.jpg" alt="" /> All Is Well Case 10</a>
+<p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
+select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-11</span></p>
+</li>
+
+</ul>
+
+<ul  role="tablist" id="bigList11" style="display: none">
+    
+    <li style="border-bottom: 1px dashed #ccc;"><a href="javascript:%20ajax_postS(960214)"><img src="img/5.jpg" alt="" /> Twitter Case Study 11</a>
+<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-10</span> </p>
+</li>
+<li><a href="javascript:%20ajax_postS(821548)"><img src="img/6.jpg" alt="" /> All Is Well Case 11</a>
+<p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
+select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-11</span></p>
+</li>
+
+</ul>
+
+<ul  role="tablist" id="bigList12" style="display: none">
+    
+    <li style="border-bottom: 1px dashed #ccc;"><a href="javascript:%20ajax_postS(960214)"><img src="img/5.jpg" alt="" /> Twitter Case Study 12</a>
+<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-10</span> </p>
+</li>
+<li><a href="javascript:%20ajax_postS(821548)"><img src="img/6.jpg" alt="" /> All Is Well Case 12</a>
+<p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
+select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-11</span></p>
+</li>
+
+</ul>
+
+<ul  role="tablist" id="bigList13" style="display: none">
+    
+    <li style="border-bottom: 1px dashed #ccc;"><a href="javascript:%20ajax_postS(960214)"><img src="img/5.jpg" alt="" /> Twitter Case Study 13</a>
+<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-10</span> </p>
+</li>
+<li><a href="javascript:%20ajax_postS(821548)"><img src="img/6.jpg" alt="" /> All Is Well Case 13</a>
+<p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
+select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-11</span></p>
+</li>
+
+</ul>
+
+<ul  role="tablist" id="bigList14" style="display: none">
+    
+    <li style="border-bottom: 1px dashed #ccc;"><a href="javascript:%20ajax_postS(960214)"><img src="img/5.jpg" alt="" /> Twitter Case Study 14</a>
+<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-10</span> </p>
+</li>
+<li><a href="javascript:%20ajax_postS(821548)"><img src="img/6.jpg" alt="" /> All Is Well Case 14</a>
+<p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
+select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-11</span></p>
+</li>
+
+</ul>
+
+<ul  role="tablist" id="bigList15" style="display: none">
+    
+    <li style="border-bottom: 1px dashed #ccc;"><a href="javascript:%20ajax_postS(960214)"><img src="img/5.jpg" alt="" /> Twitter Case Study 15</a>
+<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-10</span> </p>
+</li>
+<li><a href="javascript:%20ajax_postS(821548)"><img src="img/6.jpg" alt="" /> All Is Well Case 15</a>
+<p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
+select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-11</span></p>
+</li>
+
+</ul>
+
+<ul  role="tablist" id="bigList16" style="display: none">
+    
+    <li style="border-bottom: 1px dashed #ccc;"><a href="javascript:%20ajax_postS(960214)"><img src="img/5.jpg" alt="" /> Twitter Case Study 16</a>
+<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-10</span> </p>
+</li>
+<li><a href="javascript:%20ajax_postS(821548)"><img src="img/6.jpg" alt="" /> All Is Well Case 16</a>
+<p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
+select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-11</span></p>
+</li>
+
+</ul>
+
+
+
+</div>
+ 
+ <input type="text" name="" value="1" id="helpScroller" style="display: none" /> 
+
+     <ul class="pagination" style="text-align: center;" id="ListScroller1">
+    
+    <li><a href="javascript:%20ajax_postL(1)">1</a></li>
+    <li><a href="javascript:%20ajax_postL(2)">2</a></li>
+    <li><a href="javascript:%20ajax_postL(3)">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><a href="#">7</a></li>
+    <li><a href="#">8</a></li>
+    
+    <li><a href="#">»</a></li>
+  </ul>   
+  
+<ul class="pagination" style="text-align: center; display: none" id="ListScroller2" >
+    
+    <li><a href="#">«</a></li>
+    <li><a href="#">9</a></li>
+    <li><a href="#">10</a></li>
+    <li><a href="#">11</a></li>
+    <li><a href="#">12</a></li>
+    <li><a href="#">13</a></li>
+    <li><a href="#">14</a></li>
+    <li><a href="#">15</a></li>
+    <li><a href="#">16</a></li>
+    
+    
+  </ul>   
+
+
+
+ </div>
+
+
  
 
 </div>
@@ -2698,7 +3117,6 @@ select the technology stack for development <br/> <br/> <span style="color: gree
 
 
 <!-- Case evolution ends -->
- 
 
 
 
@@ -2794,16 +3212,20 @@ select the technology stack for development <br/> <br/> <span style="color: gree
     <div class="row">
       <div class="blog_section">
           <h1>Founding <span>Team</span></h1>
-          <div class="single_blog col-md-3 slider-content">
+          <div class="single_blog col-md-1 slider-content" style="margin-left: 4%">
+          </div>
+          
+          <div class="single_blog col-md-3 slider-content" >
             <a href="http://ashish-sureka.in/" target="_blank">
                 <img src="img/1.jpg" alt="">
                 <div class="slider-text">
                   <h3>Ashish Sureka</h3>
                   <!--<p> <i class="fa fa-user"></i> By FAHEM <i class="fa fa-clock-o"></i> August 31th, 2014</p>-->
-                  <p>Researcher, Educator, Programmer and Writer. Principal Scientist at ABB Corporate Research (India) and PhD from NCSU (USA)</p>
+                  <p>Researcher, Educator, Writer and Entrepreneur. Associate Professor at Ashoka University (India) and PhD from NCSU (USA)</p>
                 </div>
             </a>
           </div> 
+          
           <div class="single_blog col-md-3 slider-content">
             <a href="http://www.pvsingh.com" target="_blank">
                 <img src="img/2.jpg" alt="">
@@ -2814,30 +3236,72 @@ select the technology stack for development <br/> <br/> <span style="color: gree
                 </div>
             </a>
           </div> 
+           
           <div class="single_blog col-md-3 slider-content">
+            <a href=" https://sites.google.com/site/saurabhiiitdmj/" target="_blank">
+                <img src="img/PHOTO.jpg" alt="" height="240">
+                <div class="slider-text">
+                  <h3>Saurabh Tiwari</h3>
+                  <!--<p> <i class="fa fa-user"></i> By FAHEM <i class="fa fa-clock-o"></i> August 31th, 2014</p>                  -->
+                  <p>Assistant Professor at DA-IICT (India) and PhD from IIITDM Jabalpur (India).</p>
+                </div>
+            </a>
+          </div>   
+
+          
+                          
+      </div>
+    </div>
+
+          
+           <div class="row">
+   
+          <div class="single_blog col-md-1 slider-content" style="margin-left: 4%">
+          </div>
+          
+          <div class="single_blog col-md-3 slider-content" >
+            <a href="#">
+                <img src="img/Deepti4.jpg" alt="" height="240">
+                <div class="slider-text">
+                  <h3>Deepti Ameta</h3>
+                  <!--<p> <i class="fa fa-user"></i> By FAHEM <i class="fa fa-clock-o"></i> August 31th, 2014</p>-->
+                  <p>Junior Research Fellow (JRF) at DA-IICT. M.Tech from Banasthali Vidyapith (India) and B.E from GIT (India)</p>
+                </div>
+            </a>
+          </div> 
+          
+        <div class="single_blog col-sm-3 slider-content">
             <a href="#">
                 <img src="img/3.jpg" alt="">
                 <div class="slider-text">
                   <h3>Yukti Mehta</h3>
                   <!--<p> <i class="fa fa-user"></i> By FAHEM <i class="fa fa-clock-o"></i> August 31th, 2014</p>                  -->
-                  <p>Researcher, Programmer and Intern at ABB Corporate Research (India).  MTech Scholar at NITJ (India) and BTech from IGDTUW (India) </p>
+                  <p>Researcher, Programmer and Internship from ABB Corporate Research (India). MTech from NITJ and BTech from IGDTUW (India) </p>
                 </div>
             </a>
-          </div>   
-<div class="single_blog col-md-3 slider-content">
+          </div> 
+           
+     <div class="single_blog col-sm-3 slider-content">
             <a href="#">
                 <img src="img/4.jpg" alt="">
                 <div class="slider-text">
                   <h3>Veena Saini </h3>
                   <!--<p> <i class="fa fa-user"></i> By FAHEM <i class="fa fa-clock-o"></i> August 31th, 2014</p>                  -->
-                  <p>Researcher and Programmer.  MTech Scholar at NITJ (India) and BTech from SKIT (India) </p>
+                  <p>Researcher and Programmer. MTech Scholar at NITJ (India) and BTech from SKIT (India) </p>
                 </div>
             </a>
-          </div>                              
+          </div>   
+
+          
+                          
       </div>
     </div>
-  </div>
+
+
 </div><!-- blog area end   -->
+
+
+
 
 <div class="work_area">
   <div class="container">
@@ -2858,11 +3322,14 @@ select the technology stack for development <br/> <br/> <span style="color: gree
               <div class="tab-content">
                   <div id="sectionA" class="tab-pane fade in active">
                       <h3>Publications</h3>
-                      <h7>[1] Kirti Garg, Ashish Sureka, and Vasudeva Varma,<a href="https://dl.dropboxusercontent.com/u/48972351/CMCE-2015-COSEED.pdf" target="_blank"> “A Case-Study on Teaching Software Engineering Concepts using a Case-Based Learning Environment”</a> APSEC Workshop, (CMCE 2015).</h7>
+                      <h7>[1] Kirti Garg, Ashish Sureka, and Vasudeva Varma,<a href="http://www.robo-paathshaala.in/ashish/CMCE-2015-COSEED.pdf" target="_blank"> “A Case-Study on Teaching Software Engineering Concepts using a Case-Based Learning Environment”</a> APSEC Workshop, (CMCE 2015).</h7>
             <!--<p> <a href="https://dl.dropboxusercontent.com/u/48972351/CMCE-2015-COSEED.pdf"><h6>APSEC 2015 workshop</h6></a></p>-->
            <!-- <p>International Conference on Technology for Education (T4E 2016)</p>-->
-           <br/> <h7>[2] Divya Kundra and Ashish Sureka,<a href="https://dl.dropboxusercontent.com/u/48972351/T4E-2016-CBL.pdf" target="_blank"> “An Experience Report on Teaching Compiler Design Concepts using Case-Based and Project-Based Learning Approaches”</a> International Conference on Technology for Education (T4E 2016).</h7>
+           <br/> <h7>[2] Divya Kundra and Ashish Sureka,<a href="http://www.robo-paathshaala.in/ashish/T4E-2016-CBL.pdf" target="_blank"> “An Experience Report on Teaching Compiler Design Concepts using Case-Based and Project-Based Learning Approaches”</a> International Conference on Technology for Education (T4E 2016).</h7>
+           <br/>
           <!--  <p> <a href="https://dl.dropboxusercontent.com/u/48972351/T4E-2016-CBL.pdf"><h6>  T4E 2016</h6></a></p>-->
+
+          <h7>[3] Veena Saini, Paramvir Singh and Ashish Sureka,<a href="http://www.robo-paathshaala.in/ashish/COMPSAC-2017-SEABED.pdf" target="_blank"> “SEABED: An Open-Source Software Engineering Case-Based Learning Database”</a> (COMPSAC 2017)<a href=" https://www.youtube.com/watch?v=ajANIVXA48A" target="_blank" >[Video Presentation] </a></h7>
                   </div>
                 <!--  <div id="sectionB" class="tab-pane fade">
                       <h3>Case Study</h3>
@@ -2907,6 +3374,7 @@ select the technology stack for development <br/> <br/> <span style="color: gree
   
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
+
     <div class="item slides active">
       <div class="slide-11"></div>
       <div class="hero">
@@ -2936,6 +3404,8 @@ select the technology stack for development <br/> <br/> <span style="color: gree
         </hgroup>
         <!--<button class="btn btn-hero btn-lg" role="button">See all features</button>-->
       </div>
+
+
     </div>
       <div class="item slides">
       <div class="slide-14"></div>
@@ -2947,6 +3417,61 @@ select the technology stack for development <br/> <br/> <span style="color: gree
         <!--<button class="btn btn-hero btn-lg" role="button">See all features</button>-->
       </div>
     </div>
+
+
+<div class="item slides">
+      <div class="slide-16"></div>
+      <div class="hero">        
+        <hgroup>
+           <!-- <h1>SEABED <span>Community</span></h1>        -->
+             <h3>Case Based Learning (CBL) at DA-IICT</h3>
+        </hgroup>
+        <!--<button class="btn btn-hero btn-lg" role="button">See all features</button>-->
+      </div>
+    </div>
+
+<div class="item slides">
+      <div class="slide-15"></div>
+      <div class="hero">        
+        <hgroup>
+            <h3>Prof. Saurabh Tiwari implementing CBL in DA-IICT</h3>
+        </hgroup>
+        <!--<button class="btn btn-hero btn-lg" role="button">See all features</button>-->
+      </div>
+    </div>
+
+<div class="item slides">
+      <div class="slide-17"></div>
+      <div class="hero">        
+        <hgroup>
+           <!-- <h1>SEABED <span>Community</span></h1>        -->
+            <h3>Active Learning and Participation </h3>
+        </hgroup>
+        <!--<button class="btn btn-hero btn-lg" role="button">See all features</button>-->
+      </div>
+    </div>
+
+
+<div class="item slides">
+      <div class="slide-18"></div>
+      <div class="hero">        
+        <hgroup>
+           <h3>Self-Encouragement and Knowledge Exchange</h3>
+        </hgroup>
+        <!--<button class="btn btn-hero btn-lg" role="button">See all features</button>-->
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
   
   </div> 
 </div>
@@ -3022,11 +3547,6 @@ select the technology stack for development <br/> <br/> <span style="color: gree
 
 
 </br></br>
-
-
-
-
-
 
 
 
@@ -4121,50 +4641,10 @@ function clearInput(){
 
 
 
-<!-- Search -->
-<script>
-$("form#data1").submit(function(event){
- 
-  //disable the default form submission
-  event.preventDefault();
- 
-  //grab all form data  
-  var formData = new FormData($(this)[0]);
- 
-  $.ajax({
-    url: 'search.php',
-    type: 'POST',
-    data: formData,
-    async: false,
-    cache: false,
-    contentType: false,
-    processData: false,
-    success: function (returndata) {
-      //alert(returndata);
-    $("#data1").fadeOut(10).hide(function()
-            {
-              $(".result1").fadeIn(10).show(function()
-              {
-                $(".result1").html(returndata);
-              });
-            });
-    }
-  });
-  clearInput();
-  return "Thanks for submission";
- 
-  //return false;
-});
 
 
-function clearInput(){
-  $("#data1 :input").each(function(){
-    $(this).val('');
-  });
-  
-}
 
-</script>
+
 
 
 
@@ -4475,6 +4955,137 @@ function clearInput(){
 </script>
 
 
+<!-- For Case Evolution -->
+
+<script type="text/javascript">
+
+function ajax_postS(id1)
+{
+
+  $("#MainS").fadeOut(100).hide(function()
+            {  
+                
+              
+  var hr = new XMLHttpRequest();
+  
+   var url = "my_parse_file.php";
+  
+    
+    hr.open("POST", url, true);
+
+    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    
+    // Access the onreadystatechange event for the XMLHttpRequest object
+    hr.onreadystatechange = function() {
+        if(hr.readyState == 4 && hr.status == 200) {
+            var return_data = hr.responseText;
+            document.getElementById("resultE").innerHTML = return_data;
+           
+
+        }
+}
+
+        hr.send('id='+id1); // Actually execute the request
+        
+
+    document.getElementById("resultE").innerHTML = "processing...";
+
+       
+
+  
+  //document.getElementById('demo1').style.display = "none";
+  //document.getElementById('demo5').style.display = "block";
+  
+   
+              
+              $("#demo5").fadeIn(100).show();
+
+          }
+              );
+  
+  
+
+}
+</script>
+
+
+
+<script type="text/javascript">
+
+function ajax_postScroll(id1)
+{
+   var v="#ListScroller"+id1;
+   
+   var id2=document.getElementById("helpScroller").value;
+   
+   $("#ListScroller"+id2).hide();
+   $(v).show();
+    
+ document.getElementById("helpScroller").value=id1;
+}
+
+</script>
+
+
+<script type="text/javascript">
+
+function ajax_postScrollS(id1)
+{
+   var v="#ListScrollerS"+id1;
+   
+   var id2=document.getElementById("helpScrollerS").value;
+   
+   $("#ListScrollerS"+id2).hide();
+   $(v).show();
+    
+ document.getElementById("helpScrollerS").value=id1;
+}
+
+</script>
+
+
+
+
+
+<script type="text/javascript">
+
+function ajax_postL(id1)
+{
+ 
+   var v="#bigList"+id1;
+   
+   var id2=document.getElementById("help").value;
+   
+   $("#bigList"+id2).hide();
+   $(v).show();
+    
+ document.getElementById("help").value=id1;
+   
+}
+
+</script>
+
+<script type="text/javascript">
+
+function ajax_postLS(id1)
+{
+ 
+   var v="#smallList"+id1;
+   
+   var id2=document.getElementById("helpS").value;
+   
+   $("#smallList"+id2).hide();
+   $(v).show();
+    
+ document.getElementById("helpS").value=id1;
+   
+}
+
+</script>
+
+
+
+
 
 
 
@@ -4505,9 +5116,159 @@ function clearInput(){
     </script>
 
 
+<script type="text/javascript">
+  var safeCopy=$("#newSearch").html();
+
+if (matchMedia) {
+  
+  var mq = window.matchMedia("(min-width: 900px)");
+  mq.addListener(WidthChange);
+  WidthChange(mq);
+}
+
+// media query change
+function WidthChange(mq) {
+
+  if(!mq.matches)
+  {
+    $(".skill_section").css("margin-left","0%");
+     document.getElementById("current1").className = "newFeatureClass";  
+document.getElementById("current2").className = "newFeatureClass";
+$("#current2").css("margin-top","30px");
+flag=1;
+document.getElementById("newSearch").innerHTML='<div class="search_area"><div class="container"><div class="row"><div class="search_section"><h1>CASE <span>SEARCH</span></h1><div class="search_form"><br/> <fieldset id="search_form"><div id="formS" class="result1s"><form id="data1s" action="search.php" method="post"><div id="inputs1"><label style="float:left"> <font style="normal" size="3" color="black">Term 1: &nbsp;  </font> </label>&nbsp;<input type="text" id="term1" maxlength="180"  name="term1" placeholder="&#xf1fc;  Term1" style="float:left"> <br/> <br/> <label style="float:left"> <font style="normal" size="3" color="black" id="field1" >  Field 1: &nbsp;   </font> </label>&nbsp;<select id="option1" name="option1" style="width:40%;float:left"><option>Select Field</option><option value="title">Title</option><option value="author" >Author</option><option value="category">Category</option></select> <br/> <select id="condition" name="condition" style="min-width:7%;margin-right:35%" class="list1"><option value="and" >AND</option><option value="or" selected>OR</option></select><br/><label style="float:left"> <font style="normal" size="3" color="black" id="term21">Term 2: &nbsp;   </font> </label>&nbsp;<input type="text" id="term2"  name="term2" maxlength="180" placeholder="&#xf1fc;  Term2" style="float:left"> <br/> <br/> <label style="float:left"> <font style="normal" size="3" color="black" id="field1">  Field 2: &nbsp;   </font> </label> &nbsp;<select id="option2" name="option2" style="width:40%;float:left"> <option>Select Field</option><option value="title">Title</option><option value="author" >Author</option><option value="category">Category</option></select> <br/> <br/> <input type="submit" style="width: 19%;height: 37px; text-align: center;padding-top:1.5%" value="Search" title="Search"></div></form></div></fieldset></div></div></div></div></div></div>';   
+
+$('#search_form input').css("width","70%");
+
+$("form#data1s").submit(function(event){
+ 
+  //disable the default form submission
+  event.preventDefault();
+ 
+  //grab all form data  
+  var formData = new FormData($(this)[0]);
+ 
+  $.ajax({
+    url: 'search.php',
+    type: 'POST',
+    data: formData,
+    async: false,
+    cache: false,
+    contentType: false,
+    processData: false,
+    success: function (returndata) {
+      //alert(returndata);
+    $("#data1s").fadeOut(10).hide(function()
+            {
+              $(".result1s").fadeIn(10).show(function()
+              {
+                $(".result1s").html(returndata);
+                
+              });
+            });
+    }
+  });
+  clearInput();
+  return "Thanks for submission";
+ 
+  //return false;
+});
 
 
+function clearInput(){
+  $("#data1s :input").each(function(){
+    $(this).val('');
+  });
+  
+}
 
+
+  
+  
+  }
+
+  if(mq.matches)
+  {
+    $(".skill_section").css("margin-left","15%");
+    $("#current2").css("margin-top","0px");
+
+     document.getElementById("current1").className = "col-md-5";  
+document.getElementById("current2").className = "col-md-5";
+
+
+   $("#newSearch").html(safeCopy);
+
+
+$("form#data1").submit(function(event){
+ 
+  //disable the default form submission
+  event.preventDefault();
+ 
+  //grab all form data  
+  var formData = new FormData($(this)[0]);
+ 
+  $.ajax({
+    url: 'search.php',
+    type: 'POST',
+    data: formData,
+    async: false,
+    cache: false,
+    contentType: false,
+    processData: false,
+    success: function (returndata) {
+      //alert(returndata);
+    $("#data1").fadeOut(10).hide(function()
+            {
+              $(".result1").fadeIn(10).show(function()
+              {
+                $(".result1").html(returndata);
+              });
+            });
+    }
+  });
+  clearInput();
+  return "Thanks for submission";
+ 
+  //return false;
+});
+
+
+function clearInput(){
+  $("#data1 :input").each(function(){
+    $(this).val('');
+  });
+  
+}
+
+
+  //alert(msg);
+
+ 
+
+}
+
+}
+
+</script>
+<script type="text/javascript">
+   
+    var str = navigator.userAgent; 
+
+    
+    if(str.match(/Edge/g))
+    {
+       
+     
+   document.getElementById("forEdge").innerHTML='<span data-tip="Please enter name of author(s) involved" ><input type="text" name="boxes[]" value="" id="first1" title="" maxlength="50" style="width:34%; margin-left:0.8%; margin-right: 1%" placeholder="&#xf0c0; First Name"  required /> <input type="text" name="boxes[]" value="" id="last1" maxlength="50" style="width:34%; margin-left: 0.2%" placeholder="&#xf0c0; Last Name"  required /> <br/><br/> </span><span data-tip="Please enter the email id of the author(s)"><input type="email" name="boxes[]" value="" id="email1" style="width:70%" maxlength="100" placeholder="&#xf0e0;  Email Address"  required /><br/><br/> </span><span data-tip="Please provide author\'s affiliation"><input type="text" name="boxes[]" value="" id="af1" maxlength="100" style=" margin-left:11%; width:70%" placeholder="&#xf19c; Affiliation"  required /></span><a class="add-box" href="#">Add More</a>';
+
+$("#case_evolve").css("padding-left","30px");
+    $("#case_evolve2").css("padding-left","30px");
+     
+}
+
+    
+    
+    </script>
 
 
 
