@@ -260,6 +260,7 @@ Image credits: unsplash.com
 }
 
 /** whats new **/
+/** whats new **/
 .fade-carouseln .carousel-indicators > li {
     margin: 0 2px;
     background-color: #3498db;
@@ -274,7 +275,12 @@ Image credits: unsplash.com
 .fade-carouseln .slides .slide-11, 
 .fade-carouseln .slides .slide-12,
 .fade-carouseln .slides .slide-13,
-.fade-carouseln .slides .slide-14 {
+.fade-carouseln .slides .slide-14,
+.fade-carouseln .slides .slide-15,
+.fade-carouseln .slides .slide-16,
+.fade-carouseln .slides .slide-17,
+.fade-carouseln .slides .slide-18
+ {
   height: 70vh;
   background-size: cover;
   background-position: center center;
@@ -291,6 +297,19 @@ Image credits: unsplash.com
 }
 .fade-carouseln .slides .slide-14 {
   background-image: url(img/student-led.jpg);
+}
+
+  .fade-carouseln .slides .slide-15 {
+  background-image: url(img/11.jpg);
+}
+  .fade-carouseln .slides .slide-16 {
+  background-image: url(img/12.jpg);
+}
+  .fade-carouseln .slides .slide-17 {
+  background-image: url(img/13.jpg);
+}
+  .fade-carouseln .slides .slide-18 {
+  background-image: url(img/14.jpg);
 }
 
 /********************************/
@@ -941,7 +960,7 @@ scroll {  0% {
 }
 
 
-.skill_section{
+/*.skill_section{
   display: inline-block;
   margin-top: 30px;
   margin-bottom: 5px;
@@ -949,7 +968,7 @@ scroll {  0% {
    margin-right: 50px;
  
   }
-
+*/
 .skill_section h2{
   text-transform: uppercase;
 }
@@ -1698,13 +1717,15 @@ line-height: 45px !important;}
  }*/
 
 
-
+/*
 #search_form input{
   width: 15%;
   height: 30px;
   border: 1px solid #DBDBDB;
   padding-left: 10px;
  }
+ 
+ */
 
  #search_form input[type=submit]{
   width: 20%;
