@@ -1950,14 +1950,17 @@ select.list1{
 
     <ul id="filters" class="clearfix">
       <li><span class="filter active" data-filter="req design construct test maintain configure process quality">All</span></li>
-      <li><span class="filter" data-filter="req">Requirements</span></li>
-      <li><span class="filter" data-filter="design">Design</span></li>
+      <li><span class="filter" data-filter="process">Process and Framework</span></li>
+     <li><span class="filter" data-filter="req">Requirements</span></li>
+     <li><span class="filter" data-filter="design">Design</span></li>
+     <li><span class="filter" data-filter="construct">Construction</span></li> 
      <li><span class="filter" data-filter="test">Testing</span></li>
-    <li><span class="filter" data-filter="maintain">Maintenance</span></li>
-    <li><span class="filter" data-filter="configure">Configuration Management</span></li>
-    <li><span class="filter" data-filter="process">Process and Framework</span></li>
-    <li><span class="filter" data-filter="quality">Quality</span></li>
-   <li><span class="filter" data-filter="construct">Construction</span></li> 
+     <li><span class="filter" data-filter="configure">Configuration Management</span></li>
+     <li><span class="filter" data-filter="quality">Quality</span></li>
+     <li><span class="filter" data-filter="maintain">Maintenance</span></li>
+   
+    
+   
   <!--  <li><span class="filter" data-filter="eco">Economics</span></li>-->
     
 
@@ -2000,7 +2003,7 @@ select.list1{
    <div class="portfolio req" data-cat="Requirements">
         <div class="portfolio-wrapper">   
     <a href="./case-study/Twitter-Case.pdf" target="_blank">        
-          <img src="img/Twitter_Case_Pic.png"  alt="" /> </a>
+          <img src="img/TwitterCase.PNG"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
               <a class="text-title"></a>
@@ -2043,7 +2046,7 @@ select.list1{
       <div class="portfolio design" data-cat="Design">
         <div class="portfolio-wrapper">   
     <a href="./case-study/Design-All-is-Well-Case.pdf" target="_blank">       
-          <img src="img/Design-All-is-Well-Case.png"  alt="" /> </a>
+          <img src="img/AIW.PNG"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
               <a class="text-title"></a>
@@ -2053,11 +2056,27 @@ select.list1{
           </div>
         </div>
       </div>    
-       
+
+
+      <div class="portfolio design" data-cat="Design">
+        <div class="portfolio-wrapper">   
+    <a href="./case-study/babyGirl.pdf" target="_blank">       
+          <img src="img/MBD.PNG"  alt="" /> </a>
+          <div class="label">
+            <div class="label-text">
+              <a class="text-title"></a>
+              <span class="text-category">My Baby Girl's Data</span>
+            </div>
+            <div class="label-bg"></div>
+          </div>
+        </div>
+      </div>   
+   
+   
       <div class="portfolio test" data-cat="Testing">
         <div class="portfolio-wrapper">   
     <a href="./case-study/StalwartX_Case.pdf" target="_blank">        
-          <img src="img/StalwartX_Case_Pic.png"  alt="" /> </a>
+          <img src="img/Stalwart.PNG"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
               <a class="text-title"></a>
@@ -2073,7 +2092,7 @@ select.list1{
        <div class="portfolio test" data-cat="Testing">
         <div class="portfolio-wrapper">   
     <a href="./case-study/Google_Case.pdf" target="_blank">        
-          <img src="img/browser_case.png"  alt="" /> </a>
+          <img src="img/Browser.PNG"  alt="" /> </a>
           <div class="label">
             <div class="label-text">
               <a class="text-title"></a>
@@ -2699,6 +2718,8 @@ jQuery(document).ready(function($){
   <option value="940771" >Responsiveness Case</option>
   <option value="690686" >TicketDistributor Case</option>
   <option value="277003">LIC Market-Driven System Case</option> 
+   <option value="118949">My Baby Girl's Data</option> 
+  
  
   
 </select>
@@ -2744,6 +2765,8 @@ jQuery(document).ready(function($){
   <option value="940771" >Responsiveness Case</option>
   <option value="690686" >TicketDistributor Case</option>
   <option value="277003">LIC Market-Driven System Case</option> 
+   <option value="118949">My Baby Girl's Data</option> 
+  
  
 </select>
 
@@ -2831,6 +2854,15 @@ select the technology stack for development <br/> <br/> <span style="color: gree
 </ul>
 
 
+<ul  role="tablist" id="smallList4" style="display: none" >
+    
+    <li ><a href="javascript:%20ajax_postS(118949)"><img src="img/babyCase.PNG" alt="" /> My Baby Girl's Data Case</a>
+<p>This case is designed to exercise the Java Collections framework through a treasure-hunt like solution search approach. <br/> <br/><span style="color: green">Uploaded by Paramvir on 2017-12-07</span> </p>
+</li>
+
+</ul>
+
+
 
 
 
@@ -2842,7 +2874,7 @@ select the technology stack for development <br/> <br/> <span style="color: gree
     <li><a href="javascript:%20ajax_postLS(1)">1</a></li>
     <li><a href="javascript:%20ajax_postLS(2)">2</a></li>
     <li><a href="javascript:%20ajax_postLS(3)">3</a></li>
-    <li><a href="#">4</a></li>
+    <li><a href="javascript:%20ajax_postLS(4)">4</a></li>
     <li><a href="#">5</a></li>
     <li><a href="#">6</a></li>
     <li><a href="#">7</a></li>
@@ -2914,12 +2946,8 @@ select the technology stack for development <br/> <br/> <span style="color: gree
 </ul>
 <ul  role="tablist" id="bigList4" style="display: none">
     
-    <li style="border-bottom: 1px dashed #ccc;"><a href="javascript:%20ajax_postS(960214)"><img src="img/5.jpg" alt="" /> Twitter Case Study 4</a>
-<p>Twitter started as a side project of some of the employees of Odeon Inc. in 2006. It had immense growth nearly 1000 % growth/year. <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-10</span> </p>
-</li>
-<li><a href="javascript:%20ajax_postS(821548)"><img src="img/6.jpg" alt="" /> All Is Well Case 4</a>
-<p>AIW wants to set-up an online medical store to sell a wide range of medicines. You and your team need to
-select the technology stack for development <br/> <br/> <span style="color: green">Uploaded by Ashish,Paramvir and Yukti on 2016-10-11</span></p>
+<li style="margin-right: 15%"><a href="javascript:%20ajax_postS(118949)"><img src="img/babyCase.PNG" alt="" /> My Baby Girl's Data Case</a>
+<p>This case is designed to exercise the Java Collections framework through a treasure-hunt like solution search approach. <br/> <br/> <span style="color: green; margin-left: 15%">Uploaded by Paramvir on 2017-12-07</span></p>
 </li>
 
 </ul>
@@ -3076,7 +3104,7 @@ select the technology stack for development <br/> <br/> <span style="color: gree
     <li><a href="javascript:%20ajax_postL(1)">1</a></li>
     <li><a href="javascript:%20ajax_postL(2)">2</a></li>
     <li><a href="javascript:%20ajax_postL(3)">3</a></li>
-    <li><a href="#">4</a></li>
+     <li><a href="javascript:%20ajax_postL(4)">4</a></li>
     <li><a href="#">5</a></li>
     <li><a href="#">6</a></li>
     <li><a href="#">7</a></li>
@@ -3330,7 +3358,10 @@ select the technology stack for development <br/> <br/> <span style="color: gree
           <!--  <p> <a href="https://dl.dropboxusercontent.com/u/48972351/T4E-2016-CBL.pdf"><h6>  T4E 2016</h6></a></p>-->
 
           <h7>[3] Veena Saini, Paramvir Singh and Ashish Sureka,<a href="http://www.robo-paathshaala.in/ashish/COMPSAC-2017-SEABED.pdf" target="_blank"> “SEABED: An Open-Source Software Engineering Case-Based Learning Database”</a> (COMPSAC 2017)<a href=" https://www.youtube.com/watch?v=ajANIVXA48A" target="_blank" >[Video Presentation] </a></h7>
+
+          <br/><h7>[4] Saurabh Tiwari, Veena Saini, Paramvir Singh and Ashish Sureka,<a href="upload/ISEC2018.pdf" target="_blank"> “A Case Study on the Application of Case-Based Learning in Software Testing”</a> (ISEC 2018)</h7>
                   </div>
+
                 <!--  <div id="sectionB" class="tab-pane fade">
                       <h3>Case Study</h3>
                       <p><a href="http://seabed.in/upload/casestudyaiw.pdf"><h6>All Is Well (AIW) Pharmacy Incorporation Case Study</h6></a></p>-->
