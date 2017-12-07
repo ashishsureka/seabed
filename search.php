@@ -15,8 +15,18 @@ $http_referer=$_SERVER['HTTP_REFERER'];
   Global $count1;
     $flag=0;
 $term1 = strtolower($_POST['term1']);
+if (strpos($term1, "'") !== FALSE)
+{
+ $term1=substr($term1, 0, strpos($term1, "'"));
+}
+
 $option1=strtolower($_POST['option1']);
 $term2 = strtolower($_POST['term2']);
+if (strpos($term2, "'") !== FALSE)
+{
+ $term2=substr($term2, 0, strpos($term2, "'"));
+}
+
 $option2=strtolower($_POST['option2']);
 $condition =strtolower($_POST['condition']);
     
@@ -34,7 +44,7 @@ if(!empty($condition)&&($condition=='and'))
     {
       
       $flag=1;
-            $sql = "SELECT * FROM `formdata` WHERE (`$option1` LIKE '%$term1%') AND (`$option2` LIKE '%$term2%') AND `allow`='1' ";
+            $sql = "SELECT * FROM `formdata` WHERE allow=1 AND (`$option1` LIKE '%$term1%') AND (`$option2` LIKE '%$term2%')";
     }
         else
           die('All fields are mandatory. <a href="'.$http_referer.'">Try again </a>');
@@ -47,7 +57,7 @@ else if(!empty($condition)&&($condition=='or'))
             {
               
               $flag=1;
-              $sql = "SELECT * FROM `formdata` WHERE (`$option1` LIKE '%$term1%') OR (`$option2` LIKE '%$term2%') AND `allow`='1' "; 
+              $sql = "SELECT * FROM `formdata` WHERE allow=1 AND (`$option1` LIKE '%$term1%') OR (`$option2` LIKE '%$term2%')"; 
             }
     
     
@@ -55,7 +65,7 @@ else if(!empty($condition)&&($condition=='or'))
           else if(!empty($term1)&&!empty($option1))
           {
             $flag=1;
-            $sql = "SELECT * FROM `formdata` WHERE `$option1` LIKE '%$term1%' AND `allow`='1' ";
+            $sql = "SELECT * FROM `formdata` WHERE allow=1 AND `$option1` LIKE '%$term1%'";
             
           } 
         
@@ -64,7 +74,7 @@ else if(!empty($condition)&&($condition=='or'))
              {
               
               $flag=1;
-              $sql = "SELECT * FROM `formdata` WHERE `$option2` LIKE '%$term2%' AND `allow`='1' ";  
+              $sql = "SELECT * FROM `formdata` WHERE allow=1 AND `$option2` LIKE '%$term2%'";  
              }
     
       
